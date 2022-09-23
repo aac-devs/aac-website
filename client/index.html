@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="css/color-theme.css" />
     <link rel="stylesheet" href="css/sizes/xxlarge.css" />
     <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="stylesheet" href="css/components/info.css" />
     <link rel="stylesheet" href="css/components/projects.css" />
+    <link rel="stylesheet" href="css/components/hackerrank.css" />
 
     <title>aac-devs</title>
   </head>
@@ -34,18 +37,28 @@
     </header>
     <main>
       <aside class="info">
-        <div class="info-image">
-          <img src="#" alt="info-image" />
-        </div>
-        <div class="info-body">
-          <h1 class="info__name">Andrés Arana Castillo</h1>
-          <h2 class="info__description">JavaScript Developer</h2>
-          <p class="info__location">Argentina</p>
-        </div>
-        <div class="info-social-media">
-          <div class="social__item">email</div>
-          <div class="social__item">linkedIn</div>
-          <div class="social__item">github</div>
+        <div class="info-block">
+          <div class="info-image">
+            <div class="js-image"></div>
+          </div>
+          <div class="info-body">
+            <h1 class="info__name">Andrés Arana Castillo</h1>
+            <h2 class="info__description">JavaScript Developer</h2>
+            <p class="info__location">Argentina</p>
+          </div>
+          <div class="info-social-media">
+            <!-- <div class="social__item"><ion-icon name="mail-unread-outline"></ion-icon>aac.devs@gmail.com</div> -->
+            <div class="social__item">
+              <a href="https://github.com/aac-devs" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </div>
+            <div class="social__item">
+              <a href="https://www.linkedin.com/in/andr%C3%A9s-arana-castillo-880757203/" target="_blank"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+            </div>
+          </div>
         </div>
       </aside>
 
@@ -63,13 +76,14 @@
               enim vel odit.
             </p>
             <div class="project-links">
-              <a href="#" class="project-links__link">website</a>
-              <a href="#" class="project-links__link">github</a>
+              <a href="#" class="project-links__link"><ion-icon name="link-outline"></ion-icon></a>
+              <a href="#" class="project-links__link"><ion-icon name="logo-github"></ion-icon></a>
             </div>
           </div>
         </article>
 
-        <hr />
+        <div class="hr"></div>
+
         <article class="project">
           <div class="project__image">
             <img src="/img/projects/youtubeclone.png" alt="image" />
@@ -82,13 +96,14 @@
               <strong>Other:</strong> Youtube Data API v3, Firebase.
             </p>
             <div class="project-links">
-              <a href="#" class="project-links__link">website</a>
-              <a href="#" class="project-links__link">github</a>
+              <a href="#" class="project-links__link"><ion-icon name="link-outline"></ion-icon></a>
+              <a href="#" class="project-links__link"><ion-icon name="logo-github"></ion-icon></a>
             </div>
           </div>
         </article>
 
-        <hr />
+        <div class="hr"></div>
+
         <article class="project">
           <div class="project__image">
             <img src="/img/projects/videogames.png" alt="image" />
@@ -102,8 +117,8 @@
               <strong>Other:</strong> RAWG API.
             </p>
             <div class="project-links">
-              <a href="#" class="project-links__link">website</a>
-              <a href="#" class="project-links__link">github</a>
+              <a href="#" class="project-links__link"><ion-icon name="link-outline"></ion-icon></a>
+              <a href="#" class="project-links__link"><ion-icon name="logo-github"></ion-icon></a>
             </div>
           </div>
         </article>
@@ -154,5 +169,8 @@
       </section>
     </main>
     <footer>footer</footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

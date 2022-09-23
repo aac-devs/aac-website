@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 h1 {
@@ -59,6 +60,7 @@ header {
   padding: 0 4rem;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 header h1 {
@@ -89,4 +91,30 @@ a {
   text-decoration: none;
   font-weight: 500;
   font-size: 1.8rem;
+}
+
+section {
+  padding: var(--section-padding);
+  box-shadow: var(--section-box-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.hr {
+  height: 1rem;
+  border-top: 1px solid #ddd;
+  width: 98%;
+  margin: 0 auto;
+}
+
+ion-icon {
+  font-size: 32px;
+}
+
+/* .icon-small {
+  font-size: 32px;
+} */
+
+.icon-red {
+  color: red;
 }

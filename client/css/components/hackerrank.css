@@ -1,0 +1,6 @@
+.hackerrank {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* row-gap: var(--projects-row-gap); */
+  row-gap: var(--section-row-gap);
+}

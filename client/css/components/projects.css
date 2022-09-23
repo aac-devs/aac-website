@@ -1,12 +1,10 @@
 .projects {
   /* background-color: cyan; */
-  box-shadow: var(--projects-box-shadow);
-  padding: var(--projects-padding);
   margin-top: var(--projects-margin-top);
   grid-area: projects;
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--projects-row-gap);
+  /* display: flex; */
+  /* flex-direction: column; */
+  row-gap: var(--section-row-gap);
 }
 
 .projects-link {
@@ -49,5 +47,5 @@
 }
 
 .project-links a {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
