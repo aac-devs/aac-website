@@ -15,7 +15,6 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1;
   color: var(--color-grey-normal);
-  /* background-color: var(--info-bg-color); */
   display: flex;
   flex-direction: column;
   align-items: center;

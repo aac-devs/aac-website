@@ -1,0 +1,15 @@
+.skills {
+  grid-area: skills;
+  row-gap: var(--skills-row-gap);
+}
+
+.skills-list ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--skills-list-ul-gap);
+  flex-wrap: wrap;
+}
+
+.skills-list img {
+  height: var(--skills-list-img-height);
+}

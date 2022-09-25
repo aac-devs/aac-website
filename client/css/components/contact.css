@@ -1,0 +1,68 @@
+.contact {
+  grid-area: contact;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--contact-margin-bottom);
+  row-gap: var(--contact-row-gap);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  margin: var(--contact-form-margin);
+  max-width: var(--contact-form-max-width);
+  min-width: var(--contact-form-min-width);
+  row-gap: var(--contact-form-row-gap);
+  padding: var(--contact-form-padding);
+  border: var(--contact-form-border);
+  background-color: var(--contact-form-background-color);
+  border-radius: var(--contact-form-border-radius);
+}
+
+.contact form label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--contact-form-label-font-family);
+  font-size: var(--contact-form-label-font-size);
+  font-weight: var(--contact-form-label-font-weight);
+  row-gap: var(--contact-form-label-row-gap);
+}
+
+.contact form input {
+  outline: none;
+  height: var(--contact-form-input-height);
+  border: var(--contact-form-input-border);
+  border-radius: var(--contact-form-input-border-radius);
+  padding: var(--contact-form-input-padding);
+  line-height: var(--contact-form-input-line-height);
+  font-family: var(--contact-form-input-font-family);
+  font-size: var(--contact-form-input-font-size);
+  letter-spacing: var(--contact-form-input-letter-spacing);
+}
+
+.contact form textarea {
+  outline: none;
+  resize: none;
+  height: var(--contact-form-textarea-height);
+  border: var(--contact-form-textarea-border);
+  border-radius: var(--contact-form-textarea-border-radius);
+  padding: var(--contact-form-textarea-padding);
+  line-height: var(--contact-form-textarea-line-height);
+  font-family: var(--contact-form-textarea-font-family);
+  font-size: var(--contact-form-textarea-font-size);
+  letter-spacing: var(--contact-form-textarea-letter-spacing);
+}
+
+#contact-button {
+  color: var(--contact-form-button-color);
+  background-color: var(--contact-form-button-background-color);
+  border: var(--contact-form-button-border);
+  cursor: var(--contact-form-button-cursor-default);
+  height: var(--contact-form-button-height);
+  padding: var(--contact-form-button-padding);
+  font-size: var(--contact-form-button-font-size);
+  line-height: var(--contact-form-button-line-height);
+  font-weight: var(--contact-form-button-font-weight);
+  box-shadow: var(--contact-form-button-box-shadow);
+  font-family: var(--contact-form-button-font-family);
+}

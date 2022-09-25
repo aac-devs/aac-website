@@ -4,65 +4,63 @@
 
 .info-block {
   overflow: hidden;
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: var(--info-block-height);
   position: -webkit-sticky;
   position: sticky;
-  top: var(--header-height);
+  top: var(--info-block-top);
 }
 
 .info-image {
-  top: 10rem;
-  right: -5rem;
+  top: var(--info-image-top);
+  right: var(--info-image-right);
   position: absolute;
-  /* background-color: pink; */
-  height: 50vh;
-  width: 95%;
-  background-image: url('/img/home.jpg');
+  height: var(--info-image-height);
+  width: var(--info-image-width);
+  background-image: url('https://res.cloudinary.com/aac-devs-data/image/upload/v1663975628/aac-website/info/home_fpw5fk.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 1rem;
-  z-index: -1;
+  border-radius: var(--info-image-border-radius);
+  z-index: var(--info-image-z-index);
 }
 
 .info-body {
   position: absolute;
-  top: 20vh;
-  width: 100%;
+  top: var(--info-body-top);
+  width: var(--info-body-width);
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 1rem;
+  row-gap: var(--info-body-row-gap);
 }
 
 .info-social-media {
   position: absolute;
-  left: 2rem;
-  bottom: 2rem;
+  left: var(--info-social-media-left);
+  bottom: var(--info-social-media-bottom);
   display: flex;
   flex-direction: row;
-  column-gap: 1rem;
-  /* text-align: right; */
+  column-gap: var(--info-social-media-column-gap);
 }
 
 .info__name,
 .info__description {
-  color: #555;
-  text-shadow: 0 0 1em yellow, 0 0 0.2em gold;
+  color: var(--info-name-description-color);
+  text-shadow: var(--info-name-description-text-shadow);
 }
 
 .info__location {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: var(--info-location-font-size);
+  font-weight: var(--info-location-font-weight);
 }
 
 .js-image {
-  bottom: 2rem;
-  left: -2rem;
+  bottom: var(--info-js-image-bottom);
+  left: var(--info-js-image-left);
   position: absolute;
-  height: 15vh;
-  aspect-ratio: 3 / 4;
-  width: auto;
-  background-image: url('/img/js.png');
+  height: var(--info-js-image-height);
+  aspect-ratio: var(--info-js-image-aspect-ratio);
+  width: var(--info-js-image-width);
+  background-image: url('https://res.cloudinary.com/aac-devs-data/image/upload/v1663975560/aac-website/info/js_cgxlpb.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
