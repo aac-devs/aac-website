@@ -59,8 +59,9 @@
   position: absolute;
   height: var(--info-js-image-height);
   aspect-ratio: var(--info-js-image-aspect-ratio);
-  width: var(--info-js-image-width);
   background-image: url('https://res.cloudinary.com/aac-devs-data/image/upload/v1663975560/aac-website/info/js_cgxlpb.png');
   background-repeat: no-repeat;
   background-size: contain;
+  box-shadow: var(--info-js-image-box-shadow);
+  border-radius: var(--info-js-image-border-radius);
 }

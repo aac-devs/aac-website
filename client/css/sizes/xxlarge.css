@@ -27,14 +27,20 @@ XXLARGE: 1344 <= SCREEN
 
     /* SECTION */
     --section-padding: 2rem;
-    --section-box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+    --section-box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.2);
     --section-row-gap: 2rem;
 
     /* HEADER VARIABLES */
-    --header-height: 7.2rem;
+    --header-height: 8rem;
+    --header-width: 100%;
+    --header-padding: 0 4rem;
+    --header-top: 0;
+    --header-z-index: 10;
 
     /* FOOTER VARIABLES */
-    --footer-height: 4.8rem;
+    --footer-height: 6.4rem;
+    --footer-width: 100%;
+    --footer-p-font-weight: 500;
 
     /* INFO SECTION VARIABLES */
     --info-block-height: calc(100vh - var(--header-height) - var(--footer-height));
@@ -63,13 +69,14 @@ XXLARGE: 1344 <= SCREEN
 
     --info-js-image-bottom: 2rem;
     --info-js-image-left: -2rem;
-    --info-js-image-height: 15vh;
-    --info-js-image-aspect-ratio: 3 / 5;
-    --info-js-image-width: auto;
+    --info-js-image-height: 12vh;
+    --info-js-image-aspect-ratio: 1 / 1;
+    --info-js-image-box-shadow: 1rem 1.8rem 2.8rem rgba(0, 0, 0, 0.6);
+    --info-js-image-border-radius: 0.4rem;
 
     /* PROJECTS SECTION VARIABLES */
     --projects-margin-top: 2rem;
-    --projects-row-gap: var(var(--section-row-gap));
+    --projects-row-gap: var(--section-row-gap);
 
     --project-column-gap: 2rem;
 
@@ -82,6 +89,17 @@ XXLARGE: 1344 <= SCREEN
     --project-body-padding-right: 1rem;
 
     --project-links-a-margin-left: 1.5rem;
+
+    --project-span-background-color: orangered;
+    --project-span-color: #fff;
+    --project-span-box-shadow: 0 2.4rem 2.8rem rgba(0, 0, 0, 0.3);
+    --project-span-right: -0.5rem;
+    --project-span-top: -0.5rem;
+    --project-span-font-weight: 600;
+    --project-span-font-size: 1.6rem;
+    --project-span-padding: 0.6rem 1.2rem;
+    --project-span-border-radius: 0.6rem;
+    --project-span-transform: rotate(3deg);
 
     /* HACKERRANK SECTION VARIABLES */
     --hackerrank-row-gap: calc(var(--section-row-gap) * 1.5);
@@ -128,21 +146,24 @@ XXLARGE: 1344 <= SCREEN
     --contact-form-input-border-radius: 0.6rem;
     --contact-form-input-padding: 0.5rem 1.2rem;
     --contact-form-input-line-height: 2rem;
-    --contact-form-input-font-family: 'Poppins', sans-serif;
-    --contact-form-input-font-size: 1.4rem;
-    --contact-form-input-letter-spacing: 0.1rem;
+    --contact-form-input-font-family: sans-serif;
+    --contact-form-input-font-size: 1.6rem;
+    --contact-form-input-font-weight: 300;
+    --contact-form-input-letter-spacing: 0.2rem;
 
     --contact-form-textarea-height: 10rem;
     --contact-form-textarea-border: 1px solid rgb(225, 228, 232);
     --contact-form-textarea-border-radius: 0.6rem;
     --contact-form-textarea-padding: 0.5rem 1.2rem;
     --contact-form-textarea-line-height: 2rem;
-    --contact-form-textarea-font-family: 'Poppins', sans-serif;
-    --contact-form-textarea-font-size: 1.4rem;
-    --contact-form-textarea-letter-spacing: 0.1rem;
+    --contact-form-textarea-font-family: sans-serif;
+    --contact-form-textarea-font-size: 1.6rem;
+    --contact-form-textarea-font-weight: 300;
+    --contact-form-textarea-letter-spacing: 0.2rem;
 
     --contact-form-button-color: rgba(255, 255, 255, 0.8);
-    --contact-form-button-background-color: rgb(148, 211, 162);
+    --contact-form-button-background-color-disabled: rgb(222, 222, 222);
+    --contact-form-button-background-color-enabled: rgb(102, 93, 235);
     --contact-form-button-border: 1px solid rgba(27, 31, 35, 0.1);
     --contact-form-button-cursor-default: default;
     --contact-form-button-cursor-pointer: pointer;

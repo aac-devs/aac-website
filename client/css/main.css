@@ -14,11 +14,12 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1;
-  color: var(--color-grey-normal);
+  color: var(--color-grey-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  /* background-image: url('/img/background.png'); */
 }
 
 h1 {
@@ -50,16 +51,17 @@ strong {
 }
 
 header {
-  background-color: var(--color-main-normal);
-  height: var(--header-height);
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4rem;
   position: sticky;
-  top: 0;
-  z-index: 10;
+  width: var(--header-width);
+  background-color: var(--color-main-normal);
+  height: var(--header-height);
+  padding: var(--header-padding);
+  top: var(--header-top);
+  z-index: var(--header-z-index);
+  box-shadow: var(--section-box-shadow);
 }
 
 header h1 {
@@ -72,7 +74,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--color-grey-normal);
+  color: var(--color-grey-dark);
 }
 
 header h1 {
@@ -80,9 +82,17 @@ header h1 {
 }
 
 footer {
-  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey-darker);
   height: var(--footer-height);
-  width: 100%;
+  width: var(--footer-width);
+}
+
+footer p {
+  color: var(--color-grey-lighter);
+  font-weight: var(--footer-p-font-weight);
 }
 
 a {
@@ -97,6 +107,12 @@ section {
   box-shadow: var(--section-box-shadow);
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+aside {
+  background-color: #fff;
 }
 
 .hr {
@@ -107,12 +123,34 @@ section {
 }
 
 ion-icon {
-  font-size: 32px;
+  font-size: 28px;
 }
 
-/* .icon-small {
-  font-size: 32px;
-} */
+.logo-linkedin {
+  color: rgb(29, 56, 212);
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 36px;
+  transition: all 0.4s ease-in-out;
+}
+
+.logo-linkedin:hover {
+  color: #fff;
+  background-color: rgb(29, 56, 212);
+}
+
+.logo-github {
+  color: var(--color-grey-dark);
+  background-color: #fff;
+  font-size: 36px;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.logo-github:hover {
+  color: #fff;
+  background-color: var(--color-grey-dark);
+}
 
 .icon-red {
   color: red;
