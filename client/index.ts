@@ -1,9 +1,9 @@
-const inputName: HTMLElement = window.document.getElementById('contact-name')!;
-const inputEmail: HTMLElement = window.document.getElementById('contact-email')!;
-const textMessage: HTMLElement = window.document.getElementById('contact-message')!;
-const labelVerify: HTMLElement = window.document.getElementById('label-contact-verify')!;
-const inputVerify: HTMLElement = window.document.getElementById('contact-verify')!;
-const buttonSend: HTMLElement = window.document.getElementById('contact-button')!;
+const inputName = <HTMLElement>window.document.getElementById('contact-name')!;
+const inputEmail = <HTMLElement>window.document.getElementById('contact-email')!;
+const textMessage = <HTMLElement>window.document.getElementById('contact-message')!;
+const labelVerify = <HTMLElement>window.document.getElementById('label-contact-verify')!;
+const inputVerify = <HTMLElement>window.document.getElementById('contact-verify')!;
+const buttonSend = <HTMLElement>window.document.getElementById('contact-button')!;
 const contactForm = <HTMLFormElement>window.document.getElementById('contact-form')!;
 
 interface FormValues {

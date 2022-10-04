@@ -5,146 +5,178 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
-    />
+    /> -->
 
-    <link rel="stylesheet" href="css/color-theme.css" />
+    <!-- <link rel="stylesheet" href="css/color-theme.css" />
     <link rel="stylesheet" href="css/sizes/xxlarge.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/themes/text.css" />
 
     <link rel="stylesheet" href="css/components/info.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
     <link rel="stylesheet" href="css/components/projects.css" />
     <link rel="stylesheet" href="css/components/hackerrank.css" />
     <link rel="stylesheet" href="css/components/skills.css" />
-    <link rel="stylesheet" href="css/components/contact.css" />
+    <link rel="stylesheet" href="css/components/contact.css" /> -->
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/queries/layouts.css" />
 
     <title>aac-devs</title>
   </head>
   <body>
-    <header>
-      <h1 class="website-brand">aac-devs</h1>
-      <nav>
+    <header class="layout-header">
+      <h1 class="text-brand">aac-devs</h1>
+      <span class="layout-menu-button">-</span>
+      <nav class="layout-menu-nav">
+        <article class="layout-info-menu">
+          <div style="font-size: 4rem">INFO AAC SMALL SCREENS</div>
+          <!-- <div>
+              <div>
+                <div></div>
+              </div>
+              <div>
+                <h1>Andrés Arana Castillo</h1>
+                <h2>JavaScript Programmer</h2>
+                <p>Argentina</p>
+              </div>
+              <div>
+                <div>
+                  <a href="https://github.com/aac-devs" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                  </a>
+                </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/andr%C3%A9s-arana-castillo-880757203/" target="_blank"
+                    ><ion-icon name="logo-linkedin"></ion-icon
+                  ></a>
+                </div>
+              </div>
+            </div> -->
+        </article>
         <ul>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">HackerRank</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Contact me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hackerrank">HackerRank</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact me</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <aside class="info">
-        <div class="info-block">
-          <div class="info-image">
-            <div class="js-image"></div>
+
+    <!-- <main class="layout-main"> -->
+    <aside class="layout-info-aside">
+      <div style="font-size: 4rem">INFO AAC LARGE SCREENS</div>
+      <!-- <div>
+          <div>
+            <div></div>
           </div>
-          <div class="info-body">
-            <h1 class="info__name">Andrés Arana Castillo</h1>
-            <h2 class="info__description">JavaScript Programmer</h2>
-            <p class="info__location">Argentina</p>
+          <div>
+            <h1>Andrés Arana Castillo</h1>
+            <h2>JavaScript Programmer</h2>
+            <p>Argentina</p>
           </div>
-          <div class="info-social-media">
-            <!-- <div class="social__item"><ion-icon name="mail-unread-outline"></ion-icon>aac.devs@gmail.com</div> -->
-            <div class="social__item">
+          <div>
+            <div>
               <a href="https://github.com/aac-devs" target="_blank">
-                <ion-icon class="logo-github" name="logo-github"></ion-icon>
+                <ion-icon name="logo-github"></ion-icon>
               </a>
             </div>
-            <div class="social__item">
+            <div>
               <a href="https://www.linkedin.com/in/andr%C3%A9s-arana-castillo-880757203/" target="_blank"
-                ><ion-icon class="logo-linkedin" name="logo-linkedin"></ion-icon
+                ><ion-icon name="logo-linkedin"></ion-icon
               ></a>
             </div>
           </div>
-        </div>
-      </aside>
+        </div> -->
+    </aside>
 
-      <section class="projects">
-        <h2 class="section__title">Projects</h2>
+    <section id="projects" class="layout-projects">
+      <!-- <h2>Projects</h2>
 
-        <article class="project">
-          <span>Sep 2021</span>
-          <div class="project__image">
+        <article>
+          <span><p>Sep 2021</p></span>
+          <div>
             <img
               src="https://res.cloudinary.com/aac-devs-data/image/upload/v1663975746/aac-website/projects/youtubeclone_ypszxw.png"
               alt="project-image"
             />
           </div>
-          <div class="project-body">
-            <h3 class="project-body__title">Wizetube App</h3>
-            <p class="project-body__description">
+          <div>
+            <h3>Wizetube App</h3>
+            <p>
               <strong>Frontend:</strong> React, Context API, StyledComponents. <br />
               <strong>Other:</strong> Youtube Data API v3, Firebase.
             </p>
-            <div class="project-links">
-              <a href="#" class="project-links__link"><ion-icon name="link-outline"></ion-icon></a>
-              <a href="#" class="project-links__link"><ion-icon name="logo-github"></ion-icon></a>
+            <div>
+              <a href="#"><ion-icon name="link-outline"></ion-icon></a>
+              <a href="#"><ion-icon name="logo-github"></ion-icon></a>
             </div>
           </div>
         </article>
 
-        <div class="hr"></div>
+        <div></div>
 
-        <article class="project">
-          <span>Apr 2021</span>
-          <div class="project__image">
-            <img
-              src="https://res.cloudinary.com/aac-devs-data/image/upload/v1663975746/aac-website/projects/videogames_lzvq9a.png"
-              alt="project-image"
-            />
-          </div>
-          <div class="project-body">
-            <h3 class="project-body__title">Videogames App</h3>
-            <p class="project-body__description">
-              <strong>Frontend:</strong> React, Redux, StyledComponents. <br />
-              <strong>Backend:</strong> Node.js, Express, PosgreSQL - Sequelize. <br />
-              <strong>Other:</strong> RAWG API.
-            </p>
-            <div class="project-links">
-              <a href="#" class="project-links__link"><ion-icon name="link-outline"></ion-icon></a>
-              <a href="#" class="project-links__link"><ion-icon name="logo-github"></ion-icon></a>
-            </div>
-          </div>
-        </article>
-
-        <div class="hr"></div>
-
-        <article class="project">
-          <span>May 2021</span>
-          <div class="project__image">
+        <article>
+          <span><p>May 2021</p></span>
+          <div>
             <img
               src="https://res.cloudinary.com/aac-devs-data/image/upload/v1621513713/aac-website/projects/DiaryApp_upj8bb.png"
               alt="project-image"
             />
           </div>
-          <div class="project-body">
-            <h3 class="project-body__title">Diary App</h3>
-            <p class="project-body__description">
+          <div>
+            <h3>Diary App</h3>
+            <p>
               <strong>Frontend:</strong> React, Redux, Material UI. <br />
               <strong>Backend:</strong> Node.js, Express, PosgreSQL - Sequelize. <br />
             </p>
-            <div class="project-links">
-              <a href="#" class="project-links__link"><ion-icon name="link-outline"></ion-icon></a>
-              <a href="#" class="project-links__link"><ion-icon name="logo-github"></ion-icon></a>
+            <div>
+              <a href="#"><ion-icon name="link-outline"></ion-icon></a>
+              <a href="#"><ion-icon name="logo-github"></ion-icon></a>
             </div>
           </div>
         </article>
 
-        <div class="projects-link">
-          <a href="#" class="projects__link">view more...</a>
-        </div>
-      </section>
+        <div></div>
 
-      <section class="hackerrank">
-        <h2 class="section__title">HackerRank</h2>
+        <article>
+          <span><p>Apr 2021</p></span>
+          <div>
+            <img
+              src="https://res.cloudinary.com/aac-devs-data/image/upload/v1663975746/aac-website/projects/videogames_lzvq9a.png"
+              alt="project-image"
+            />
+          </div>
+          <div>
+            <h3>Videogames App</h3>
+            <p>
+              <strong>Frontend:</strong> React, Redux, StyledComponents. <br />
+              <strong>Backend:</strong> Node.js, Express, PosgreSQL - Sequelize. <br />
+              <strong>Other:</strong> RAWG API.
+            </p>
+            <div>
+              <a href="#"><ion-icon name="link-outline"></ion-icon></a>
+              <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+            </div>
+          </div>
+        </article>
 
-        <article class="hackerrank-badges">
-          <h3 class="article__title">Badges:</h3>
-          <div class="badges-list">
+        <div>
+          <a href="#">view more...</a>
+        </div> -->
+    </section>
+
+    <section id="hackerrank" class="layout-hackerrank">
+      <!-- <h2>HackerRank</h2>
+
+        <article>
+          <h3>Badges:</h3>
+          <div>
             <ul>
               <li>
                 <img
@@ -174,9 +206,9 @@
           </div>
         </article>
 
-        <article class="hackerrank-skills">
-          <h3 class="article__title">Verified Skills:</h3>
-          <div class="hackerrank-skills-list">
+        <article>
+          <h3>Verified Skills:</h3>
+          <div>
             <ul>
               <li>
                 <img
@@ -194,14 +226,14 @@
           </div>
         </article>
 
-        <div class="hackerrank-link">
-          <a href="https://www.hackerrank.com/aac_devs" target="_blank" class="projects__link">view HR profile...</a>
-        </div>
-      </section>
+        <div>
+          <a href="https://www.hackerrank.com/aac_devs" target="_blank">view HR profile...</a>
+        </div> -->
+    </section>
 
-      <section class="skills">
-        <h2 class="section__title">Skills</h2>
-        <article class="skills-list">
+    <section id="skills" class="layout-skills">
+      <!-- <h2>Skills</h2>
+        <article>
           <ul>
             <li>
               <img
@@ -300,11 +332,11 @@
               />
             </li>
           </ul>
-        </article>
-      </section>
+        </article> -->
+    </section>
 
-      <section class="contact">
-        <h2 class="section__title">Contact me</h2>
+    <section id="contact" class="layout-contact">
+      <!-- <h2>Contact me</h2>
         <form id="contact-form" action="post" onsubmit="">
           <div>
             <label for="contact-name">Name: </label>
@@ -344,21 +376,16 @@
             />
           </div>
           <input id="contact-button" type="submit" value="Send" disabled />
-        </form>
-      </section>
-    </main>
-    <footer><p>&#169; Andrés Arana Castillo - 2022</p></footer>
+        </form> -->
+    </section>
+    <!-- </main> -->
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="build/index.js"></script>
+    <footer class="layout-footer">
+      <!-- <p>&#169; Andrés Arana Castillo - 2022</p> -->
+    </footer>
+
+    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
+    <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    <!-- <script src="build/index.js"></script> -->
   </body>
 </html>
-
-<!-- 
-                onkeypress="return (event.charCode>=65 && event.charCode<=90) || (event.charCode>=97 && event.charCode<=122) || event.charCode==95 || event.charCode==32"
-              placeholder="enter your name.."
-              autocomplete="off"
-              id="contact-name"
-
- -->
