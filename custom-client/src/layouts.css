@@ -102,7 +102,7 @@
   :root {
     --body-display: grid;
     --body-grid-template-columns: 4fr 6fr;
-    --body-grid-template-rows: auto;
+      --body-grid-template-rows: auto;
     --body-grid-template-areas: 'header header' 'aside projects' 'aside hackerrank' 'aside skills' 'aside contact'
       'footer footer';
 
