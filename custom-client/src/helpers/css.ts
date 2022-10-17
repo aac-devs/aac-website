@@ -1,24 +1,33 @@
 import {
   AlignItems,
+  Auto,
+  MarPadTypes,
   BoxSizing,
+  Color,
   Cursor,
   Display,
   Distance,
   FlexDirection,
-  FlexGap,
   FlexWrap,
   FontFamily,
   FontSize,
   FontStyle,
   FontWeight,
+  GlobalType,
   JustifyContent,
+  Keyword,
+  Length,
   LineHeight,
+  None,
   Opacity,
+  Percentage,
   Position,
   Size,
   Str,
   TextDecorationLine,
   Unit,
+  NtoS,
+  Gap,
 } from './cssTypes.js';
 
 export default class CSSStyles {
@@ -37,7 +46,7 @@ export default class CSSStyles {
     return stringStyles;
   }
 
-  static mapStyles(styles: string): Map<string, string> {
+  private static mapStyles(styles: string): Map<string, string> {
     const mapped = new Map<string, string>();
     styles.split(';').map((item) => {
       const keyVal = item.trim().split(':');
@@ -53,64 +62,36 @@ export default class CSSStyles {
     return this;
   }
 
-  public static display(dp: Display) {
-    this.styles.set('display', dp);
+  public static boxShadow(offsetX_None?: Length | None, offsetY?: Length, blurRadius?: Length, color?: Color) {
+    if (offsetX_None === 'none') this.styles.set('box-shadow', 'none');
+    else this.styles.set('box-shadow', `${offsetX_None} ${offsetY} ${blurRadius} ${color}`);
     return this;
   }
 
-  // public static box(bz?: BoxSizing, bs?: BoxShadow) {
-  //   if (bz) this.styles.set('box-sizing', bz);
-  //   if (!bs) return this;
-  //   if (bs === 'none') this.styles.set('box-shadow', bs);
-  //   else this.styles.set('box-shadow', `${bs['h-offset']} ${bs['h-offset']} ${bs.blur} ${bs.color}`);
-  //   return this;
-  // }
-
-  public static boxSizing(bz: BoxSizing) {
-    this.styles.set('box-sizing', bz);
-    return this;
-  }
-
-  public static position(ps: Position) {
-    this.styles.set('position', ps);
-    return this;
-  }
-
-  private static place(pl: string) {
-    return function (d: Distance, u?: Unit): typeof CSSStyles {
-      if (typeof d === 'string' && !u) this.styles.set(pl, d);
-      else this.styles.set(pl, `${d}${u}`);
+  private static placeSize(key: string) {
+    return (value: Length | Percentage | Keyword | GlobalType): typeof CSSStyles => {
+      this.styles.set(key, value);
       return this;
     };
   }
 
-  public static top = this.place('top');
-  public static right = this.place('right');
-  public static bottom = this.place('bottom');
-  public static left = this.place('left');
-
-  private static size(sz: string) {
-    return function (v: Size, u?: Unit): typeof CSSStyles {
-      if (typeof v === 'string' && !u) this.styles.set(sz, v);
-      else this.styles.set(sz, `${v}${u}`);
-      return this;
-    };
-  }
-
-  public static width = this.size('width');
-  public static height = this.size('height');
-  public static minWidth = this.size('min-width');
-  public static minHeight = this.size('min-height');
-  public static maxWidth = this.size('max-width');
-  public static maxWeight = this.size('max-height');
+  public static top = this.placeSize('top');
+  public static right = this.placeSize('right');
+  public static bottom = this.placeSize('bottom');
+  public static left = this.placeSize('left');
+  public static width = this.placeSize('width');
+  public static height = this.placeSize('height');
+  public static minWidth = this.placeSize('min-width');
+  public static minHeight = this.placeSize('min-height');
+  public static maxWidth = this.placeSize('max-width');
+  public static maxWeight = this.placeSize('max-height');
 
   // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-  private static mpSide(type: string) {
-    return (val: Distance, unit?: Unit): typeof CSSStyles => {
-      if (typeof val === 'string') this.styles.set(type, val);
-      else this.styles.set(type, `${val}${unit}`);
+  private static mpSide(key: string) {
+    return (value: Length | Percentage | Auto | GlobalType): typeof CSSStyles => {
+      this.styles.set(key, value);
       return this;
     };
   }
@@ -128,18 +109,16 @@ export default class CSSStyles {
   public static paddingBottom = this.mpSide('padding-bottom');
   public static paddingLeft = this.mpSide('padding-left');
 
-  private static mp(type: string) {
-    return (topVertical: Str, rightHorizontal?: Str, bottom?: Str, left?: Str): typeof CSSStyles => {
-      let str = '';
-
-      if (rightHorizontal && bottom && left) str = `${topVertical} ${rightHorizontal} ${bottom} ${left}`;
-      else if (rightHorizontal && bottom) str = `${topVertical} ${rightHorizontal} ${bottom}`;
-      else if (rightHorizontal) str = `${topVertical} ${rightHorizontal}`;
-      else str = `${topVertical}`;
-
-      this.styles.set(type, str);
+  private static mp(key: string) {
+    function fn(val1: MarPadTypes): typeof CSSStyles;
+    function fn(val1: MarPadTypes, val2?: MarPadTypes): typeof CSSStyles;
+    function fn(val1: MarPadTypes, val2?: MarPadTypes, val3?: MarPadTypes): typeof CSSStyles;
+    function fn(val1: MarPadTypes, val2?: MarPadTypes, val3?: MarPadTypes, val4?: MarPadTypes): typeof CSSStyles {
+      const value = `${val1} ${val2 ? val2 : ''} ${val3 ? val3 : ''} ${val4 ? val4 : ''}`.trim();
+      this.styles.set(key, value);
       return this;
-    };
+    }
+    return fn;
   }
 
   public static margin = this.mp('margin');
@@ -148,74 +127,40 @@ export default class CSSStyles {
   // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-  public static backgroundColor(color: string) {
-    this.styles.set('background-color', color);
+  public static fontFamily(val1: FontFamily, val2?: FontFamily) {
+    const value = `${val1}${val2 ? `, ${val2}` : ''}`.trim();
+    console.log('font-family', value);
+    this.styles.set('font-family', value);
     return this;
   }
 
-  public static color(col: string) {
-    this.styles.set('color', col);
-    return this;
+  private static closure(key: string) {
+    return function <T>(value: T): typeof CSSStyles {
+      // console.log(key, value);
+      this.styles.set(key, `${value}`);
+      return this;
+    };
   }
 
-  public static zIndex(index: number) {
-    this.styles.set('z-index', index.toString());
-    return this;
-  }
-
-  public static fontFamily(ff: FontFamily) {
-    this.styles.set('font-family', ff);
-    return this;
-  }
-
-  public static fontSize(fz: FontSize) {
-    this.styles.set('font-size', fz);
-    return this;
-  }
-
-  public static fontWeight(fw: FontWeight) {
-    this.styles.set('font-weight', fw);
-    return this;
-  }
-
-  public static fontStyle(fs: FontStyle) {
-    this.styles.set('font-style', fs);
-    return this;
-  }
-
-  public static lineHeight(lh: LineHeight) {
-    this.styles.set('line-height', lh);
-    return this;
-  }
-
-  public static textDecorationLine(td: TextDecorationLine) {
-    this.styles.set('text-decoration-line', td);
-    return this;
-  }
-
-  public static parentFlex(fd: FlexDirection, jc: JustifyContent, ai: AlignItems, fg?: FlexGap, fw?: FlexWrap) {
-    this.styles.set('display', 'flex');
-    this.styles.set('flex-direction', fd);
-    this.styles.set('justify-content', jc);
-    this.styles.set('align-items', ai);
-    if (fw) this.styles.set('flex-wrap', fw);
-    if (fg) fd.startsWith('column') ? this.styles.set('row-gap', fg) : this.styles.set('column-gap', fg);
-    return this;
-  }
-
-  public static opacity(op: Opacity, perc?: '%') {
-    if (typeof op === 'string') this.styles.set('opacity', op);
-    else if (typeof op === 'number') {
-      if (perc) this.styles.set('opacity', `${op}${perc}`);
-      else this.styles.set('opacity', op.toString());
-    }
-    return this;
-  }
-
-  public static cursor(cr: Cursor) {
-    this.styles.set('cursor', cr);
-    return this;
-  }
+  public static alignItems = this.closure('align-items')<AlignItems>;
+  public static backgroundColor = this.closure('background-color')<Color>;
+  public static boxSizing = this.closure('box-sizing')<BoxSizing>;
+  public static color = this.closure('color')<Color>;
+  public static columnGap = this.closure('column-gap')<Gap>;
+  public static cursor = this.closure('cursor')<Cursor>;
+  public static display = this.closure('display')<Display>;
+  public static flexDirection = this.closure('flex-direction')<FlexDirection>;
+  public static flexWrap = this.closure('flex-wrap')<FlexWrap>;
+  public static fontSize = this.closure('font-size')<FontSize>;
+  public static fontStyle = this.closure('font-style')<FontStyle>;
+  public static fontWeight = this.closure('font-weight')<FontWeight>;
+  public static justifyContent = this.closure('justify-content')<JustifyContent>;
+  public static lineHeight = this.closure('line-height')<LineHeight>;
+  public static opacity = this.closure('opacity')<Opacity>;
+  public static position = this.closure('position')<Position>;
+  public static rowGap = this.closure('row-gap')<Gap>;
+  public static textDecorationLine = this.closure('text-decoration-line')<TextDecorationLine>;
+  public static zIndex = this.closure('z-index')<number>;
 
   private constructor() {}
 }

@@ -1,4 +1,5 @@
 import ThemeColor from '../helpers/colors';
+import { addListener } from '../events/listeners.js';
 
 export interface AnchorParams {
   text: string;
@@ -24,6 +25,8 @@ export function createAnchorElement(values: AnchorParams): HTMLAnchorElement {
   anchorElement.addEventListener('mouseout', () => {
     anchorElement.style.color = values.color;
   });
+
+  addListener([[anchorElement, 'click']]);
 
   return anchorElement;
 }

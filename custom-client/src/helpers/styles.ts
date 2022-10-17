@@ -4,20 +4,20 @@ import CSSStyles from './css.js';
 const styles = {
   _html: CSSStyles.start()
     .boxSizing('border-box')
-    .fontFamily('Poppins')
-    .height(100, '%')
-    .margin('0')
-    .padding('0')
-    .backgroundColor('wheat')
+    // .fontFamily('Poppins')
+    // .height(100, '%')
+    .margin('0rem')
+    .padding('0rem')
+    // .backgroundColor('wheat')
     .toString(),
 
   // body: `min-height:100%;padding:0;margin:0;background-color:${ThemeColor.colorGreyLighter}`,
   _body: CSSStyles.start()
     .boxSizing('border-box')
-    .padding('0')
-    .margin('0')
+    .padding('0rem')
+    .margin('0rem')
     .backgroundColor(ThemeColor.colorGreyLighter)
-    .minHeight(100, '%')
+    // .minHeight(100, '%')
     .toString(),
 
   // anchor: `font-weight:400;font-size:1.8rem;padding:0;margin:0;margin-block-start:0px;margin-block-end:0px;text-decoration:none`,
@@ -25,10 +25,10 @@ const styles = {
   _anchor: CSSStyles.start()
     .fontWeight('400')
     .fontSize('1.8rem')
-    .padding('0')
-    .margin('0')
-    .marginBlockStart(0, 'px')
-    .marginBlockEnd(0, 'px')
+    .padding('0rem')
+    .margin('0rem')
+    // .marginBlockStart(0, 'px')
+    // .marginBlockEnd(0, 'px')
     .textDecorationLine('none')
     .toString(),
 
@@ -40,10 +40,10 @@ const styles = {
       .backgroundColor('#fff')
       .opacity(0.5)
       .position('fixed')
-      .top(0, 'px')
-      .left(0, 'px')
-      .width(10, 'vw')
-      .height(100, 'vh')
+      .top('0px')
+      .left('0px')
+      // .width(10, 'vw')
+      // .height(100, 'vh')
       .toString(),
     off: CSSStyles.start().boxSizing('border-box').display('none').toString(),
   },
@@ -54,10 +54,10 @@ const styles = {
     // };position:relative;padding:0 2rem;z-index:10`,
     small: CSSStyles.start()
       .boxSizing('border-box')
-      .parentFlex('row-reverse', 'space-between', 'center')
+      // .parentFlex('row-reverse', 'space-between', 'center')
       .backgroundColor(ThemeColor.colorMainDark)
       .position('relative')
-      .padding('0 2rem')
+      .padding('0rem', '2rem')
       .zIndex(1)
       .toString(),
     // large: `${CSSStyles.parentFlex('row', 'space-between', 'center').toString()}background-color:${
@@ -65,10 +65,10 @@ const styles = {
     // };position:relative;padding:0 2rem`,
     large: CSSStyles.start()
       .boxSizing('border-box')
-      .parentFlex('row', 'space-between', 'center')
+      // .parentFlex('row', 'space-between', 'center')
       .backgroundColor(ThemeColor.colorMainDark)
       .position('relative')
-      .padding('0 2rem')
+      .padding('0rem', '2rem')
       .toString(),
   },
 
@@ -80,18 +80,18 @@ const styles = {
   _ul: {
     small: `${CSSStyles.start()
       .boxSizing('border-box')
-      .parentFlex('column', 'center', 'stretch', '2.5rem')
+      // .parentFlex('column', 'center', 'stretch', '2.5rem')
       .toString()}list-style:none;padding:0;margin-block-start:0px;margin-block-end:0px;`,
     large: `${CSSStyles.start()
       .boxSizing('border-box')
-      .parentFlex('row', 'center', 'center', '2rem')
+      // .parentFlex('row', 'center', 'center', '2rem')
       .toString()}list-style:none;padding:0;margin-block-start:0px;margin-block-end:0px;`,
   },
 
   _nav: {
     small: `${CSSStyles.start()
       .boxSizing('border-box')
-      .parentFlex('column', 'center', 'stretch')
+      // .parentFlex('column', 'center', 'stretch')
       .toString()}border-top:${`1px solid ${ThemeColor.colorMainLight}`};padding:0 4rem;position:absolute;background-color:${`${ThemeColor.colorMainDark}`};box-shadow:none;overflow-y:scroll;transition:left 0.5s ease-in-out`,
     large: `box-sizing:border-box;position:static;height:auto;padding:0;border:none;box-shadow:none;width:auto;background-color:${ThemeColor.colorMainDark};overflow-y:visible`,
   },

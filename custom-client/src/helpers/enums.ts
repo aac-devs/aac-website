@@ -29,7 +29,6 @@ export enum FontWeight {
   'h6' = '400',
   'p' = '300',
 }
-export enum Theme {
-  'light' = ThemeColor.colorGreyLighter,
-  'dark' = ThemeColor.colorGreyDark,
-}
+
+// TODO: ubicar este type en su lugar
+export type Theme = 'light' | 'dark';

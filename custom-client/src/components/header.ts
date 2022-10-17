@@ -31,7 +31,7 @@ export function createHeader(brand: string, items: string[]): HTMLHeadElement {
   nav.setAttribute('class', 'menu-nav');
   nav.appendChild(ul);
 
-  const brandElement = createTextElement(brand, TextTag.brand, Theme.light);
+  const brandElement = createTextElement(brand, TextTag.brand, 'light');
   brandElement.style.height = 'auto';
 
   const buttonElement = window.document.createElement('button');

@@ -1,3 +1,5 @@
+import { NamedColor, SystemColor } from './color-names.js';
+
 export type Display =
   | 'block'
   | 'inline'
@@ -39,7 +41,6 @@ export type JustifyContent =
   | 'initial'
   | 'inherit';
 export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse' | 'initial' | 'inherit';
-export type FlexGap = string;
 
 export type BoxSizing = 'border-box' | 'content-box';
 export type BoxShadow =
@@ -64,14 +65,10 @@ export type FontWeight =
   | '600'
   | '700'
   | '800'
-  | '900'
-  | 'inherit'
-  | 'initial'
-  | 'unset';
-export type FontSize = string;
+  | '900';
+
 export type FontStyle = 'normal' | 'italic' | 'oblique' | 'inherit' | 'initial' | 'unset';
 export type LineHeight = string;
-export type FontFamily = string;
 
 export type Position = 'static' | 'absolute' | 'fixed' | 'relative' | 'sticky' | 'initial' | 'inherit';
 
@@ -99,6 +96,55 @@ export type Str = string;
 
 export type TextDecorationLine = 'none' | 'underline' | 'overline' | 'line-through' | 'blink';
 
-export type Opacity = number | 'inherit' | 'initial' | 'revert' | 'revert-layer' | 'unset';
-
 export type Cursor = 'auto' | 'default' | 'none ' | 'help' | 'pointer' | 'progress' | 'wait' | 'not-allowed';
+
+type RGB = `rgb(${number}, ${number}, ${number})`;
+type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
+type HEX = `#${string}`;
+
+export type Color = RGB | RGBA | HEX | NamedColor | SystemColor;
+
+type Px = `${number}px`;
+type Em = `${number}em`;
+type Rem = `${number}rem`;
+type Viewport = `${number}vh` | `${number}vw`;
+export type Percentage = `${number}%`;
+
+export type NtoS = `${number}`;
+
+export type None = 'none';
+export type Auto = 'auto';
+export type GlobalType = 'inherit' | 'initial' | 'revert' | 'revert-layer' | 'unset';
+export type Keyword = 'max-content' | 'min-content' | 'auto';
+
+type Absolute = 'xx-small' | 'x-small' | 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | 'xxx-large';
+type Relative = 'smaller' | 'larger';
+
+export type Length = Px | Em | Rem | Viewport;
+
+export type MarPadTypes = Length | Percentage | Auto | GlobalType;
+
+export type FontSize = Absolute | Relative | Length | Percentage | GlobalType;
+
+type GenericFamily =
+  | 'serif'
+  | 'sans-serif'
+  | 'monospace'
+  | 'cursive'
+  | 'fantasy'
+  | 'system-ui'
+  | 'ui-serif'
+  | 'ui-sans-serif'
+  | 'ui-monospace'
+  | 'ui-rounded'
+  | 'emoji'
+  | 'math'
+  | 'fangsong';
+
+type NamedFamily = `"${string}"`;
+
+export type FontFamily = NamedFamily | GenericFamily | GlobalType;
+
+export type Opacity = number | Percentage | GlobalType;
+
+export type Gap = 'normal' | Length | Percentage | GlobalType;

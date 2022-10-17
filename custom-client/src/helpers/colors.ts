@@ -14,6 +14,8 @@ enum ThemeColor {
   'colorGreyNormal' = '#495057',
   'colorGreyLight' = '#adb5bd',
   'colorGreyLighter' = '#dee2e6',
+  'light' = '#dee2e6',
+  'dark' = '#212529',
 }
 
 export default ThemeColor;

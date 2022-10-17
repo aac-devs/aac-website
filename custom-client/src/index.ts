@@ -1,7 +1,4 @@
-import { createHeader, updateHeader } from './components/header.js';
 import CSS from './helpers/css.js';
-import { eventsRegister } from './helpers/events.js';
-import { dom } from './helpers/dom.js';
 import { createMenuNav } from './components/header/nav.js';
 import { createMainHeader } from './components/header/head.js';
 import ThemeColor from './helpers/colors.js';
@@ -9,6 +6,12 @@ import { createBrand } from './components/header/brand.js';
 import createMenuButton from './components/header/menu-button.js';
 import createMenuUl from './components/header/ul.js';
 import createListItem from './components/header/li.js';
+import { createTouchArea } from './components/header/touch-area.js';
+// import touchEvent from './events/touch-listeners.js';
+import { createIcon, Icons } from './components/other/icons.js';
+import { proto } from './components/header/small-menu.js';
+import setChildrenRelation from './helpers/relations.js';
+import { addListener, ListenerType } from './events/listeners.js';
 
 const html = globalThis.document.getElementsByTagName('html')[0];
 // const htmlStyles = CSSStyles.insert(html.getAttribute('style')).toString();
@@ -17,11 +20,11 @@ html.setAttribute(
   'style',
   CSS.start()
     .boxSizing('border-box')
-    .fontFamily('Poppins')
-    .height(100, '%')
-    .margin('0')
-    .padding('0')
-    .backgroundColor('wheat')
+    .fontFamily('"Poppins"', 'monospace')
+    .height('100%')
+    .margin('0px')
+    .padding('0px')
+    .backgroundColor('white')
     .toString()
 );
 
@@ -30,38 +33,114 @@ body.setAttribute(
   'style',
   CSS.start()
     .boxSizing('border-box')
-    .padding('0')
-    .margin('0')
+    .padding('0px')
+    .margin('0px')
     .backgroundColor(ThemeColor.colorGreyLighter)
-    .minHeight(100, '%')
+    .minHeight('100%')
     .toString()
 );
 
 // -------------- MAIN HEADER -------------------------------------------------------
 const mainHeader = createMainHeader('main-header');
+
 // -------------- BRAND -------------------------------------------------------------
 const brandElement = createBrand('brand-element');
+
 // -------------- MENU BUTTON -------------------------------------------------------
-const menuButton = createMenuButton('menu-button');
+const menuButton = createMenuButton('menu-button', mainHeader.style.height);
+
 // -------------- MENU NAV ----------------------------------------------------------
 const menuNav = createMenuNav('menu-nav', mainHeader.style.height);
+
 // -------------- MENU UL -----------------------------------------------------------
 const menuUl = createMenuUl('menu-ul');
+
 // -------------- MENU LIST ITEMS ---------------------------------------------------
-const itemNames = ['Projects', 'HackerRank', 'Skills', 'Contact'];
-itemNames.forEach((itemName: string) => {
-  menuUl.appendChild(createListItem(itemName));
+const listItems: HTMLElement[] = ['Projects', 'HackerRank', 'Skills', 'Contact'].map((itemName) =>
+  createListItem(itemName)
+);
+
+// -------------- TOUCH AREA --------------------------------------------------------
+const touchArea = createTouchArea('touch-area');
+
+const linkedinIcon = createIcon(Icons.linkedin);
+const githubIcon = createIcon(Icons.github);
+
+// -------------- BODY RELATIONSHIP -------------------------------------------------
+setChildrenRelation({
+  parent: body,
+  children: [
+    setChildrenRelation({
+      parent: mainHeader,
+      children: [
+        touchArea,
+        brandElement,
+        menuButton,
+        setChildrenRelation({
+          parent: menuNav,
+          children: [setChildrenRelation({ parent: menuUl, children: listItems })],
+        }),
+      ],
+    }),
+    ,
+    linkedinIcon,
+    githubIcon,
+  ],
 });
 
-menuNav.appendChild(menuUl);
-mainHeader.appendChild(brandElement);
-mainHeader.appendChild(menuButton);
-mainHeader.appendChild(menuNav);
+// -------------- LISTENERS ---------------------------------------------------------
+const elementListeners: ListenerType[] = [
+  [menuButton, 'click'],
+  [touchArea, 'touchmove'],
+  [menuNav, 'touchmove'],
+];
 
-body.appendChild(mainHeader);
+addListener(elementListeners);
 
-// console.log(body.getAttribute('style'));
-// body.setAttribute('style', styles.body);
+// -------------- LISTENERS ---------------------------------------------------------
+
+export function listeners(ev: Event) {
+  console.clear();
+  if (!ev.target) return;
+  const target = <HTMLElement>ev.target;
+  const type: string = ev.type;
+  console.log(target);
+  console.log(type);
+  switch (type) {
+    case 'click':
+      if (target.className.endsWith('-menu-a')) {
+        console.log('click event / anchor');
+      } else if (target.className === 'menu-button') {
+        console.log('click event / menu-button');
+      }
+      break;
+    case 'touchmove':
+      if (target.className === 'menu-nav') {
+        console.log('touch event / menu-nav');
+        // touchEvent(ev, menuNav, touchArea);
+      } else if (target.className === 'touch-area') {
+        console.log('touch event / touch-area');
+        // touchEvent(ev, menuNav, touchArea);
+      }
+      break;
+  }
+}
+
+// const barsIcon = createIcon(Icons.bars);
+// const xmarkIcon = createIcon(Icons.xmark);
+// const linkedinIcon = createIcon(Icons.linkedin);
+// const githubIcon = createIcon(Icons.github);
+// const linkIcon = createIcon(Icons.link);
+// const jsIcon = createIcon(Icons.javascript);
+// const jsSqIcon = createIcon(Icons.square_javascript);
+// const pagerIcon = createIcon(Icons.pager);
+// const projectIcon = createIcon(Icons.project);
+// const skillIcon = createIcon(Icons.skill);
+// const contactIcon = createIcon(Icons.contact);
+// const infoIcon = createIcon(Icons.info);
+// const copyRightIcon = createIcon(Icons.copy_right);
+
+proto();
 
 // HEADER:
 // const header = createHeader('aac-devs', ['Projects', 'HackerRank', 'Skills', 'Contact']);

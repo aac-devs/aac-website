@@ -18,11 +18,11 @@ export function dom(action: 'init' | 'update') {
       'style',
       CSSStyles.start()
         .boxSizing('border-box')
-        .fontFamily('Poppins')
-        .height(100, '%')
-        .margin('0')
-        .padding('0')
-        .backgroundColor('wheat')
+        // .fontFamily('Poppins')
+        .height('100%')
+        .margin('0rem')
+        .padding('0rem')
+        // .backgroundColor('wheat')
         .toString()
     );
     // console.log(html.getAttribute('style'));
@@ -34,10 +34,10 @@ export function dom(action: 'init' | 'update') {
       'style',
       CSSStyles.start()
         .boxSizing('border-box')
-        .padding('0')
-        .margin('0')
+        .padding('0rem')
+        .margin('0rem')
         .backgroundColor(ThemeColor.colorGreyLighter)
-        .minHeight(100, '%')
+        .minHeight('100%')
         .toString()
     );
     // console.log(body.getAttribute('style'));
@@ -51,18 +51,18 @@ export function dom(action: 'init' | 'update') {
         screenSize === 'small'
           ? CSSStyles.start()
               .boxSizing('border-box')
-              .parentFlex('row-reverse', 'space-between', 'center')
+              // .parentFlex('row-reverse', 'space-between', 'center')
               .backgroundColor(ThemeColor.colorMainDark)
               .position('relative')
-              .padding('0 2rem')
+              .padding('0rem', '2rem')
               .zIndex(1)
               .toString()
           : CSSStyles.start()
               .boxSizing('border-box')
-              .parentFlex('row', 'space-between', 'center')
+              // .parentFlex('row', 'space-between', 'center')
               .backgroundColor(ThemeColor.colorMainDark)
               .position('relative')
-              .padding('0 2rem')
+              .padding('0rem', '2rem')
               .toString()
       }`
     );
@@ -74,18 +74,18 @@ export function dom(action: 'init' | 'update') {
       screenSize === 'small'
         ? CSSStyles.start()
             .boxSizing('border-box')
-            .parentFlex('column', 'center', 'stretch')
+            // .parentFlex('column', 'center', 'stretch')
             .backgroundColor(ThemeColor.colorMainDark)
-            .padding('0', '4rem')
+            .padding('0rem', '4rem')
             .position('absolute')
-            .left(screenWidth * 0, 'px')
-            .width(screenWidth * 0.4, 'px')
+            // .left(screenWidth * 0, 'px')
+            // .width(screenWidth * 0.4, 'px')
             .toString()
         : `${CSSStyles.start()
             .boxSizing('border-box')
             .position('static')
             .height('auto')
-            .padding('0')
+            .padding('0rem')
             .width('auto')
             .backgroundColor(ThemeColor.colorMainDark)
             .toString()}border:none;box-shadow:none`;
@@ -111,11 +111,11 @@ export function dom(action: 'init' | 'update') {
         screenSize === 'small'
           ? `${CSSStyles.start()
               .boxSizing('border-box')
-              .parentFlex('column', 'center', 'stretch', '2.5rem')
+              // .parentFlex('column', 'center', 'stretch', '2.5rem')
               .toString()}list-style:none;padding:0;margin-block-start:0px;margin-block-end:0px;`
           : `${CSSStyles.start()
               .boxSizing('border-box')
-              .parentFlex('row', 'center', 'center', '2rem')
+              // .parentFlex('row', 'center', 'center', '2rem')
               .toString()}list-style:none;padding:0;margin-block-start:0px;margin-block-end:0px;`
       }`
     );
@@ -133,9 +133,9 @@ export function dom(action: 'init' | 'update') {
       mainHeader.setAttribute(
         'style',
         CSSStyles.insert(mainHeader.getAttribute('style'))
-          .height(heightValue, unit)
-          .minHeight(heightValue, unit)
-          .maxWeight(heightValue, unit)
+          // .height(heightValue, unit)
+          // .minHeight(heightValue, unit)
+          // .maxWeight(heightValue, unit)
           .toString()
       );
     }
