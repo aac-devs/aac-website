@@ -9,11 +9,15 @@ const SMALL_STYLES: string = `${CSS.start()
   .flexDirection('column')
   .justifyContent('center')
   .alignItems('stretch')
-  .rowGap('2.5rem')
-  .padding('0px')
+  // .flexGrow(1)
+  .rowGap('2rem')
+  .padding('1rem')
+  .minWidth('200px')
+  // .width('50%')
+  // .maxWidth('200px')
   .marginBlockStart('0px')
   .marginBlockEnd('0px')
-  // .backgroundColor(ThemeColor.colorMainDark)
+  .backgroundColor('chartreuse')
   .toString()}list-style:none`;
 
 const LARGE_STYLES: string = `${CSS.start()
@@ -38,8 +42,13 @@ export default function createMenuUl(className: string): HTMLElement {
   setStyles();
 
   function setStyles() {
-    const ulStyles = getScreenSize().width > 944 ? LARGE_STYLES : SMALL_STYLES;
+    const ulStyles = getScreenSize().device === 'desktop' ? LARGE_STYLES : SMALL_STYLES;
     ul.replaceStyles(ulStyles);
+    if (getScreenSize().orientation === 'portrait-primary') {
+      ul.style.width = '100%';
+    } else {
+      ul.style.width = '50%';
+    }
   }
 
   window.addEventListener('resize', setStyles);

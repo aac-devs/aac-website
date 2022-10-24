@@ -16,6 +16,7 @@ export function createAnchorElement(values: AnchorParams): HTMLAnchorElement {
   anchorElement.setAttribute('class', `${values.className.toLowerCase()}-menu-a`);
 
   anchorElement.style.color = `${values.color}`;
+  anchorElement.style.display = 'block';
 
   anchorElement.addEventListener('mouseover', () => {
     anchorElement.style.color = values.hoverColor;

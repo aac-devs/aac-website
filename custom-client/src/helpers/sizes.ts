@@ -13,11 +13,16 @@ SMALL SIZES <= 944px
 BIG SIZES > 944px
 */
 
-export default function getScreenSize(): { height: number; width: number; orientation: string } {
+export default function getScreenSize(): { height: number; width: number; orientation: string; device: string } {
   const { clientWidth: width, clientHeight: height } = window.document.documentElement;
   const orientation = window.screen.orientation.type;
-  // console.log({ height, width, orientation });
-  return { height, width, orientation };
+  const userAgent = navigator.userAgent || navigator.vendor;
+  // console.clear();
+  // console.log(userAgent);
+  const regexp = /mobile/i;
+  const matches = <RegExpMatchArray>userAgent.match(regexp);
+  // console.log(matches ? 'mobile' : 'desktop');
+  return { height, width, orientation, device: matches ? 'mobile' : 'desktop' };
 }
 
 /*

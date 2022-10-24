@@ -32,36 +32,33 @@ function iconClass(category: IconCategory, logo: IconLogo, size?: IconSize): str
 // ----------------------------------------------------------------------------------
 export default function createMenuButton(className: string, headerHeight: string): HTMLElement {
   const btn = globalThis.document.createElement('button');
-  const menuIcon = <HTMLElement>globalThis.document.createElement('i');
+  const barsIcon = <HTMLElement>globalThis.document.createElement('i');
+  const xmarkIcon = <HTMLElement>globalThis.document.createElement('i');
 
-  menuIcon.setAttribute('class', 'fa-solid fa-bars');
-  menuIcon.style.setProperty('color', `${ThemeColor.colorGreyLighter}`);
-  menuIcon.style.setProperty('font-size', '2.5rem');
-  menuIcon.style.zIndex = '-1';
-  //TODO: Ajustar el brand al tamaño del header, así como este botón
+  barsIcon.setAttribute('class', 'fa-solid fa-bars menu-bars');
+  barsIcon.style.setProperty('color', `${ThemeColor.colorGreyLighter}`);
+  barsIcon.style.setProperty('font-size', '2.5rem');
+  barsIcon.style.zIndex = '-1';
 
-  btn.appendChild(menuIcon);
+  xmarkIcon.setAttribute('class', 'fa-solid fa-xmark menu-xmark');
+  xmarkIcon.style.setProperty('color', `${ThemeColor.colorGreyLighter}`);
+  xmarkIcon.style.setProperty('font-size', '3rem');
+  xmarkIcon.style.zIndex = '-1';
+  // TODO: La idea es agregar ambos al btn y por medio de la propiedad display, mostrar uno u otro.
+
+  btn.appendChild(barsIcon);
   btn.setAttribute('class', className);
-  // btn.innerHTML = 'MENU';
   setStyles();
 
   function setStyles() {
     const header: HTMLElement | null = globalThis.document.querySelector('.main-header');
     const h = header ? header.style.height : headerHeight;
 
-    const btnStyles = getScreenSize().width > 944 ? HIDDEN_BUTTON : VISIBLE_BUTTON;
+    const btnStyles = getScreenSize().device === 'desktop' ? HIDDEN_BUTTON : VISIBLE_BUTTON;
     btn.replaceStyles(btnStyles);
     btn.style.setProperty('height', `calc(${h} / 1.5)`);
     btn.style.setProperty('width', `calc(${h} / 1.5)`);
-    // console.clear();
-    // console.log(btn.getAttribute('style'));
   }
-
-  // btn.addEventListener('click', () => {
-  //   if (isSideMenuOpen) isSideMenuOpen = false;
-  //   else isSideMenuOpen = true;
-  // });
-
-  window.addEventListener('resize', setStyles);
+  globalThis.addEventListener('resize', setStyles);
   return btn;
 }

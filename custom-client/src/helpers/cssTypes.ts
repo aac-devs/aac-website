@@ -41,6 +41,7 @@ export type JustifyContent =
   | 'initial'
   | 'inherit';
 export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse' | 'initial' | 'inherit';
+export type FlexGrow = number | GlobalType;
 
 export type BoxSizing = 'border-box' | 'content-box';
 export type BoxShadow =

@@ -1,5 +1,4 @@
-import clickEvent from './small-size-menu/click-events.js';
-import touchEvent from './small-size-menu/touch-events.js';
+import touchEvent, { showHideNav } from './small-size-menu/menu-events.js';
 
 export type ListenerType = [element: HTMLElement, event: 'click' | 'touchmove'];
 
@@ -13,8 +12,7 @@ export function addListener(items: ListenerType[]) {
 
 function listener(ev: Event) {
   if (!ev.target) return;
-  const target = <HTMLElement>ev.target;
   const type: string = ev.type;
   if (type === 'touchmove') touchEvent(ev);
-  if (type === 'click') clickEvent(ev);
+  if (type === 'click') showHideNav(null);
 }

@@ -2,6 +2,7 @@ import ThemeColor from '../../helpers/colors.js';
 import CSS from '../../helpers/css.js';
 import getScreenSize from '../../helpers/sizes.js';
 import '../../helpers/htmlelement.extensions.js';
+import { showHideNav } from '../../events/small-size-menu/menu-events.js';
 
 const SMALL_STYLES: string = CSS.start()
   .boxSizing('border-box')
@@ -35,8 +36,11 @@ export function createMainHeader(className: string): HTMLElement {
   setStyles();
 
   function setStyles() {
-    const headerStyles = getScreenSize().width > 944 ? LARGE_STYLES : SMALL_STYLES;
+    const headerStyles = getScreenSize().device === 'desktop' ? LARGE_STYLES : SMALL_STYLES;
     header.replaceStyles(headerStyles);
+    console.clear();
+    console.log('header setStyles', headerStyles);
+    header.style.backgroundColor = getScreenSize().device === 'mobile' ? 'navy' : 'fuchsia';
     updateFontSize();
   }
 
@@ -47,6 +51,8 @@ export function createMainHeader(className: string): HTMLElement {
     // Actualiza el fontSize del HTML (Verificar si aplica en todo)
     const formatSize = getScreenSize().orientation === 'portrait-primary' ? clientHeight : clientWidth;
     globalThis.document.getElementsByTagName('html')[0].style.fontSize = `${formatSize / 16}%`;
+
+    setTimeout(() => showHideNav('hidden'), 100);
 
     const heightValue = `${6}${getScreenSize().orientation === 'portrait-primary' ? 'vh' : 'vw'}`;
     const looseStyles = {

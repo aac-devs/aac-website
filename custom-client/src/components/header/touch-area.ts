@@ -25,7 +25,7 @@ export function createTouchArea(className: string): HTMLElement {
 
   function setStyles() {
     setTimeout(() => {
-      if (getScreenSize().width > 944) return touchArea.replaceStyles(HIDDEN_TOUCH);
+      if (getScreenSize().device === 'desktop') return touchArea.replaceStyles(HIDDEN_TOUCH);
 
       touchArea.replaceStyles(SMALL_TOUCH);
       touchArea.changeStyleProps({ height: `${getScreenSize().height}px` });

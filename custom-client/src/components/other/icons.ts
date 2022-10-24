@@ -42,7 +42,11 @@ export enum Icons {
 export function createIcon(iconType: Icons): HTMLElement {
   const icon: HTMLElement = globalThis.document.createElement('i');
   icon.setAttribute('class', iconType);
-  icon.style.fontSize = '2.5rem';
-  icon.style.margin = '2rem';
+  icon.style.fontSize = '2.6rem';
+  icon.style.margin = '0rem';
+  icon.style.border = '1px solid black';
+  icon.style.padding = '0.3rem';
+  icon.style.aspectRatio = '1';
+  icon.style.borderRadius = '0.5rem';
   return icon;
 }

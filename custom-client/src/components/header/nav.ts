@@ -7,10 +7,13 @@ const SMALL_STYLES: string = CSS.start()
   .boxSizing('border-box')
   .display('flex')
   .flexDirection('column')
-  .justifyContent('center')
+  .justifyContent('flex-start')
   .alignItems('stretch')
+  .flexWrap('wrap')
+  // .rowGap('1rem')
+  // .columnGap('1rem')
   .backgroundColor(ThemeColor.colorMainDark)
-  .padding('0rem', '4rem')
+  // .padding('1rem')
   .position('absolute')
   .toString();
 
@@ -30,20 +33,31 @@ export function createMenuNav(className: string, headerHeight: string): HTMLElem
   setStyles();
 
   function setStyles() {
-    if (getScreenSize().width > 944) return nav.replaceStyles(LARGE_STYLES);
+    if (getScreenSize().device === 'desktop') return nav.replaceStyles(LARGE_STYLES);
 
-    const header: HTMLElement | null = globalThis.document.querySelector('.main-header');
-    const h = header ? header.style.height : headerHeight;
-    const looseStyles = {
-      top: h,
-      left: `${getScreenSize().width * -0.4}px`,
-      width: `${getScreenSize().width * 0.4}px`,
-      height: `calc(${getScreenSize().height}px - ${h})`,
-      transition: 'left 0.3s ease-in-out',
-    };
-    nav.replaceStyles(SMALL_STYLES);
-    nav.changeStyleProps(looseStyles);
-    // console.log('nav-styles:', nav.getAttribute('style'));
+    setTimeout(() => {
+      const { height, width, orientation } = getScreenSize();
+      const leftPosition = height > width ? height : width;
+      const header: HTMLElement | null = globalThis.document.querySelector('.main-header');
+      const h = header ? header.style.height : headerHeight;
+      const looseStyles = {
+        top: h,
+        left: `${leftPosition * -1}px`,
+        // width: 'max-content',
+        // width: `${width * 0.5}px`,
+        height: `calc(${height}px - ${h})`,
+        transition: 'left 0.3s ease-out',
+      };
+      nav.replaceStyles(SMALL_STYLES);
+      nav.changeStyleProps(looseStyles);
+      if (orientation === 'portrait-primary') {
+        nav.style.justifyContent = 'flex-start';
+      } else {
+        nav.style.justifyContent = 'center';
+        nav.style.alignItems = 'center';
+      }
+      console.log('nav-styles:', nav.getAttribute('style'));
+    }, 100);
   }
 
   globalThis.addEventListener('resize', setStyles);

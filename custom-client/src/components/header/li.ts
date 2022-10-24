@@ -19,7 +19,7 @@ const A_LARGE_STYLES: string = CSS.start()
   .toString();
 const A_SMALL_STYLES: string = CSS.start()
   .fontWeight('400')
-  .fontSize('3rem')
+  .fontSize('2rem')
   .padding('0rem')
   .margin('0rem')
   .marginBlockStart('0px')
@@ -45,7 +45,7 @@ export default function createListItem(name: string) {
 
   function setStyles() {
     const { liStyles, aStyles } =
-      getScreenSize().width > 944
+      getScreenSize().device === 'desktop'
         ? { liStyles: LI_LARGE_STYLES, aStyles: A_LARGE_STYLES }
         : { liStyles: LI_SMALL_STYLES, aStyles: A_SMALL_STYLES };
 

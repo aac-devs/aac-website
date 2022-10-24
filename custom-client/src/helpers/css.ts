@@ -28,6 +28,7 @@ import {
   Unit,
   NtoS,
   Gap,
+  FlexGrow,
 } from './cssTypes.js';
 
 export default class CSSStyles {
@@ -151,6 +152,7 @@ export default class CSSStyles {
   public static display = this.closure('display')<Display>;
   public static flexDirection = this.closure('flex-direction')<FlexDirection>;
   public static flexWrap = this.closure('flex-wrap')<FlexWrap>;
+  public static flexGrow = this.closure('flex-grow')<FlexGrow>;
   public static fontSize = this.closure('font-size')<FontSize>;
   public static fontStyle = this.closure('font-style')<FontStyle>;
   public static fontWeight = this.closure('font-weight')<FontWeight>;
