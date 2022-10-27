@@ -29,6 +29,7 @@ import {
   NtoS,
   Gap,
   FlexGrow,
+  BorderRadius,
 } from './cssTypes.js';
 
 export default class CSSStyles {
@@ -146,6 +147,7 @@ export default class CSSStyles {
   public static alignItems = this.closure('align-items')<AlignItems>;
   public static backgroundColor = this.closure('background-color')<Color>;
   public static boxSizing = this.closure('box-sizing')<BoxSizing>;
+  public static borderRadius = this.closure('border-radius')<BorderRadius>;
   public static color = this.closure('color')<Color>;
   public static columnGap = this.closure('column-gap')<Gap>;
   public static cursor = this.closure('cursor')<Cursor>;

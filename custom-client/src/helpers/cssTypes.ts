@@ -149,3 +149,5 @@ export type FontFamily = NamedFamily | GenericFamily | GlobalType;
 export type Opacity = number | Percentage | GlobalType;
 
 export type Gap = 'normal' | Length | Percentage | GlobalType;
+
+export type BorderRadius = Length | Percentage | GlobalType;

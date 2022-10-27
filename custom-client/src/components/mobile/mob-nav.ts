@@ -1,8 +1,8 @@
 import '../../helpers/htmlelement.extensions.js';
+import '../../helpers/string.extensions.js';
 import getScreenSize from '../../helpers/sizes.js';
-import { createIcon, Icons } from '../other/icons.js';
-import mobileLandscapeStyles from './mobile-landscape-styles.js';
-import mobilePortraitStyles from './mobile-portrait-styles.js';
+// import { navStyles } from './styles/navStyles.js';
+import { menuStyles } from './styles/menu-styles.js';
 
 export interface ComponentStyles {
   header: string;
@@ -43,7 +43,7 @@ const ICON_ITEM_STYLES = `
   width:2rem;
 `;
 
-function createMenuItems(): HTMLElement {
+function createMenuItems(fn: (ev?: Event) => void): HTMLElement {
   const ul: HTMLElement = globalThis.document.createElement('ul');
   [
     'Projects fa-solid fa-gears',
@@ -77,10 +77,7 @@ function createMenuItems(): HTMLElement {
 
     ul.appendChild(li);
 
-    a.addEventListener('click', (ev) => {
-      console.log('a click');
-      // TODO: la única función de este listener es cerrar el mobile-nav con cualquier botón que realice el evento
-    });
+    a.addEventListener('click', fn);
   });
   return ul;
 }
@@ -91,9 +88,25 @@ export default function mobileHeader() {
   const info: HTMLElement = globalThis.document.createElement('section');
   const touch: HTMLElement = globalThis.document.createElement('div');
   const button: HTMLElement = globalThis.document.createElement('button');
-  const ul: HTMLElement = createMenuItems();
 
-  let styles: ComponentStyles;
+  let navStyle: string;
+  let navState: 'visible' | 'hidden' = 'hidden';
+  const HIDE_NAV = 'translateX(-100%)';
+  const SHOW_NAV = 'translateX(0%)';
+  const HIDE_SHADOW = 'none';
+  const SHOW_SHADOW = '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)';
+
+  const ul: HTMLElement = createMenuItems(() => {
+    navStyle = navStyle.css('transform', HIDE_NAV).css('box-shadow', HIDE_SHADOW);
+    navState = 'hidden';
+    nav.setAttribute('style', navStyle);
+  });
+
+  nav.setAttribute('class', 'menu-nav');
+
+  button.style.width = '3rem';
+  button.style.height = '3rem';
+  button.style.backgroundColor = 'red';
 
   nav.appendChild(info);
   nav.appendChild(ul);
@@ -102,19 +115,17 @@ export default function mobileHeader() {
   header.appendChild(nav);
 
   function updateElements() {
-    const { height, width, orientation, device } = getScreenSize();
+    if (getScreenSize().device === 'desktop') return;
 
-    if (device === 'desktop') return;
+    const [HEADER_STYLES, NAV_STYLES, INFO_STYLES, UL_STYLES] = menuStyles();
 
-    styles =
-      orientation === 'portrait-primary' ? mobilePortraitStyles(width, height) : mobileLandscapeStyles(width, height);
-
-    header.setAttribute('style', styles.header);
-    nav.setAttribute('style', styles['nav-shown']); // cambiar a hidden
-    info.setAttribute('style', styles.info);
-    ul.setAttribute('style', styles.ul);
-    touch.setAttribute('style', styles['touch-shown']); // cambiar a hidden
-    button.setAttribute('style', styles['button-bars']);
+    navStyle = NAV_STYLES.css('transform', 'translateX(-100%)').css('box-shadow', 'none');
+    header.setAttribute('style', HEADER_STYLES);
+    nav.setAttribute('style', navStyle); // cambiar a hidden
+    info.setAttribute('style', INFO_STYLES);
+    ul.setAttribute('style', UL_STYLES);
+    // touch.setAttribute('style', styles['touch-shown']); // cambiar a hidden
+    // button.setAttribute('style', styles['button-bars']);
 
     const icons = globalThis.document.getElementsByClassName('menu-icon') as HTMLCollectionOf<HTMLElement>;
     Array.from(icons).forEach((i) => {
@@ -128,15 +139,27 @@ export default function mobileHeader() {
   globalThis.addEventListener('resize', () => {
     clearTimeout(timeOut);
     nav.style.display = 'none';
-    button.style.display = 'none';
+    navState = 'hidden';
+    // button.style.display = 'none';
 
     timeOut = setTimeout(() => {
       updateElements();
     }, 100);
   });
 
+  button.addEventListener('click', () => {
+    if (navState === 'hidden') {
+      navState = 'visible';
+      navStyle = navStyle.css('transform', SHOW_NAV).css('box-shadow', SHOW_SHADOW);
+    } else {
+      navState = 'hidden';
+      navStyle = navStyle.css('transform', HIDE_NAV).css('box-shadow', HIDE_SHADOW);
+    }
+    nav.setAttribute('style', navStyle);
+  });
+
   nav.style.display = 'none';
-  button.style.display = 'none';
+  // button.style.display = 'none';
   updateElements();
   return header;
 }

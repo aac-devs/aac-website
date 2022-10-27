@@ -38,8 +38,8 @@ export function createMainHeader(className: string): HTMLElement {
   function setStyles() {
     const headerStyles = getScreenSize().device === 'desktop' ? LARGE_STYLES : SMALL_STYLES;
     header.replaceStyles(headerStyles);
-    console.clear();
-    console.log('header setStyles', headerStyles);
+    // console.clear();
+    // console.log('header setStyles', headerStyles);
     header.style.backgroundColor = getScreenSize().device === 'mobile' ? 'navy' : 'fuchsia';
     updateFontSize();
   }

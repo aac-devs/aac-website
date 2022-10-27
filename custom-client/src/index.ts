@@ -13,6 +13,7 @@ import setChildrenRelation from './helpers/relations.js';
 import { addListener, ListenerType } from './events/listeners.js';
 import getScreenSize from './helpers/sizes.js';
 import mobileHeader from './components/mobile/mob-nav.js';
+import './helpers/string.extensions.js';
 
 const html = globalThis.document.getElementsByTagName('html')[0];
 html.setAttribute(
@@ -81,6 +82,28 @@ const githubIcon = createIcon(Icons.github);
 // setChildrenRelation({ parent: body, children: [mobHeader] });
 
 body.appendChild(mobileHeader());
+
+// let str = '';
+
+// str = str
+//   .css('display', 'flex')
+//   .css('justify-content', 'flex-start')
+//   .css('align-items', 'center')
+//   .css('display', 'grid')
+//   .css('padding', '0rem 1rem 2rem 3rem');
+
+// str = str
+//   .css('justify-content', 'flex-end')
+//   .CSSDisplay('flex')
+//   .css('position', 'relative')
+//   .css('background-color', 'rgba(0, 0, 0, 0.5)')
+//   .css('align-items', 'stretch')
+//   .css('position', 'absolute')
+//   .css('background-color', 'blue')
+//   .css('background-color', 'rgba(0, 0, 0, 0.5)')
+//   .css('border-inline', '0 auto');
+
+// console.log(str);
 
 // setChildrenRelation({
 //   parent: body,
