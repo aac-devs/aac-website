@@ -1,6 +1,6 @@
 interface String {
   css(key: Prop, value: string): string;
-  CSSDisplay(value: Display): string;
+  display(value: Display): string;
 }
 
 String.prototype.css = function (key: Prop, value: string) {
@@ -20,7 +20,7 @@ function propertyFactory(key: Prop) {
   };
 }
 
-String.prototype.CSSDisplay = propertyFactory('display')<Display>;
+String.prototype.display = propertyFactory('display')<Display>;
 
 //#####################################################################################################################
 //#####################################################################################################################
