@@ -26,8 +26,9 @@ export function createInfoSection(fn: (ev?: Event) => void): InfoReturn {
   linkedInAnchor.appendChild(linkedInIcon);
   githubAnchor.appendChild(githubIcon);
 
-  githubIcon.setAllStyles(''.css('height', '100%').css('width', '100%'));
-  linkedInIcon.setAllStyles(''.css('height', '100%').css('width', '100%'));
+  const ICON_STYLES = ''.css('height', '100%').css('width', '100%');
+  githubIcon.setAllStyles(ICON_STYLES);
+  linkedInIcon.setAllStyles(ICON_STYLES);
 
   linkedInAnchor.addEventListener('click', fn);
   githubAnchor.addEventListener('click', fn);

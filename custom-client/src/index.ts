@@ -1,24 +1,23 @@
-import ThemeColor from './helpers/colors.js';
-import setChildrenRelation from './helpers/relations.js';
-import getScreenSize from './helpers/sizes.js';
 import mobileHeader from './components/mobile/header/nav/nav.js';
+import { mobileSections } from './components/mobile/sections/projects.js';
 import './helpers/string.extensions.js';
 
-const html = globalThis.document.getElementsByTagName('html')[0];
-html.setAttribute(
-  'style',
-  ''
-    .css('box-sizing', 'border-box')
-    .css('font-family', '"Poppins", sans-serif')
-    .css('height', '100%')
-    .css('margin', '0')
-    .css('padding', '0')
-    .css('background-color', '#fff')
-);
+globalThis.document
+  .getElementsByTagName('html')[0]
+  .setAllStyles(
+    ''
+      .css('box-sizing', 'border-box')
+      .css('font-family', '"Poppins", sans-serif')
+      .css('height', '100%')
+      .css('margin', '0')
+      .css('padding', '0')
+      .css('position', 'relative')
+      .css('scroll-behavior', 'smooth')
+      .css('background-color', '#fff')
+  );
 
 const body = globalThis.document.getElementsByTagName('body')[0];
-body.setAttribute(
-  'style',
+body.setAllStyles(
   ''
     .css('box-sizing', 'border-box')
     .css('padding', '0')
@@ -28,4 +27,12 @@ body.setAttribute(
     .css('position', 'relative')
 );
 
-body.appendChild(mobileHeader());
+body.append(mobileHeader());
+
+const { elements, setState } = mobileSections();
+
+elements.forEach((el) => body.appendChild(el));
+
+setTimeout(() => {
+  setState({ project: 'games', hackerrank: 'days of js', skills: 'JavaScript', contact: 'aac@mail.com' });
+}, 3000);

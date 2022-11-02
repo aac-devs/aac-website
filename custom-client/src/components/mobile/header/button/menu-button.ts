@@ -1,12 +1,13 @@
+import { VisibilityType } from '../../../styles/menu-styles';
+
 export interface ButtonWithFunctionReturn {
   button: HTMLButtonElement;
-  styleFn: (styles: ButtonStyles) => void;
+  styleFn: (styles: MenuButtonStyles) => void;
 }
 
-type ButtonStyles = {
+export type MenuButtonStyles = {
   button?: string;
-  bars: string;
-  xmark: string;
+  showBars: VisibilityType;
 };
 
 export default function createMenuButton(fn: (ev: Event) => void): ButtonWithFunctionReturn {
@@ -22,18 +23,15 @@ export default function createMenuButton(fn: (ev: Event) => void): ButtonWithFun
   bars.setAllStyles(''.css('height', '100%').css('aspect-ratio', '1'));
   xmark.setAllStyles(''.css('height', '100%').css('aspect-ratio', '1'));
 
-  barsContainer.setAllStyles(
-    ''.css('height', '80%').css('position', 'absolute').css('top', '10%').css('left', '10%').css('aspect-ratio', '1')
-  );
-  xmarkContainer.setAllStyles(
-    ''
-      .css('height', '80%')
-      .css('position', 'absolute')
-      .css('top', '10%')
-      .css('left', '10%')
-      .css('aspect-ratio', '1')
-      .css('visibility', 'hidden')
-  );
+  const ICON_STYLES = ''
+    .css('height', '80%')
+    .css('position', 'absolute')
+    .css('top', '10%')
+    .css('left', '10%')
+    .css('aspect-ratio', '1');
+
+  barsContainer.setAllStyles(ICON_STYLES.css('visibility', 'visible'));
+  xmarkContainer.setAllStyles(ICON_STYLES.css('visibility', 'hidden'));
 
   barsContainer.appendChild(bars);
   xmarkContainer.appendChild(xmark);
@@ -42,10 +40,10 @@ export default function createMenuButton(fn: (ev: Event) => void): ButtonWithFun
 
   button.addEventListener('click', fn);
 
-  function styleFn(styles: ButtonStyles) {
+  function styleFn(styles: MenuButtonStyles) {
     if (styles.button) button.setAllStyles(styles.button);
-    barsContainer.style.visibility = styles.bars;
-    xmarkContainer.style.visibility = styles.xmark;
+    barsContainer.style.visibility = styles.showBars;
+    xmarkContainer.style.visibility = styles.showBars === 'visible' ? 'hidden' : 'visible';
   }
 
   return { button, styleFn };

@@ -7,6 +7,7 @@ interface HTMLElement {
   setAllStyles(newStyles: string): void;
   changeStyleProps(newStyles: PropsObject): void;
   setClassName(className: string): void;
+  setElementsStyles(...items: ElementStyleParam[]): void;
 }
 
 HTMLElement.prototype.addStyles = function (newStyles: string) {
@@ -34,4 +35,15 @@ HTMLElement.prototype.changeStyleProps = function (propsObject: PropsObject) {
   }
   // element.setAttribute('style', newStyles);
   // console.log('loose:==>', element.getAttribute('style'));
+};
+
+type ElementStyleParam = {
+  element: HTMLElement;
+  style: string;
+};
+
+HTMLElement.prototype.setElementsStyles = function (...items: ElementStyleParam[]) {
+  items.forEach((item) => {
+    item.element.setAllStyles(item.style);
+  });
 };

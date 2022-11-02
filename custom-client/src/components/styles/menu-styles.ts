@@ -1,13 +1,14 @@
 import ThemeColor from '../../helpers/colors.js';
 import getScreenSize from '../../helpers/sizes.js';
 
+export type VisibilityType = 'visible' | 'hidden';
+
 export interface MenuElementStyles {
   header: {
     own: string;
     button: {
       own: string;
-      bars: string;
-      xmark: string;
+      showBars: VisibilityType;
     };
     brand: string;
     nav: {
@@ -45,10 +46,9 @@ export default function menuStyles(): MenuElementStyles {
   let elems: MenuElementStyles = {
     header: {
       own: ''
-        .css('width', '100%')
         .css('display', 'flex')
         .css('flex-direction', 'row')
-        .css('justify-content', 'flex-start')
+        .css('justify-content', 'space-between')
         .css('align-items', 'center')
         .css('background-color', `${ThemeColor.colorMainDarker}`)
         .css('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)'),
@@ -66,12 +66,14 @@ export default function menuStyles(): MenuElementStyles {
           .css('background-color', `${ThemeColor.colorMainDark}`)
           .css('border-radius', '1rem'),
 
-        bars: 'visible',
-
-        xmark: 'hidden',
+        showBars: 'visible',
       },
 
-      brand: '',
+      brand: ''
+        .css('margin-block-start', '0')
+        .css('margin-block-end', '0')
+        .css('font-weight', '500')
+        .css('color', `#ccc`),
 
       nav: {
         own: ''
@@ -196,11 +198,18 @@ export default function menuStyles(): MenuElementStyles {
     elems.header.own += ''
       .css('min-height', '6vh')
       //
+      .css('position', 'sticky')
+      .css('top', '0')
+      .css('z-index', '10')
       .css('padding', '0 3vw');
 
     elems.header.button.own += ''
       //
       .css('height', `${6 * 0.7}vh`);
+
+    elems.header.brand += ''
+      //
+      .css('font-size', `${6 * 0.5}vh`);
 
     elems.header.nav.own += ''
       .css('flex-direction', 'column')
@@ -255,10 +264,15 @@ export default function menuStyles(): MenuElementStyles {
       .css('padding', '0rem 0.2rem')
       .css('transform', 'translateY(-140%)');
 
-    elems.header.nav.ul.li.own += ''.css('border-radius', '5vw');
+    elems.header.nav.ul.li.own += ''
+      //
+      .css('border-radius', '5vw');
 
     elems.header.nav.ul.li.anchor.own += ''
       .css('font-size', '5vw')
+      .css('margin', 'auto 0')
+      .css('min-height', '10vw')
+      .css('max-height', '10vw')
       .css('border-radius', '5vw')
       .css('padding', '1vw 2.5vw');
 
@@ -287,6 +301,10 @@ export default function menuStyles(): MenuElementStyles {
     elems.header.button.own += ''
       //
       .css('height', `${calculatedTop * 0.7}px`);
+
+    elems.header.brand += ''
+      //
+      .css('font-size', `${calculatedTop * 0.5}px`);
 
     elems.header.nav.own += ''
       .css('flex-direction', 'row')
@@ -338,11 +356,16 @@ export default function menuStyles(): MenuElementStyles {
       .css('padding', '0rem 0.2rem')
       .css('transform', 'translateY(-140%)');
 
-    elems.header.nav.ul.li.own += ''.css('border-radius', '5vh');
+    elems.header.nav.ul.li.own += ''
+      //
+      .css('border-radius', '5vh');
 
     elems.header.nav.ul.li.anchor.own += ''
       .css('font-size', '4.2vh')
+      .css('margin', 'auto 0')
       .css('border-radius', '5vh')
+      .css('min-height', '10vh')
+      .css('max-height', '10vh')
       .css('padding', '1vh 2.5vh');
 
     elems.header.nav.ul.li.anchor.icon += ''
