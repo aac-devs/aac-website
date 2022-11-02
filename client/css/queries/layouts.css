@@ -1,0 +1,268 @@
+/* TAMAÑO T */
+@media (max-width: 544px) {
+  :root {
+    --header-height: 4.8rem;
+    --header-padding: 2rem;
+
+    --menu-nav-background-color: blue;
+    --menu-nav-width: 40%;
+    --menu-nav-max-width: 40%;
+
+    --footer-height: 5.6rem;
+  }
+}
+
+/* TAMAÑO S */
+@media (min-width: 545px) and (max-width: 704px) {
+  :root {
+    --header-height: 5.6rem;
+    --header-padding: 2rem;
+
+    --menu-nav-background-color: green;
+    --menu-nav-width: 40%;
+    --menu-nav-max-width: 40%;
+
+    --footer-height: 6.4rem;
+  }
+}
+
+/* TAMAÑO M */
+@media (min-width: 705px) and (max-width: 944px) {
+  :root {
+    --header-height: 6.4rem;
+    --header-padding: 2rem;
+
+    --menu-nav-background-color: red;
+    --menu-nav-width: 40%;
+    --menu-nav-max-width: 40%;
+
+    --footer-height: 7.2rem;
+  }
+}
+
+/* 1 COLUMNA: TAMAÑOS T, S, M */
+@media (max-width: 944px) {
+  :root {
+    --body-display: grid;
+    --body-grid-template-columns: 1fr;
+    --body-grid-template-rows: auto;
+    --body-grid-template-areas: 'header' 'aside' 'projects' 'hackerrank' 'skills' 'contact' 'footer';
+
+    --header-display: flex;
+    --header-flex-direction: row-reverse;
+    --header-justify-content: space-between;
+    --header-align-items: center;
+
+    --header-menu-button-display: display-block;
+
+    --menu-nav-position: fixed;
+    --menu-nav-top: var(--header-height);
+    --menu-nav-height: calc(100vh - var(--header-height));
+    --menu-nav-left: 0;
+    /* --menu-nav-left: -40vw; */
+    /* --menu-nav-left: calc(var(--menu-nav-width) * -0.9); */
+
+    --menu-items-display: flex;
+    --menu-items-flex-direction: column;
+    --menu-items-justify-content: center;
+    --menu-items-row-gap: 1rem;
+
+    --info-aside-display: none;
+
+    --info-menu-display: block;
+  }
+}
+
+/* TAMAÑO L */
+@media (min-width: 945px) and (max-width: 1200px) {
+  :root {
+    --header-height: 7.2rem;
+    --header-padding: 2rem;
+  }
+}
+
+/* TAMAÑO XL */
+@media (min-width: 1201px) and (max-width: 1344px) {
+  :root {
+    --header-height: 8rem;
+    --header-padding: 2rem;
+  }
+}
+
+/* TAMAÑO XXL */
+@media (min-width: 1345px) {
+  :root {
+    --header-height: 8.8rem;
+    --header-padding: 2rem;
+  }
+}
+
+/* 2 COLUMNAS: TAMAÑOS L, XL, XXL */
+@media (min-width: 945px) {
+  :root {
+    --body-display: grid;
+    --body-grid-template-columns: 4fr 6fr;
+    --body-grid-template-rows: auto;
+    --body-grid-template-areas: 'header header' 'aside projects' 'aside hackerrank' 'aside skills' 'aside contact'
+      'footer footer';
+
+    --header-display: flex;
+    --header-flex-direction: row;
+    --header-justify-content: space-between;
+    --header-align-items: center;
+
+    --header-menu-button-display: none;
+
+    --menu-items-display: flex;
+    --menu-items-flex-direction: row;
+    --menu-items-justify-content: flex-end;
+    --menu-items-column-gap: 2rem;
+
+    --info-aside-display: block;
+
+    /* --menu-nav-position: relative; */
+    /* --menu-nav-top: var(--header-height); */
+    /* --menu-nav-height: 100%; */
+
+    --info-menu-display: none;
+    --footer-height: 8rem;
+  }
+}
+
+/* END OF QUERIES ------------------------------------- */
+
+/* ########################################################################################### */
+/* ########################################################################################### */
+/* ########################################################################################### */
+
+body {
+  /* display: var(--body-display);
+  grid-template-columns: var(--body-grid-template-columns);
+  grid-template-rows: var(--body-grid-template-rows);
+  grid-template-areas: var(--body-grid-template-areas); */
+}
+
+/* HEADER #################################################################################### */
+
+.layout-header {
+  grid-area: header;
+  height: var(--header-height);
+  background-color: var(--color-main-darker);
+  display: var(--header-display);
+  flex-direction: var(--header-flex-direction);
+  justify-content: var(--header-justify-content);
+  padding: var(--header-padding);
+  align-items: var(--header-align-items);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.text-brand {
+  display: inline-block;
+  background-color: #fff;
+}
+
+.layout-menu-button {
+  display: var(--header-menu-button-display);
+  background-color: #fff;
+  width: 30px;
+  height: 20px;
+}
+
+.layout-menu-nav {
+  grid-area: nav;
+  background-color: var(--menu-nav-background-color);
+  max-width: var(--menu-nav-max-width);
+  width: var(--menu-nav-width);
+  height: var(--menu-nav-height);
+  position: var(--menu-nav-position);
+  top: var(--menu-nav-top);
+  left: var(--menu-nav-left);
+  z-index: 10;
+  background-color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.layout-menu-nav ul {
+  display: var(--menu-items-display);
+  flex-direction: var(--menu-items-flex-direction);
+  justify-content: var(--menu-items-justify-content);
+  column-gap: var(--menu-items-column-gap);
+  row-gap: var(--menu-items-row-gap);
+  align-items: center;
+}
+
+.layout-menu-nav a {
+  color: black;
+  font-size: 2rem;
+}
+
+/* INFO MENU ################################################################################# */
+
+/* .layout-info-menu {
+  display: var(--info-menu-display);
+  background-color: #fff;
+} */
+
+/* .layout-info-menu div {
+} */
+
+/* INFO ASIDE ################################################################################ */
+
+.layout-info-aside {
+  display: var(--info-aside-display);
+  grid-area: aside;
+  height: 300px;
+  background-color: fuchsia;
+}
+
+.layout-info-aside div {
+  height: 150px;
+  background-color: pink;
+}
+
+/* PROJECTS ################################################################################## */
+
+.layout-projects {
+  grid-area: projects;
+  height: 500px;
+  /* background-color: red; */
+}
+
+/* HACKERRANK ################################################################################ */
+
+.layout-hackerrank {
+  grid-area: hackerrank;
+  height: 400px;
+  background-color: green;
+}
+
+/* SKILLS #################################################################################### */
+
+.layout-skills {
+  grid-area: skills;
+  height: 300px;
+  background-color: yellow;
+}
+
+/* CONTACT ################################################################################### */
+
+.layout-contact {
+  grid-area: contact;
+  height: 450px;
+  background-color: cyan;
+}
+
+/* FOOTER #################################################################################### */
+
+.layout-footer {
+  grid-area: footer;
+  height: var(--footer-height);
+  background-color: #333;
+}
