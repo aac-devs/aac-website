@@ -73,12 +73,13 @@ export default function menuStyles(): MenuElementStyles {
         .css('margin-block-start', '0')
         .css('margin-block-end', '0')
         .css('font-weight', '500')
+        .css('display', 'inline')
         .css('color', `#ccc`),
 
       nav: {
         own: ''
           .css('box-sizing', 'border-box')
-          .css('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)')
+          .css('box-shadow', '0 2.4rem 4.8rem rgba(255, 255, 255, 1)')
 
           .css('display', 'flex')
           .css('justify-content', 'flex-start')
@@ -200,8 +201,8 @@ export default function menuStyles(): MenuElementStyles {
       //
       .css('position', 'sticky')
       .css('top', '0')
-      .css('z-index', '10')
-      .css('padding', '0 3vw');
+      .css('padding', '0 3vw')
+      .css('z-index', '10');
 
     elems.header.button.own += ''
       //
