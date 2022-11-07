@@ -3,6 +3,7 @@ import { mobileSections } from './components/mobile/sections/index.js';
 import './helpers/string.extensions.js';
 import './helpers/document.extensions.js';
 import './state/index.js';
+import './components/styles/index.js';
 
 globalThis.document
   .getElementsByTagName('html')[0]
@@ -36,13 +37,9 @@ body.append(mobileHeader());
 
 const elements = mobileSections();
 
-elements.forEach((el) => body.appendChild(el));
+// elements.forEach((el) => body.appendChild(el));
 
-const relleno: HTMLElement = globalThis.document.createElement('div');
+// const relleno: HTMLElement = globalThis.document.createElement('div');
 
-relleno.setAllStyles(''.css('background-color', 'wheat').css('height', '100vh'));
-body.append(relleno);
-
-globalThis.addEventListener('resize', () => {
-  console.log('document resize');
-});
+// relleno.setAllStyles(''.css('background-color', 'wheat').css('height', '100vh'));
+// body.append(relleno);

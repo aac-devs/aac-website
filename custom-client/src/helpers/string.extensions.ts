@@ -1,9 +1,19 @@
 interface String {
   css(key: Prop, value: string): string;
+  cssProperty(key: Prop, value: string): string;
   display(value: Display): string;
 }
 
 String.prototype.css = function (key: Prop, value: string) {
+  const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
+  if (this.match(regexp)) {
+    // console.log(this.match(regexp));
+    return `${this.replace(regexp, value)}`;
+  }
+  return `${this}${key}:${value};`;
+};
+
+String.prototype.cssProperty = function (key: Prop, value: string) {
   const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
   if (this.match(regexp)) {
     // console.log(this.match(regexp));
