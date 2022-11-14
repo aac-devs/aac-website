@@ -1,16 +1,16 @@
 export type ListItemStyles = {
-  li: string;
-  anchor: string;
-  icon: string;
+  LIST_ITEM: string;
+  ANCHOR: string;
+  ICON: string;
 };
 
 export type ListItemFn = (styles: ListItemStyles) => void;
 
 export type InfoStyles = {
-  name: string;
-  filter: string;
-  description: string;
-  jsLogo: string;
-  linkedin: string;
-  github: string;
+  NAME: string;
+  FILTER: string;
+  DESCRIPTION: string;
+  JS_LOGO: string;
+  LINKEDIN: string;
+  GITHUB: string;
 };

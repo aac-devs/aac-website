@@ -5,207 +5,243 @@ export function mobileLandscapeStyles(): ElementStyles {
   const CALCULATED_TOP = getScreenSize().height * 0.12;
   let e: ElementStyles = {};
 
-  // MAIN-HEADER:
-  e['main-header'] = ''
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'row')
-    .cssProperty('justify-content', 'space-between')
-    .cssProperty('align-items', 'center')
-    .cssProperty('background-color', `${ThemeColor.colorMainDarker}`)
-    .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)')
-    .cssProperty('height', `${CALCULATED_TOP}px`)
-    .cssProperty('padding', '0 3vw');
+  // HTML, BODY:
+  e.html = ''.cssProperties(
+    ['box-sizing', 'border-box'],
+    ['font-family', '"Poppins", sans-serif'],
+    ['height', '100%'],
+    ['margin', '0'],
+    ['padding', '0'],
+    ['position', 'relative'],
+    ['scroll-behavior', 'smooth'],
+    ['background-color', '#fff']
+  );
 
-  e['main-header-button'] = ''
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty('color', '#ccc')
-    .cssProperty('display', 'flex')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('position', 'relative')
-    .cssProperty('border', '1px solid #888')
-    .cssProperty('background-color', `${ThemeColor.colorMainDark}`)
-    .cssProperty('border-radius', '1rem')
-    .cssProperty('height', `${CALCULATED_TOP * 0.7}px`);
+  e.body = ''.cssProperties(
+    ['box-sizing', 'border-box'],
+    ['padding', '0'],
+    ['margin', '0'],
+    ['background-color', '#fff'],
+    ['min-height', '100%'],
+    ['position', 'relative']
+  );
+
+  // MAIN-HEADER:
+  // HEADER:
+  e['main-header'] = ''.cssProperties(
+    ['display', 'flex'],
+    ['flex-direction', 'row'],
+    ['justify-content', 'space-between'],
+    ['align-items', 'center'],
+    ['background-color', `${ThemeColor.colorMainDarker}`],
+    ['box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)'],
+    ['height', `${CALCULATED_TOP}px`],
+    ['padding', '0 3vw']
+  );
+
+  e['main-header-button'] = ''.cssProperties(
+    ['aspect-ratio', '1'],
+    ['color', '#ccc'],
+    ['display', 'flex'],
+    ['justify-content', 'flex-start'],
+    ['align-items', 'center'],
+    ['position', 'relative'],
+    ['border', '1px solid #888'],
+    ['background-color', `${ThemeColor.colorMainDark}`],
+    ['border-radius', '1rem'],
+    ['height', `${CALCULATED_TOP * 0.7}px`]
+  );
 
   e['main-header-button-bars'] = 'visible';
 
-  e['main-header-brand'] = ''
-    .cssProperty('margin-block-start', '0')
-    .cssProperty('margin-block-end', '0')
-    .cssProperty('font-weight', '500')
-    .cssProperty('display', 'inline')
-    .cssProperty('color', `#ccc`)
-    .cssProperty('font-size', `${CALCULATED_TOP * 0.5}px`);
+  e['main-header-brand'] = ''.cssProperties(
+    ['margin-block-start', '0'],
+    ['margin-block-end', '0'],
+    ['font-weight', '500'],
+    ['display', 'inline'],
+    ['color', `#ccc`],
+    ['font-size', `${CALCULATED_TOP * 0.5}px`]
+  );
 
-  e['main-header-nav'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(255, 255, 255, 1)')
-    .cssProperty('display', 'flex')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('position', 'absolute')
-    .cssProperty('left', '0') // change to hidden,
-    .cssProperty('background-color', ThemeColor.colorMainDark)
-    .cssProperty('transition', 'all 0.3s ease-in-out')
-    .cssProperty('flex-direction', 'row')
-    .cssProperty('align-items', 'center')
-    .cssProperty('border-bottom-right-radius', '3vh')
-    .cssProperty('border-top-right-radius', '3vh')
-    .cssProperty('column-gap', `4vh`)
-    .cssProperty('padding', `4vh`)
-    .cssProperty('top', `${CALCULATED_TOP}px`);
+  e['main-header-nav'] = ''.cssProperties(
+    ['box-sizing', 'border-box'],
+    ['box-shadow', '0 2.4rem 4.8rem rgba(255, 255, 255, 1)'],
+    ['display', 'flex'],
+    ['justify-content', 'flex-start'],
+    ['position', 'absolute'],
+    ['left', '0'], // change to hidden,
+    ['background-color', `${ThemeColor.colorMainDark}`],
+    ['transition', 'all 0.3s ease-in-out'],
+    ['flex-direction', 'row'],
+    ['align-items', 'center'],
+    ['border-bottom-right-radius', '3vh'],
+    ['border-top-right-radius', '3vh'],
+    ['column-gap', `4vh`],
+    ['padding', `4vh`],
+    ['top', `${CALCULATED_TOP}px`]
+  );
 
-  e['main-header-nav-info'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('position', 'relative')
-    .cssProperty(
+  e['main-header-nav-info'] = ''.cssProperties(
+    ['box-sizing', 'border-box'],
+    ['position', 'relative'],
+    [
       'background-image',
-      'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1666998062/aac-website/info/cyber-3400789_1920_csolpx.jpg)'
-    )
-    .cssProperty('background-size', 'cover')
-    .cssProperty('background-repeat', 'no-repeat')
-    .cssProperty('background-position', 'center')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'column')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('height', `60vh`)
-    .cssProperty('padding-top', '8vh')
-    .cssProperty('border-radius', '5vh')
-    .cssProperty('aspect-ratio', '5/4');
+      'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1666998062/aac-website/info/cyber-3400789_1920_csolpx.jpg)',
+    ],
+    ['background-size', 'cover'],
+    ['background-repeat', 'no-repeat'],
+    ['background-position', 'center'],
+    ['display', 'flex'],
+    ['flex-direction', 'column'],
+    ['justify-content', 'flex-start'],
+    ['align-items', 'center'],
+    ['height', `60vh`],
+    ['padding-top', '8vh'],
+    ['border-radius', '5vh'],
+    ['aspect-ratio', '5/4']
+  );
 
-  e['main-header-nav-info-filter'] = ''
-    .cssProperty('position', 'absolute')
-    .cssProperty('bottom', '0')
-    .cssProperty('left', '0')
-    .cssProperty('height', '100%')
-    .cssProperty('width', '100%')
-    .cssProperty('opacity', '0.15')
-    .cssProperty('background-color', '#000')
-    .cssProperty('border-radius', '5vh');
+  e['main-header-nav-info-filter'] = ''.cssProperties(
+    ['position', 'absolute'],
+    ['bottom', '0'],
+    ['left', '0'],
+    ['height', '100%'],
+    ['width', '100%'],
+    ['opacity', '0.15'],
+    ['background-color', '#000'],
+    ['border-radius', '5vh']
+  );
 
-  e['main-header-nav-info-name'] = ''
-    .cssProperty('margin', '0')
-    .cssProperty('padding', '0')
-    .cssProperty('font-weight', '500')
-    .cssProperty('margin-block-start', '0px')
-    .cssProperty('margin-block-end', '0px')
-    .cssProperty('z-index', '10')
-    .cssProperty('color', '#eee')
-    .cssProperty('text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)')
-    .cssProperty('font-size', '7.5vh');
+  e['main-header-nav-info-name'] = ''.cssProperties(
+    ['margin', '0'],
+    ['padding', '0'],
+    ['font-weight', '500'],
+    ['margin-block-start', '0px'],
+    ['margin-block-end', '0px'],
+    ['z-index', '10'],
+    ['color', '#eee'],
+    ['text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)'],
+    ['font-size', '7.5vh']
+  );
 
-  e['main-header-nav-info-description'] = ''
-    .cssProperty('margin', '0')
-    .cssProperty('padding', '0')
-    .cssProperty('z-index', '10')
-    .cssProperty('font-weight', '400')
-    .cssProperty('color', '#ee0')
-    .cssProperty('margin-block-start', '0px')
-    .cssProperty('margin-block-end', '0px')
-    .cssProperty('text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)')
-    .cssProperty('font-size', '5.2vh');
+  e['main-header-nav-info-description'] = ''.cssProperties(
+    ['margin', '0'],
+    ['padding', '0'],
+    ['z-index', '10'],
+    ['font-weight', '400'],
+    ['color', '#ee0'],
+    ['margin-block-start', '0px'],
+    ['margin-block-end', '0px'],
+    ['text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)'],
+    ['font-size', '5.2vh']
+  );
 
-  e['main-header-nav-info-jslogo'] = ''
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty(
+  e['main-header-nav-info-jslogo'] = ''.cssProperties(
+    ['aspect-ratio', '1'],
+    [
       'background-image',
-      'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1663975560/aac-website/info/js_cgxlpb.png)'
-    )
-    .cssProperty('background-size', 'contain')
-    .cssProperty('position', 'absolute')
-    .cssProperty('height', '12vh')
-    .cssProperty('border-radius', '1vh')
-    .cssProperty('bottom', '4vh')
-    .cssProperty('left', '4vh');
+      'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1663975560/aac-website/info/js_cgxlpb.png)',
+    ],
+    ['background-size', 'contain'],
+    ['position', 'absolute'],
+    ['height', '12vh'],
+    ['border-radius', '1vh'],
+    ['bottom', '4vh'],
+    ['left', '4vh']
+  );
 
-  e['main-header-nav-info-linkedin'] = ''
-    .cssProperty('color', '#fff')
-    .cssProperty('position', 'absolute')
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty('height', '9vh')
-    .cssProperty('bottom', '4vh')
-    .cssProperty('right', '4vh')
-    .cssProperty('padding', '0rem 0.2rem');
+  e['main-header-nav-info-linkedin'] = ''.cssProperties(
+    ['color', '#fff'],
+    ['position', 'absolute'],
+    ['aspect-ratio', '1'],
+    ['height', '9vh'],
+    ['bottom', '4vh'],
+    ['right', '4vh'],
+    ['padding', '0rem 0.2rem']
+  );
 
-  e['main-header-nav-info-github'] = ''
-    .cssProperty('color', '#fff')
-    .cssProperty('position', 'absolute')
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty('height', '9vh')
-    .cssProperty('bottom', '4vh')
-    .cssProperty('right', '4vh')
-    .cssProperty('padding', '0rem 0.2rem')
-    .cssProperty('transform', 'translateY(-140%)');
+  e['main-header-nav-info-github'] = ''.cssProperties(
+    ['color', '#fff'],
+    ['position', 'absolute'],
+    ['aspect-ratio', '1'],
+    ['height', '9vh'],
+    ['bottom', '4vh'],
+    ['right', '4vh'],
+    ['padding', '0rem 0.2rem'],
+    ['transform', 'translateY(-140%)']
+  );
 
-  e['main-header-nav-ul'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'column')
-    .cssProperty('margin', '0')
-    .cssProperty('padding', '0')
-    .cssProperty('list-style', 'none')
-    .cssProperty('height', `60vh`) // calculated
-    .cssProperty('row-gap', '2.5vh')
-    .cssProperty('aspect-ratio', '8/11')
-    .cssProperty('justify-content', 'center');
+  e['main-header-nav-ul'] = ''.cssProperties(
+    ['box-sizing', 'border-box'],
+    ['display', 'flex'],
+    ['flex-direction', 'column'],
+    ['margin', '0'],
+    ['padding', '0'],
+    ['list-style', 'none'],
+    ['height', `60vh`], // calculated
+    ['row-gap', '2.5vh'],
+    ['aspect-ratio', '8/11'],
+    ['justify-content', 'center']
+  );
 
-  e['main-header-nav-ul-li'] = ''
-    .cssProperty('background-color', `${ThemeColor.colorMainDarker}`)
-    .cssProperty('border-radius', '5vh');
+  e['main-header-nav-ul-li'] = ''.cssProperties(
+    ['background-color', `${ThemeColor.colorMainDarker}`],
+    ['border-radius', '5vh']
+  );
 
-  e['main-header-nav-ul-li-anchor'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('text-decoration', 'none')
-    .cssProperty('flex-grow', '1')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'row')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('color', '#ccc')
-    .cssProperty('font-size', '4.2vh')
-    .cssProperty('margin', 'auto 0')
-    .cssProperty('border-radius', '5vh')
-    .cssProperty('min-height', '10vh')
-    .cssProperty('max-height', '10vh')
-    .cssProperty('padding', '1vh 2.5vh');
+  e['main-header-nav-ul-li-anchor'] = ''.cssProperties(
+    ['box-sizing', 'border-box'],
+    ['text-decoration', 'none'],
+    ['flex-grow', '1'],
+    ['display', 'flex'],
+    ['flex-direction', 'row'],
+    ['justify-content', 'flex-start'],
+    ['align-items', 'center'],
+    ['color', '#ccc'],
+    ['font-size', '4.2vh'],
+    ['margin', 'auto 0'],
+    ['border-radius', '5vh'],
+    ['min-height', '10vh'],
+    ['max-height', '10vh'],
+    ['padding', '1vh 2.5vh']
+  );
 
-  e['main-header-nav-ul-li-anchor-icon'] = ''
-    .cssProperty('display', 'flex')
-    .cssProperty('justify-content', 'center')
-    .cssProperty('align-items', 'center')
-    .cssProperty('font-size', '4.5vh')
-    .cssProperty('margin', '0 3vh 0 1vh')
-    .cssProperty('width', '7vh');
+  e['main-header-nav-ul-li-anchor-icon'] = ''.cssProperties(
+    ['display', 'flex'],
+    ['justify-content', 'center'],
+    ['align-items', 'center'],
+    ['font-size', '4.5vh'],
+    ['margin', '0 3vh 0 1vh'],
+    ['width', '7vh']
+  );
 
   // SECTIONS:
-  e.sections = ''
-    .cssProperty('background-color', `#fff`)
-    .cssProperty('margin-bottom', '10vh')
-    .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)')
-    .cssProperty('background-position', 'center');
+  e.sections = ''.cssProperties(
+    ['background-color', `#fff`],
+    ['margin-bottom', '10vh'],
+    ['box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)'],
+    ['background-position', 'center']
+  );
 
-  e['sections-header'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('height', '10vw')
-    .cssProperty('background-color', 'transparent')
-    .cssProperty('background-color', `${ThemeColor.colorMainDarker}`)
-    .cssProperty('opacity', '0.9')
-    .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'row')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('column-gap', '2vw')
-    .cssProperty('position', 'sticky')
-    .cssProperty('padding', '0 2vw')
-    .cssProperty('z-index', '1')
-    .cssProperty('top', '6vh');
+  e['sections-header'] = ''.cssProperties(
+    ['box-sizing', 'border-box'],
+    ['height', '10vw'],
+    ['background-color', 'transparent'],
+    ['background-color', `${ThemeColor.colorMainDarker}`],
+    ['opacity', '0.9'],
+    ['box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)'],
+    ['display', 'flex'],
+    ['flex-direction', 'row'],
+    ['justify-content', 'flex-start'],
+    ['align-items', 'center'],
+    ['column-gap', '2vw'],
+    ['position', 'sticky'],
+    ['padding', '0 2vw'],
+    ['z-index', '1'],
+    ['top', '6vh']
+  );
 
-  e['sections-header-title'] = ''
-    .cssProperty('font-weight', '500')
-    .cssProperty('color', `#fff`)
-    .cssProperty('font-size', '5vw');
+  e['sections-header-title'] = ''.cssProperties(['font-weight', '500'], ['color', `#fff`], ['font-size', '5vw']);
 
   // PROJECTS SECTION:
 

@@ -45,7 +45,7 @@ export default function sectionsStyles(): SectionElementsStyles {
         header: {
           own: ''
             .css('box-sizing', 'border-box')
-            .css('height', '10vw')
+            .css('height', '15vw')
             //
             .css('background-color', 'transparent')
             .css('background-color', `${ThemeColor.colorMainDarker}`)
@@ -55,14 +55,14 @@ export default function sectionsStyles(): SectionElementsStyles {
             .css('flex-direction', 'row')
             .css('justify-content', 'flex-start')
             .css('align-items', 'center')
-            .css('column-gap', '2vw')
+            .css('column-gap', '1vw')
             .css('position', 'sticky')
-            .css('padding', '0 2vw')
+            .css('padding', '0 0 0 15vw')
             .css('z-index', '1')
-            .css('top', '6vh'),
+            .css('top', '0vh'),
           title: ''
             //
-            .css('font-weight', '500')
+            .css('font-weight', '400')
             .css('color', `#fff`)
             .css('font-size', '5vw'),
         }, // TODO: poner un ícono junto al título en la section
@@ -73,7 +73,7 @@ export default function sectionsStyles(): SectionElementsStyles {
       elems.section.own += ''
         // .css('height', '94vh')
         // .css('margin-bottom', '10vh')
-        .css('scroll-margin-top', '6vh')
+        // .css('scroll-margin-top', '6vh')
         .css('display', 'flex')
         .css('flex-direction', 'column')
         .css('justify-content', 'flex-start')

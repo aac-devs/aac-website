@@ -1,14 +1,14 @@
-import ThemeColor from '../../../../helpers/colors.js';
+import ThemeColor from '../../../helpers/colors.js';
 
 export default function projectCard(item: ProjectType): HTMLElement {
-  const card: HTMLElement = globalThis.document.createElement('li');
-  const title: HTMLElement = globalThis.document.createElement('h1');
-  const filter: HTMLElement = globalThis.document.createElement('div');
+  const cardElement: HTMLElement = globalThis.document.createElement('li');
+  const titleElement: HTMLElement = globalThis.document.createElement('h1');
+  const filterElement: HTMLElement = globalThis.document.createElement('div');
   const elementsContainer: HTMLElement = globalThis.document.createElement('div');
 
-  title.innerHTML = item.projectTitle;
+  titleElement.textContent = item.projectTitle;
 
-  title.setAllStyles(
+  titleElement.setAllStyles(
     ''
       //
       .css('text-shadow', '0 0 1rem rgba(255, 255, 255, 1)')
@@ -42,7 +42,7 @@ export default function projectCard(item: ProjectType): HTMLElement {
       .css('background-color', 'transparent')
   );
 
-  filter.setAllStyles(
+  filterElement.setAllStyles(
     ''
       .css('position', 'absolute')
       //
@@ -56,10 +56,10 @@ export default function projectCard(item: ProjectType): HTMLElement {
       .css('background-color', '#000')
   );
 
-  elementsContainer.append(title);
-  card.append(filter, elementsContainer);
+  elementsContainer.append(titleElement);
+  cardElement.append(filterElement, elementsContainer);
 
-  card.setAllStyles(
+  cardElement.setAllStyles(
     ''
       .css('position', 'relative')
       .css('box-sizing', 'border-box')
@@ -86,7 +86,7 @@ export default function projectCard(item: ProjectType): HTMLElement {
     // .css('align-self', 'end')
   );
 
-  console.log(item);
+  // console.log(item);
 
-  return card;
+  return cardElement;
 }

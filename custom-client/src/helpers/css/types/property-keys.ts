@@ -1,95 +1,3 @@
-interface String {
-  css(key: Prop, value: string): string;
-  cssProperty(key: Prop, value: string): string;
-  display(value: Display): string;
-}
-
-String.prototype.css = function (key: Prop, value: string) {
-  const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
-  if (this.match(regexp)) {
-    // console.log(this.match(regexp));
-    return `${this.replace(regexp, value)}`;
-  }
-  return `${this}${key}:${value};`;
-};
-
-String.prototype.cssProperty = function (key: Prop, value: string) {
-  const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
-  if (this.match(regexp)) {
-    // console.log(this.match(regexp));
-    return `${this.replace(regexp, value)}`;
-  }
-  return `${this}${key}:${value};`;
-};
-
-function propertyFactory(key: Prop) {
-  return function <T>(value: T) {
-    const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
-    if (this.match(regexp)) return `${this.replace(regexp, value)}`;
-    return `${this}${key}:${value};`;
-  };
-}
-
-String.prototype.display = propertyFactory('display')<Display>;
-
-//#####################################################################################################################
-//#####################################################################################################################
-//#####################################################################################################################
-// PROPERTY VALUE TYPES
-
-type Display =
-  | 'block'
-  | 'inline'
-  | 'inline-block'
-  | 'flex'
-  | 'inline-flex'
-  | 'grid'
-  | 'inline-grid'
-  | 'flow-root'
-  | 'none'
-  | 'contents'
-  | 'block flow'
-  | 'inline flow'
-  | 'inline flow-root'
-  | 'block flex'
-  | 'inline flex'
-  | 'block grid'
-  | 'inline grid'
-  | 'block flow-root'
-  | 'table'
-  | 'table-row'
-  | 'list-item'
-  | 'inherit'
-  | 'initial'
-  | 'revert'
-  | 'revert-layer'
-  | 'unset';
-
-//#####################################################################################################################
-//#####################################################################################################################
-//#####################################################################################################################
-// LENGTH KEY TYPES
-
-type Length = Px | Em | Rem | Viewport;
-type Px = `${number}px`;
-type Em = `${number}em`;
-type Rem = `${number}rem`;
-type Viewport = `${number}vh` | `${number}vw`;
-
-type Percentage = `${number}%`;
-
-//#####################################################################################################################
-//#####################################################################################################################
-//#####################################################################################################################
-// GLOBAL
-
-type GlobalType = 'inherit' | 'initial' | 'revert' | 'revert-layer' | 'unset';
-
-//#####################################################################################################################
-//#####################################################################################################################
-//#####################################################################################################################
-// PROPERTY KEY TYPES
-
 type Prop =
   | '-webkit-line-clamp'
   | '-webkit-text-fill-color'
@@ -499,12 +407,12 @@ type Prop =
 //#####################################################################################################################
 // COLOR NAMES
 
-type Color = RGB | RGBA | HEX | NamedColor | SystemColor;
+// type Color = RGB | RGBA | HEX | NamedColor | SystemColor;
 
-type NamedColor = CSSLev1 | CSSLev2 | CSSLev3 | CSSLev4;
-type RGB = `rgb(${number}, ${number}, ${number})`;
-type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
-type HEX = `#${string}`;
+// type NamedColor = CSSLev1 | CSSLev2 | CSSLev3 | CSSLev4;
+// type RGB = `rgb(${number}, ${number}, ${number})`;
+// type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
+// type HEX = `#${string}`;
 type CSSLev1 =
   | 'black' //  #000000
   | 'silver' // #c0c0c0

@@ -199,7 +199,7 @@ function createFakeData(): StateType {
 setTimeout(() => {
   Document.prototype.updateState(createFakeData());
   globalThis.document.dispatchEvent(stateEvent);
-  console.log('event launched!!');
+  // console.log('event launched!!');
 }, 2000);
 
 //   setTimeout(() => {

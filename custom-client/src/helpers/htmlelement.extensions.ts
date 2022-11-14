@@ -15,7 +15,6 @@ HTMLElement.prototype.addStyles = function (newStyles: string) {
   const currentStyles = element.getAttribute('style');
   const mergedStyles = currentStyles ? `${currentStyles}${newStyles}` : newStyles;
   element.setAttribute('style', `${mergedStyles}`);
-  // console.log('add:', element.getAttribute('style'));
 };
 
 function setAttribute(attrName: string) {
@@ -26,15 +25,12 @@ function setAttribute(attrName: string) {
 }
 
 HTMLElement.prototype.setAllStyles = setAttribute('style');
-// HTMLElement.prototype.setClassName = setAttribute('class');
 
 HTMLElement.prototype.changeStyleProps = function (propsObject: PropsObject) {
   const element = <HTMLElement>this;
   for (const [key, value] of Object.entries(propsObject)) {
     element.style.setProperty(key, value);
   }
-  // element.setAttribute('style', newStyles);
-  // console.log('loose:==>', element.getAttribute('style'));
 };
 
 type ElementStyleParam = {

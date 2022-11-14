@@ -72,7 +72,11 @@ Document.prototype.getState = Document.prototype.updateState();
 
 type VisibilityType = 'visible' | 'hidden';
 
-interface ElementStyles {
+interface ElementStyles extends Object {
+  // HTML, BODY:
+  html?: string;
+  body?: string;
+
   // MAIN-HEADER:
   'main-header'?: string;
   'main-header-button'?: string;
@@ -89,14 +93,19 @@ interface ElementStyles {
   'main-header-nav-ul'?: string;
   'main-header-nav-ul-li'?: string;
   'main-header-nav-ul-li-anchor'?: string;
+  'main-header-nav-ul-li-anchor-icon-container'?: string;
   'main-header-nav-ul-li-anchor-icon'?: string;
 
   // SECTIONS:
   sections?: string;
   'sections-header'?: string;
   'sections-header-title'?: string;
+  'sections-header-icon'?: string;
 
   // PROJECTS SECTION:
+  'project-section-container'?: string;
+  'project-section-ul'?: string;
+  'project-section-footer'?: string;
 
   // HACKERRANK SECTION:
 
