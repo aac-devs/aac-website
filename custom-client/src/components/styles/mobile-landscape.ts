@@ -206,7 +206,7 @@ export function mobileLandscapeStyles(): ElementStyles {
     ['padding', '1vh 2.5vh']
   );
 
-  e['main-header-nav-ul-li-anchor-icon'] = ''.cssProperties(
+  e['main-header-nav-ul-li-anchor-icon-container'] = ''.cssProperties(
     ['display', 'flex'],
     ['justify-content', 'center'],
     ['align-items', 'center'],
@@ -214,6 +214,8 @@ export function mobileLandscapeStyles(): ElementStyles {
     ['margin', '0 3vh 0 1vh'],
     ['width', '7vh']
   );
+
+  e['main-header-nav-ul-li-anchor-icon'] = ''.cssProperties(['height', '100%'], ['width', '100%']);
 
   // SECTIONS:
   e.sections = ''.cssProperties(

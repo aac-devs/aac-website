@@ -13,16 +13,16 @@ export function createCustomListItemsComponent(params: UlComponentParams): Custo
 
   let liStFnArray: ((st: ElementStyles) => void)[] = [];
 
-  listItems.forEach((item: ListItemTuple) => {
-    const [text, resouce] = item;
-    const id = `${text.toLowerCase()}-link`;
-    const href = `#${text.toLowerCase()}`;
-    const clas = text.startsWith('Hacker') ? undefined : resouce;
-    const src = text.startsWith('Hacker') ? resouce : undefined;
-    const [liEl, liStFn] = createLiComp({ text: text, id, evTp: 'click', href, evFn: eventFn, clas, src });
-    liStFnArray.push(liStFn);
-    ulElement.appendChild(liEl);
-  });
+  // listItems.forEach((item: ListItemTuple) => {
+  //   const [text, resouce] = item;
+  //   const id = `${text.toLowerCase()}-link`;
+  //   const href = `#${text.toLowerCase()}`;
+  //   const clas = text.startsWith('Hacker') ? undefined : resouce;
+  //   const src = text.startsWith('Hacker') ? resouce : undefined;
+  //   const [liEl, liStFn] = createLiComp({ text: text, id, evTp: 'click', href, evFn: eventFn, clas, src });
+  //   liStFnArray.push(liStFn);
+  //   ulElement.appendChild(liEl);
+  // });
 
   function setStyles(st: ElementStyles) {
     ulStylesFn(st['main-header-nav-ul']!);

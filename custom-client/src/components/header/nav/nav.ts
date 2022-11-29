@@ -30,7 +30,7 @@ export default function mobileHeader(): HTMLElement {
         ? NAV_STYLES.cssProperty('transform', SHOW_NAV)
         : NAV_STYLES.cssProperty('transform', HIDE_NAV);
 
-    HTMLElement.prototype.setElementsStyles({ element: navElement, style: NAV_STYLES });
+    HTMLElement.prototype.resetElementsStyles({ element: navElement, style: NAV_STYLES });
     setMainHeaderButtonStyles({ showBars: navState });
     navState = navState === 'hidden' ? 'visible' : 'hidden';
   });
@@ -38,7 +38,7 @@ export default function mobileHeader(): HTMLElement {
   function setNavHidden() {
     navState = 'hidden';
     setMainHeaderButtonStyles({ showBars: 'visible' });
-    HTMLElement.prototype.setElementsStyles({
+    HTMLElement.prototype.resetElementsStyles({
       element: navElement,
       style: NAV_STYLES.cssProperty('transform', HIDE_NAV),
     });
@@ -59,7 +59,7 @@ export default function mobileHeader(): HTMLElement {
     const STYLES: ElementStyles = Document.prototype.getStyles();
     NAV_STYLES = STYLES['main-header-nav']!.cssProperty('transform', HIDE_NAV);
 
-    HTMLElement.prototype.setElementsStyles(
+    HTMLElement.prototype.resetElementsStyles(
       { element: headerElement, style: STYLES['main-header']! },
       { element: navElement, style: NAV_STYLES },
       { element: infoElement, style: STYLES['main-header-nav-info']! },

@@ -37,6 +37,7 @@ export enum Icons {
   'contact' = 'fa-regular fa-message',
   'info' = 'fa-solid fa-circle-info',
   'copy_right' = 'fa-solid fa-copyright',
+  'github-alt' = 'fa-solid fa-code-compare',
 }
 
 export function createIcon(iconType: Icons): HTMLElement {

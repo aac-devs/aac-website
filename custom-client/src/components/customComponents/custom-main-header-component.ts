@@ -34,56 +34,56 @@ export function createCustomMainHeaderComponent(params: MainHeaderComponentParam
 }
 
 // TODO: remove, only for proofs
-const info: InfoComponentParams = {
-  name: 'Andrés Arana C',
-  desc: 'JavaScript Developer',
-  lkdi: ['fa-brands fa-linkedin', '#linkedin'],
-  gith: ['fa-brands fa-github', '#github'],
-  evTp: 'click',
-  evFn: () => {
-    console.log('linkedin or github click');
-  },
-};
+// const info: InfoComponentParams = {
+//   name: 'Andrés Arana C',
+//   desc: 'JavaScript Developer',
+//   lkdi: ['fa-brands fa-linkedin', '#linkedin'],
+//   gith: ['fa-brands fa-github', '#github'],
+//   // evTp: 'click',
+//   evFn: () => {
+//     console.log('linkedin or github click');
+//   },
+// };
 
-const listItems: UlComponentParams = {
-  items: [
-    ['Projects', 'fa-solid fa-gears'],
-    [
-      'HackerRank',
-      'https://res.cloudinary.com/aac-devs-data/image/upload/v1667017201/aac-website/info/HackerRank_Icon-1000px_qrcxjg.png',
-    ],
-    ['Skills', 'fa-solid fa-screwdriver-wrench'],
-    ['Contact', 'fa-regular fa-message'],
-  ],
-  eventFn: (ev?: Event) => {
-    if (!ev?.target) return;
-    const target = <HTMLAnchorElement>ev.target;
-    console.log(target.id);
-  },
-};
+// const listItems: UlComponentParams = {
+//   items: [
+//     ['Projects', 'fa-solid fa-gears'],
+//     [
+//       'HackerRank',
+//       'https://res.cloudinary.com/aac-devs-data/image/upload/v1667017201/aac-website/info/HackerRank_Icon-1000px_qrcxjg.png',
+//     ],
+//     ['Skills', 'fa-solid fa-screwdriver-wrench'],
+//     ['Contact', 'fa-regular fa-message'],
+//   ],
+//   eventFn: (ev?: Event) => {
+//     if (!ev?.target) return;
+//     const target = <HTMLAnchorElement>ev.target;
+//     console.log(target.id);
+//   },
+// };
 
-const navParams: NavComponentParams = {
-  infoParams: info,
-  ulParams: listItems,
-};
+// const navParams: NavComponentParams = {
+//   infoParams: info,
+//   ulParams: listItems,
+// };
 
 const brandParams: HeaderBrandComponentParams = { text: 'aac-devs' };
 
-const buttonParams: HeaderButtonComponentParams = {
-  eventType: 'click',
-  eventFn: mainButtonEvent,
-  iconClassNames: {
-    bars: '',
-    xmark: '',
-  },
-};
+// const buttonParams: HeaderButtonComponentParams = {
+//   // eventType: 'click',
+//   eventFn: mainButtonEvent,
+//   iconClassNames: {
+//     bars: '',
+//     xmark: '',
+//   },
+// };
 
-function mainButtonEvent() {
-  console.log('main button event');
-}
+// function mainButtonEvent() {
+//   console.log('main button event');
+// }
 
-const [header, headerSt] = createCustomMainHeaderComponent({ navParams, brandParams, buttonParams });
+// const [header, headerSt] = createCustomMainHeaderComponent({ navParams, brandParams, buttonParams });
 
-headerSt(Document.prototype.getStyles());
+// headerSt(Document.prototype.getStyles());
 
-export { header };
+// export { header };

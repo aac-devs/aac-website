@@ -14,12 +14,12 @@ function mobileSection(titleIcon: string, sectionTitle: string): MobileSectionTy
     imgElement.src =
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1667017201/aac-website/info/HackerRank_Icon-1000px_qrcxjg.png';
 
-    HTMLElement.prototype.setElementsStyles({ element: imgElement, style: ICON_STATIC_STYLES });
+    HTMLElement.prototype.resetElementsStyles({ element: imgElement, style: ICON_STATIC_STYLES });
     iconContainerElement.appendChild(imgElement);
   } else {
     const iconElement: HTMLElement = globalThis.document.createElement('i');
     iconElement.className = titleIcon;
-    HTMLElement.prototype.setElementsStyles({ element: iconElement, style: ICON_STATIC_STYLES });
+    HTMLElement.prototype.resetElementsStyles({ element: iconElement, style: ICON_STATIC_STYLES });
     iconContainerElement.appendChild(iconElement);
   }
 
@@ -31,7 +31,7 @@ function mobileSection(titleIcon: string, sectionTitle: string): MobileSectionTy
 
   function updateStyles({ SECTION_STYLES, HEADER_STYLES, TITLE_STYLES, ICON_STYLES }: SectionStyles) {
     // TODO: Adoptar esta forma de poner los estilos en todos los elementos
-    HTMLElement.prototype.setElementsStyles(
+    HTMLElement.prototype.resetElementsStyles(
       { element: sectionElement, style: SECTION_STYLES },
       { element: headerElement, style: HEADER_STYLES },
       { element: titleElement, style: TITLE_STYLES },

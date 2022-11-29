@@ -296,7 +296,7 @@ interface CSSProperty {
   rowGap?: Gap;
   rubyPosition?: string;
   scale?: string;
-  scrollBehavior?: string;
+  scrollBehavior?: ScrollBehaviorType;
   scrollMargin?: string;
   scrollMarginBlock?: string;
   scrollMarginBlockEnd?: string;

@@ -20,11 +20,11 @@ export default function createMainHeaderButton(clickFunction: (ev: Event) => voi
     ['aspect-ratio', '1']
   );
 
-  HTMLElement.prototype.setElementsStyles(
+  HTMLElement.prototype.resetElementsStyles(
     { element: barsIconElement, style: ICON_STATIC_STYLES },
-    { element: xmarkIconElement, style: ICON_STATIC_STYLES },
-    { element: barsIconContainerElement, style: ICON_CONTAINER_STYLES.css('visibility', 'visible') },
-    { element: xmarkIconContainerElement, style: ICON_CONTAINER_STYLES.css('visibility', 'hidden') }
+    { element: xmarkIconElement, style: ICON_STATIC_STYLES }
+    // { element: barsIconContainerElement, style: ICON_CONTAINER_STYLES.css('visibility', 'visible') },
+    // { element: xmarkIconContainerElement, style: ICON_CONTAINER_STYLES.css('visibility', 'hidden') }
   );
 
   barsIconContainerElement.appendChild(barsIconElement);
@@ -35,7 +35,7 @@ export default function createMainHeaderButton(clickFunction: (ev: Event) => voi
   buttonElement.addEventListener('click', clickFunction);
 
   function stylesFunction(STYLES: MenuButtonStyles) {
-    if (STYLES.button) HTMLElement.prototype.setElementsStyles({ element: buttonElement, style: STYLES.button });
+    if (STYLES.button) HTMLElement.prototype.resetElementsStyles({ element: buttonElement, style: STYLES.button });
     barsIconContainerElement.style.visibility = STYLES.showBars;
     xmarkIconContainerElement.style.visibility = STYLES.showBars === 'visible' ? 'hidden' : 'visible';
   }

@@ -12,10 +12,10 @@ String.prototype.cssProperties = function (...items: CSSPropertyTuple[]) {
 };
 
 interface String {
-  css(key: Prop, value: string): string;
+  // css(key: Prop, value: string): string;
   cssProperty(key: Prop, value: string): string;
   cssProperties(...items: CSSPropertyTuple[]): string;
-  display(value: Display): string;
+  // display(value: Display): string;
   cssProps(x: CSSProperty): string;
 }
 
@@ -28,18 +28,18 @@ String.prototype.cssProps = function (properties: CSSProperty) {
     if (styles.match(regexp)) styles = `${styles.replace(regexp, value)}`;
     else styles = `${styles}${key}:${value};`;
   });
-  console.log(styles);
+  // console.log(styles);
   return styles;
 };
 
-String.prototype.css = function (key: Prop, value: string) {
-  const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
-  if (this.match(regexp)) {
-    // console.log(this.match(regexp));
-    return `${this.replace(regexp, value)}`;
-  }
-  return `${this}${key}:${value};`;
-};
+// String.prototype.css = function (key: Prop, value: string) {
+//   const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
+//   if (this.match(regexp)) {
+//     // console.log(this.match(regexp));
+//     return `${this.replace(regexp, value)}`;
+//   }
+//   return `${this}${key}:${value};`;
+// };
 
 String.prototype.cssProperty = function (key: Prop, value: string) {
   const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
@@ -50,15 +50,15 @@ String.prototype.cssProperty = function (key: Prop, value: string) {
   return `${this}${key}:${value};`;
 };
 
-function propertyFactory(key: Prop) {
-  return function <T>(value: T) {
-    const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
-    if (this.match(regexp)) return `${this.replace(regexp, value)}`;
-    return `${this}${key}:${value};`;
-  };
-}
+// function propertyFactory(key: Prop) {
+//   return function <T>(value: T) {
+//     const regexp = new RegExp(`(?<=${key}:)[^;]+`, 'g');
+//     if (this.match(regexp)) return `${this.replace(regexp, value)}`;
+//     return `${this}${key}:${value};`;
+//   };
+// }
 
-String.prototype.display = propertyFactory('display')<Display>;
+// String.prototype.display = propertyFactory('display')<Display>;
 
 // interface CSSProperty {
 //   display?: Display;

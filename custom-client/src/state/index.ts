@@ -104,74 +104,90 @@ const VERIFIED_SKILLS: VerifiedSkillType[] = [
 const SKILLS: SkillType[] = [
   {
     skillTitle: 'JavaScript',
+    skillType: 'Programming Language',
     skillImage: 'https://res.cloudinary.com/aac-devs-data/image/upload/v1619759284/aac-website/skills/js2_uzcztc.png',
   },
   {
     skillTitle: 'TypeScript',
+    skillType: 'Programming Language',
     skillImage: 'https://res.cloudinary.com/aac-devs-data/image/upload/v1664068659/aac-website/skills/ts_faazhn.png',
   },
   {
     skillTitle: 'Node JS',
+    skillType: 'Runtime Environment',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1664070510/aac-website/skills/Node.js_logo_iwypdj.svg',
   },
   {
     skillTitle: 'C',
+    skillType: 'Programming Language',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1664070613/aac-website/skills/unnamed_ymuoby.png',
   },
   {
     skillTitle: 'C++',
+    skillType: 'Programming Language',
     skillImage: 'https://res.cloudinary.com/aac-devs-data/image/upload/v1664068717/aac-website/skills/c_mk8mem.png',
   },
   {
     skillTitle: 'HTML',
+    skillType: 'Web Technology',
     skillImage: 'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358674/aac-website/skills/html2_reyk9y.png',
   },
   {
     skillTitle: 'CSS',
+    skillType: 'Web Technology',
     skillImage: 'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358722/aac-website/skills/css_dykwnz.png',
   },
   {
     skillTitle: 'Git',
+    skillType: 'Version Control',
     skillImage: 'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358661/aac-website/skills/git_e4nxfn.png',
   },
   {
     skillTitle: 'Github',
+    skillType: 'Version Control',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358707/aac-website/skills/github_rbfbqy.png',
   },
   {
     skillTitle: 'React',
+    skillType: 'Framework - Library',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358686/aac-website/skills/react2_kq8ndv.png',
   },
   {
     skillTitle: 'Redux',
+    skillType: 'Framework - Library',
     skillImage: 'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358681/aac-website/skills/redux_bnekhs.png',
   },
   {
     skillTitle: 'PostgreSQL',
+    skillType: 'Database',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1619359910/aac-website/skills/postgres_2_htrqyd.png',
   },
   {
     skillTitle: 'Styled Components',
+    skillType: 'Framework - Library',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358665/aac-website/skills/1_7jRD5QhgARucFKvRHFxpOg_velwnn.png',
   },
   {
     skillTitle: 'Express',
+    skillType: 'Framework - Library',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358647/aac-website/skills/express_dj1u8e.png',
   },
   {
     skillTitle: 'React Testing Library',
+    skillType: 'Framework - Library',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1631025986/aac-website/skills/testing_r43rm3.png',
   },
   {
     skillTitle: 'Sequelize ORM',
+    skillType: 'Framework - Library',
     skillImage:
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1619358654/aac-website/skills/sequelize_jei6yf.png',
   },
@@ -184,7 +200,7 @@ function createFakeData(): StateType {
   console.log('fake date created!!');
   return {
     projects: PROJECTS,
-    hackerrank: {
+    hackerrank: <HackerrankType>{
       badges: BADGES,
       verifiedSkills: VERIFIED_SKILLS,
       profileLink: '',
@@ -199,8 +215,7 @@ function createFakeData(): StateType {
 setTimeout(() => {
   Document.prototype.updateState(createFakeData());
   globalThis.document.dispatchEvent(stateEvent);
-  // console.log('event launched!!');
-}, 2000);
+}, 100);
 
 //   setTimeout(() => {
 //     Document.prototype.updateState(createFakeData());

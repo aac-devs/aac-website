@@ -10,7 +10,7 @@ function createCustomElement<T extends HTMLElType, P extends CustomElementParams
   if (src) element.src = src;
   if (evFn) element.addEventListener(evTp!, evFn);
   function setStyles(style: string) {
-    HTMLElement.prototype.setElementsStyles({ element, style });
+    HTMLElement.prototype.resetElementsStyles({ element, style });
   }
   return [element, setStyles];
 }
@@ -45,7 +45,7 @@ function createElement(tag: Tag) {
       if (evFn) element.addEventListener(evTp!, evFn);
     }
     function setStyles(style: string) {
-      HTMLElement.prototype.setElementsStyles({ element, style });
+      HTMLElement.prototype.resetElementsStyles({ element, style });
     }
     return [element, setStyles];
   };

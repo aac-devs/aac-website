@@ -20,17 +20,17 @@ export function createLiUlElements(listName: string, fn: (ev?: Event) => void): 
     imgElement.src =
       'https://res.cloudinary.com/aac-devs-data/image/upload/v1667017201/aac-website/info/HackerRank_Icon-1000px_qrcxjg.png';
 
-    HTMLElement.prototype.setElementsStyles({ element: imgElement, style: ICON_STATIC_STYLES });
+    HTMLElement.prototype.resetElementsStyles({ element: imgElement, style: ICON_STATIC_STYLES });
     iconContainerElement.appendChild(imgElement);
   } else {
     const iconElement: HTMLElement = globalThis.document.createElement('i');
     iconElement.className = `${iconClassName[0]}`;
-    HTMLElement.prototype.setElementsStyles({ element: iconElement, style: ICON_STATIC_STYLES });
+    HTMLElement.prototype.resetElementsStyles({ element: iconElement, style: ICON_STATIC_STYLES });
     iconContainerElement.appendChild(iconElement);
   }
 
   styleFunction = (STYLES: ListItemStyles) => {
-    HTMLElement.prototype.setElementsStyles(
+    HTMLElement.prototype.resetElementsStyles(
       { element: iconContainerElement, style: STYLES.ICON },
       { element: liElement, style: STYLES.LIST_ITEM },
       { element: anchorElement, style: STYLES.ANCHOR }

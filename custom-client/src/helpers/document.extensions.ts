@@ -36,8 +36,17 @@ type HackerrankType = {
 
 // SKILLS SKELETON TYPES:
 
+type TechSkillSet =
+  | 'Programming Language'
+  | 'Framework - Library'
+  | 'Runtime Environment'
+  | 'Web Technology'
+  | 'Database'
+  | 'Version Control';
+
 type SkillType = {
   skillTitle: string;
+  skillType: TechSkillSet;
   skillImage: string;
 };
 
@@ -76,6 +85,78 @@ interface ElementStyles extends Object {
   // HTML, BODY:
   html?: string;
   body?: string;
+
+  HTML?: string;
+  BODY?: string;
+
+  NAV?: string;
+  NAV_UL?: string;
+  NAV_LI?: string;
+  NAV_ANCHOR?: string;
+  NAV_ICON?: string;
+  NAV_ICON_CONTAINER?: string;
+
+  HEADER_CONTAINER?: string;
+  HEADER_BUTTON?: string;
+  HEADER_BUTTON_ICON_CONTAINER?: string;
+  HEADER_BUTTON_ICON?: string;
+  HEADER_BRAND?: string;
+
+  INFO_CONTAINER?: string;
+  INFO_NAME?: string;
+  INFO_DESCRIPTION?: string;
+
+  SOCIAL_CONTAINER?: string;
+  SOCIAL_GITHUB_ICON_CONTAINER?: string;
+  SOCIAL_ICON?: string;
+  SOCIAL_LINKEDIN_ICON_CONTAINER?: string;
+
+  FRAMES_CONTAINER?: string;
+  FRAME_SINGLE_CONTAINER?: string;
+  FRAME_HEADER_CONTAINER?: string;
+  FRAME_HEADER_TEXT?: string;
+  FRAME_HEADER_ICON?: string;
+  FRAME_HEADER_ICON_CONTAINER?: string;
+  FRAME_BODY?: string;
+
+  PROJECTS_UL?: string;
+  PROJECT_CARD_CONTAINER?: string;
+  PROJECT_CARD_FILTER?: string;
+  PROJECT_CARD_TITLE?: string;
+  PROJECT_ELEMENTS_CONTAINER?: string;
+  PROJECT_CARD_GITHUB_ANCHOR?: string;
+  PROJECT_CARD_APP_ANCHOR?: string;
+  PROJECT_CARD_ICON_CONTAINER?: string;
+  PROJECT_CARD_ICON?: string;
+  PROJECT_CARD_DATE?: string;
+  PROJECT_CARD_DESCRIPTION_CONTAINER?: string;
+  PROJECT_CARD_DESCRIPTION_TEXT?: string;
+
+  HACKERRANK_CONTAINER?: string;
+  HACKERRANK_SECTION_CONTAINER?: string;
+  HACKERRANK_SECTION_TITLE?: string;
+  HACKERRANK_SECTION_UL?: string;
+  HACKERRANK_PROFILE_LINK_CONTAINER?: string;
+
+  HACKERRANK_CARD_CONTAINER?: string;
+  HACKERRANK_CARD_IMAGE?: string;
+  HACKERRANK_CARD_TITLE?: string;
+
+  SKILLS_CONTAINER?: string;
+  SKILLS_SECTION_CONTAINER?: string;
+  SKILLS_SECTION_TITLE?: string;
+  SKILLS_SECTION_UL?: string;
+  SKILLS_CARD_CONTAINER?: string;
+  SKILLS_CARD_IMAGE?: string;
+  SKILLS_CARD_TITLE?: string;
+
+  CONTACT_CONTAINER?: string;
+  CONTACT_FORM?: string;
+  CONTACT_INPUT_CONTAINER?: string;
+  CONTACT_INPUT_LABEL?: string;
+  CONTACT_INPUT_TEXT?: string;
+  CONTACT_TEXTAREA?: string;
+  CONTACT_BUTTON?: string;
 
   // MAIN-HEADER:
   'main-header'?: string;

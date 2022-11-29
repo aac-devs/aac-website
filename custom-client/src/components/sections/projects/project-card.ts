@@ -8,6 +8,7 @@ export default function projectCard(item: ProjectType): HTMLElement {
 
   titleElement.textContent = item.projectTitle;
 
+  /*
   titleElement.setAllStyles(
     ''
       //
@@ -85,7 +86,7 @@ export default function projectCard(item: ProjectType): HTMLElement {
     // .css('max-width', '500px')
     // .css('align-self', 'end')
   );
-
+*/
   // console.log(item);
 
   return cardElement;

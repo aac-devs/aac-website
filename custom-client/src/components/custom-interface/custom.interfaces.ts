@@ -1,5 +1,6 @@
-type Tag = 'div' | 'header' | 'a' | 'ul' | 'li' | 'h1' | 'button' | 'i' | 'img' | 'span' | 'section';
-type EventType = 'click' | 'resize';
+type Tag = 'div' | 'header' | 'a' | 'ul' | 'li' | 'h1' | 'button' | 'i' | 'img' | 'span' | 'section' | 'nav';
+// type EventType = 'click' | 'resize';
+type CustomEventDetail = 'open-close-nav' | 'text-visible-hidden' | 'icon-github' | 'anchor-event';
 
 type HTMLElType = HTMLElement & HTMLAnchorElement & HTMLImageElement & HTMLLIElement;
 

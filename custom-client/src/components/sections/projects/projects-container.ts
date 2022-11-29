@@ -12,7 +12,7 @@ export default function projectContainer(): HTMLElement {
 
   function setElementsStyles() {
     const STYLES: ElementStyles = Document.prototype.getStyles();
-    HTMLElement.prototype.setElementsStyles(
+    HTMLElement.prototype.resetElementsStyles(
       { element: containerElement, style: STYLES['project-section-container']! },
       { element: ulElement, style: STYLES['project-section-ul']! },
       { element: footerElement, style: STYLES['project-section-footer']! }

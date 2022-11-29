@@ -27,8 +27,8 @@ export function createInfoSection(fn: (ev?: Event) => void): InfoReturn {
   githubAnchorElement.appendChild(githubIconElement);
 
   const ICON_STYLES = ''.cssProperties(['height', '100%'], ['width', '100%']);
-  githubIconElement.setAllStyles(ICON_STYLES);
-  linkedInIconElement.setAllStyles(ICON_STYLES);
+  // githubIconElement.setAllStyles(ICON_STYLES);
+  // linkedInIconElement.setAllStyles(ICON_STYLES);
 
   linkedInAnchorElement.addEventListener('click', fn);
   githubAnchorElement.addEventListener('click', fn);
@@ -43,7 +43,7 @@ export function createInfoSection(fn: (ev?: Event) => void): InfoReturn {
   );
 
   function stylesFunction(STYLES: InfoStyles) {
-    HTMLElement.prototype.setElementsStyles(
+    HTMLElement.prototype.resetElementsStyles(
       { element: filterElement, style: STYLES.FILTER },
       { element: nameElement, style: STYLES.NAME },
       { element: descriptionElement, style: STYLES.DESCRIPTION },

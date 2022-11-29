@@ -26,7 +26,7 @@ type Display =
   | 'revert-layer'
   | 'unset';
 
-type AlignItems = 'stretch' | 'center' | 'flex-start' | 'flex-end	' | 'baseline' | 'initial' | 'inherit';
+type AlignItems = 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'initial' | 'inherit';
 type AlignSelf = 'auto' | 'stretch' | 'center' | 'flex-start' | 'flex-end	' | 'baseline' | 'initial' | 'inherit';
 type FlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse' | 'initial' | 'inherit';
 type JustifyContent =
@@ -42,14 +42,15 @@ type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse' | 'initial' | 'inherit';
 type FlexGrow = number | GlobalType;
 
 type BoxSizing = 'border-box' | 'content-box';
-type BoxShadow =
-  | 'none'
-  | {
-      'h-offset': string;
-      'v-offset': string;
-      blur: string;
-      color: string;
-    };
+type ShadowLength = Px | Em | Rem;
+
+type BoxShadow = 'none' | `${ShadowLength} ${ShadowLength} ${ShadowLength} ${Color}`;
+// {
+//     'h-offset': string;
+//     'v-offset': string;
+//     blur: string;
+//     color: Color;
+//   };
 
 type FontWeight =
   | 'normal'
@@ -142,7 +143,7 @@ type GenericFamily =
 
 type NamedFamily = `"${string}"`;
 
-type FontFamily = NamedFamily | GenericFamily | GlobalType;
+type FontFamily = NamedFamily | GenericFamily | GlobalType | `${NamedFamily}, ${GenericFamily}`;
 
 type Opacity = number | Percentage | GlobalType;
 
@@ -156,3 +157,5 @@ type NamedColor = CSSLev1 | CSSLev2 | CSSLev3 | CSSLev4;
 type RGB = `rgb(${number}, ${number}, ${number})`;
 type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
 type HEX = `#${string}`;
+
+type ScrollBehaviorType = GlobalType | 'auto' | 'smooth';
