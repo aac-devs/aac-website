@@ -11,6 +11,7 @@ export function hackerrankOrganims(params: HackerrankType) {
     styleName: 'HACKERRANK_PROFILE_LINK_CONTAINER',
     href: '#',
     textContent: 'Go to HackerRank profile..',
+    target: '_blank',
   });
 
   hackerrankContainer.append(hrBadges, hrVerifiedSkills, hrProfileLink);

@@ -13,15 +13,15 @@ export type SectionFrameParams = {
 };
 
 export const SECTION_FRAME_PARAMS: SectionFrameParams[] = [
-  // { headerTitle: 'Projects', headerPicture: { iconClassname: 'fa-solid fa-gears' } },
-  // {
-  //   headerTitle: 'HackerRank',
-  //   headerPicture: {
-  //     imageSrc:
-  //       'https://res.cloudinary.com/aac-devs-data/image/upload/v1667017201/aac-website/info/HackerRank_Icon-1000px_qrcxjg.png',
-  //   },
-  // },
-  // { headerTitle: 'Skills', headerPicture: { iconClassname: 'fa-solid fa-screwdriver-wrench' } },
+  { headerTitle: 'Projects', headerPicture: { iconClassname: 'fa-solid fa-gears' } },
+  {
+    headerTitle: 'HackerRank',
+    headerPicture: {
+      imageSrc:
+        'https://res.cloudinary.com/aac-devs-data/image/upload/v1667017201/aac-website/info/HackerRank_Icon-1000px_qrcxjg.png',
+    },
+  },
+  { headerTitle: 'Skills', headerPicture: { iconClassname: 'fa-solid fa-screwdriver-wrench' } },
   { headerTitle: 'Contact', headerPicture: { iconClassname: 'fa-regular fa-message' } },
 ];
 

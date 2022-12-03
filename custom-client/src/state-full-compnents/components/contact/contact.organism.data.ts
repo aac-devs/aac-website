@@ -1,6 +1,3 @@
-import { ButtonControlParams } from '../../atoms/html-atom.js';
-import { InputTextParams, TextareaParams } from './input-textarea.molecule.js';
-
 export const INITIAL_VALUES_STATE: { [key: string]: string } = {
   username: '',
   useremail: '',
@@ -22,10 +19,9 @@ export const BUTTON_DISABLED_STYLES: string =
 export const OUTLINE_SUCCESS_STYLES: string = 'outline:3px solid mediumblue;background-color:lavender';
 export const OUTLINE_WRONG_STYLES: string = 'outline:3px solid red;background-color:palegoldenrod';
 
-export const INPUT_NAME_PARAMS: InputTextParams = {
+export const INPUT_NAME_PARAMS: InputControlParams = {
   styleName: 'CONTACT_INPUT_TEXT',
   type: 'text',
-  eventDetail: 'TEXT-CHANGE',
   id: 'username',
   inputmode: 'latin',
   name: 'username',
@@ -36,7 +32,7 @@ export const INPUT_NAME_PARAMS: InputTextParams = {
   maxlength: 20,
   title: 'Error',
   tabindex: 1,
-  fn: () => '',
+  autocomplete: 'off',
 };
 
 export const INPUT_BUTTON_PARAMS: ButtonControlParams = {
@@ -49,16 +45,11 @@ export const INPUT_BUTTON_PARAMS: ButtonControlParams = {
   tabindex: 5,
   title: 'Error button',
   textContent: 'Send',
-  eventEmmiter: {
-    eventDetail: 'CONTACT-BUTTON',
-    eventType: 'click',
-  },
 };
 
-export const INPUT_EMAIL_PARAMS: InputTextParams = {
+export const INPUT_EMAIL_PARAMS: InputControlParams = {
   styleName: 'CONTACT_INPUT_TEXT',
   type: 'email',
-  eventDetail: 'EMAIL-CHANGE',
   id: 'useremail',
   inputmode: 'latin',
   name: 'useremail',
@@ -67,15 +58,13 @@ export const INPUT_EMAIL_PARAMS: InputTextParams = {
   textContent: 'Email:',
   title: 'Error email',
   tabindex: 2,
-  fn: () => '',
+  autocomplete: 'off',
 };
 
-export const TEXTAREA_PARAMS: TextareaParams = {
+export const TEXTAREA_PARAMS: TextareaControlParams = {
   styleName: 'CONTACT_TEXTAREA',
   className: 'textarea',
   cols: 20,
-  eventDetail: 'TEXTAREA-CHANGE',
-  fn: () => '',
   id: 'usermessage',
   rows: 5,
   tabindex: 3,
@@ -84,11 +73,9 @@ export const TEXTAREA_PARAMS: TextareaParams = {
   maxlength: 120,
 };
 
-export const INPUT_OPERATION_PARAMS: InputTextParams = {
+export const INPUT_OPERATION_PARAMS: InputControlParams = {
   styleName: 'CONTACT_INPUT_TEXT',
   className: 'input-number',
-  eventDetail: 'NUMBER-CHANGE',
-  fn: () => '',
   id: 'useroperation',
   inputmode: 'numeric',
   name: 'useroperation',

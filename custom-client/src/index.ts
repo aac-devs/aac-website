@@ -35,6 +35,13 @@ setTimeout(() => {
   }
 }, 200);
 
+const customEvent = new CustomEvent('nav-close');
+
+body.addEventListener('click', () => {
+  console.log('body click');
+  globalThis.document.dispatchEvent(customEvent);
+});
+
 // body.appendChild(createSocialOrganims());
 // body.appendChild(createNavOrganism(liItemsData));
 // body.append(image, anchor, text, relleno);

@@ -1,3 +1,4 @@
+import getScreenSize from '../../../../helpers/sizes.js';
 import * as atom from '../../../atoms/html-atom.js';
 import { createIconMolecule, IconMoleculeParams } from './icon.molecule.js';
 import { createImageMolecule, ImageMoleculeParams } from './image.molecule.js';
@@ -7,6 +8,7 @@ export type LiMoleculeParams = {
     textContent: string;
     href: string;
     styleName: string;
+    target: TargetType;
   };
   icon?: IconMoleculeParams;
   image?: ImageMoleculeParams;
@@ -17,19 +19,27 @@ export type LiMoleculeParams = {
   hasText: boolean;
 };
 
-export function createLiMolecule(params: LiMoleculeParams): HTMLLIElement {
-  const { textContent, ...rest } = params.anchor;
-  const a = atom.createAnchorElement({ ...rest, eventEmmiter: { eventDetail: 'MENU-BUTTON', eventType: 'click' } });
-  const li = atom.createLiElement(params.li);
+const customEvent = new CustomEvent('nav-close');
 
-  if (params.hasIconImage) {
+export function createLiMolecule(params: LiMoleculeParams): HTMLLIElement {
+  const { anchor, hasIconImage, hasText, li: liParam, icon, image } = params;
+  const { textContent, ...rest } = anchor;
+  const a = atom.createAnchorElement({
+    ...rest,
+    textContent: getScreenSize().device === 'desktop' ? anchor.textContent : '',
+  });
+  const li = atom.createLiElement(liParam);
+
+  if (hasIconImage) {
     let iconImage: HTMLElement;
-    if (params.icon) iconImage = createIconMolecule(params.icon!);
-    else iconImage = createImageMolecule(params.image!);
+    if (icon) iconImage = createIconMolecule(icon!);
+    else iconImage = createImageMolecule(image!);
     a.appendChild(iconImage);
   }
 
-  if (params.hasText) a.append(textContent);
+  a.addEventListener('click', () => globalThis.document.dispatchEvent(customEvent));
+
+  if (hasText) a.append(textContent);
   li.appendChild(a);
   return li;
 }

@@ -157,6 +157,10 @@ interface ElementStyles extends Object {
   CONTACT_INPUT_TEXT?: string;
   CONTACT_TEXTAREA?: string;
   CONTACT_BUTTON?: string;
+  CONTACT_FOOTER_CONTAINER?: string;
+  CONTACT_FOOTER_APP_DESCRIPTION?: string;
+  CONTACT_FOOTER_APP_RESERVED_RIGHTS?: string;
+  CONTACT_CODE_ANCHOR?: string;
 
   // MAIN-HEADER:
   'main-header'?: string;

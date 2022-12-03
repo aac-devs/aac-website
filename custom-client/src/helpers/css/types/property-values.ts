@@ -27,7 +27,7 @@ type Display =
   | 'unset';
 
 type AlignItems = 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'initial' | 'inherit';
-type AlignSelf = 'auto' | 'stretch' | 'center' | 'flex-start' | 'flex-end	' | 'baseline' | 'initial' | 'inherit';
+type AlignSelf = 'auto' | 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'initial' | 'inherit';
 type FlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse' | 'initial' | 'inherit';
 type JustifyContent =
   | 'flex-start'

@@ -2,6 +2,7 @@ import ThemeColor from '../../helpers/colors.js';
 
 export function mobilePortraitStyles(): ElementStyles {
   let e: ElementStyles = {};
+  const CONTAINER_TRANSITION = 'all 0.3s ease-in-out';
 
   // HTML, BODY:
 
@@ -419,8 +420,10 @@ export function mobilePortraitStyles(): ElementStyles {
 
   // /header/header.organism.ts
   e.HEADER_BUTTON_ICON = ''.cssProps({
+    boxSizing: 'border-box',
     height: '100%',
     width: '100%',
+    borderRadius: '1vw',
   });
 
   // /header/header.organism.ts
@@ -476,11 +479,12 @@ export function mobilePortraitStyles(): ElementStyles {
 
     backgroundColor: 'transparent',
     // boxShadow: '0px 2.4rem 4.8rem rgba(0, 0, 0, 0.3)',
+    backdropFilter: 'blur(10px)',
 
-    transition: 'all 0.2s ease-in-out',
+    transition: CONTAINER_TRANSITION,
     borderBottomRightRadius: '3vw',
     borderTopRightRadius: '3vw',
-    transform: 'translateX(-140%)',
+    transform: 'translateX(-1400%)',
   });
 
   // /nav/molecules/ul.molecule.ts
@@ -533,6 +537,7 @@ export function mobilePortraitStyles(): ElementStyles {
 
   // /nav/nav.organism.data.ts
   e.NAV_ICON_CONTAINER = ''.cssProps({
+    boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -544,6 +549,7 @@ export function mobilePortraitStyles(): ElementStyles {
 
   // /nav/nav.organism.data.ts
   e.NAV_ICON = ''.cssProps({
+    boxSizing: 'border-box',
     height: '100%',
     width: '100%',
     borderRadius: '1vw',
@@ -576,10 +582,10 @@ export function mobilePortraitStyles(): ElementStyles {
   e.INFO_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     position: 'fixed',
-    transition: 'all 0.2s ease-in-out',
+    transition: CONTAINER_TRANSITION,
     bottom: '0px',
     right: '0px',
-    transform: 'translateY(100%)',
+    transform: 'translateY(1000%)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
@@ -657,10 +663,10 @@ export function mobilePortraitStyles(): ElementStyles {
     // padding
     padding: '3vw 3.5vw 3vw 3vw',
 
-    transition: 'all 0.2s ease-in-out',
+    transition: CONTAINER_TRANSITION,
     borderBottomRightRadius: '3vw',
     borderTopRightRadius: '3vw',
-    transform: 'translateX(-140%)',
+    transform: 'translateX(-1400%)',
     backdropFilter: 'blur(10px)',
   });
 
@@ -740,7 +746,7 @@ export function mobilePortraitStyles(): ElementStyles {
     columnGap: '5vw',
     scrollBehavior: 'smooth',
     overflowX: 'scroll',
-    transition: 'all 0.3s ease-in',
+    transition: CONTAINER_TRANSITION,
   });
 
   // /sections/section-frame.ts
@@ -1115,6 +1121,7 @@ export function mobilePortraitStyles(): ElementStyles {
     alignItems: 'center',
     rowGap: '1vw',
     padding: '1vw',
+    backgroundColor: '#fff',
   });
 
   //  /REUSABLE/card.molecule.ts
@@ -1217,6 +1224,7 @@ export function mobilePortraitStyles(): ElementStyles {
     rowGap: '1vw',
     padding: '1vw',
     position: 'relative',
+    backgroundColor: '#fff',
   });
 
   //  /REUSABLE/card.molecule.ts
@@ -1269,10 +1277,10 @@ export function mobilePortraitStyles(): ElementStyles {
   e.CONTACT_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     listStyle: 'none',
-    padding: '5vw 0px',
+    paddingTop: '5vw',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     rowGap: '5vw',
     backgroundColor: 'honeydew',
@@ -1381,6 +1389,44 @@ export function mobilePortraitStyles(): ElementStyles {
     fontWeight: '600',
     color: 'rgba(240, 246, 252, 0.5)',
     backgroundColor: 'rgba(35, 134, 54, 0.6)',
+  });
+
+  e.CONTACT_FOOTER_CONTAINER = ''.cssProps({
+    boxSizing: 'border-box',
+    backgroundColor: '#000',
+    alignSelf: 'stretch',
+    padding: '3vw 2vw',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+    rowGap: '3vw',
+  });
+
+  e.CONTACT_FOOTER_APP_RESERVED_RIGHTS = ''.cssProps({
+    boxSizing: 'border-box',
+    color: '#fff',
+    fontSize: '3vw',
+    fontWeight: '400',
+    textAlign: 'center',
+    marginBlock: '0px',
+    marginInline: '0px',
+  });
+
+  e.CONTACT_FOOTER_APP_DESCRIPTION = ''.cssProps({
+    boxSizing: 'border-box',
+    color: '#fff',
+    fontSize: '2vw',
+    fontWeight: '300',
+    marginBlock: '0px',
+    marginInline: '0px',
+    lineHeight: '1.2',
+    textAlign: 'justify',
+  });
+
+  e.CONTACT_CODE_ANCHOR = ''.cssProps({
+    boxSizing: 'border-box',
+    color: 'deepskyblue',
   });
 
   //MP    END CONTACT

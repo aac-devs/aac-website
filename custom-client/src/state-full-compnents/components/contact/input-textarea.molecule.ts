@@ -1,56 +1,22 @@
-import {
-  createDivElement,
-  createInputElement,
-  createLabelElement,
-  createTextareaElement,
-  InputmodeType,
-  InputType,
-} from '../../atoms/html-atom.js';
+import * as atom from '../../atoms/html-atom.js';
 
-export interface InputTextParams {
-  styleName: string;
-  textContent?: string;
-  className?: string;
-  id?: string;
-  inputmode?: InputmodeType;
-  pattern?: string;
-  type?: InputType;
-  name?: string;
-  title?: string;
-  eventDetail?: string;
-  minlength?: number;
-  maxlength?: number;
-  tabindex: number;
-  fn?: (c: string, ev?: Event, className?: string) => string;
-}
+export type TextareaFnType = typeof atom.createTextareaElement;
+export type InputFnType = typeof atom.createInputElement;
 
-export interface TextareaParams {
-  styleName: string;
-  textContent?: string;
-  className?: string;
-  id?: string;
-  eventDetail?: string;
-  minlength?: number;
-  maxlength?: number;
-  tabindex?: number;
-  cols?: number;
-  rows?: number;
-  fn?: (c: string, ev?: Event, className?: string) => string;
-}
+export type BothFn = TextareaFnType | InputFnType;
+export type BothParams = InputControlParams & TextareaControlParams;
+export type BothReq = [BothFn, BothParams];
 
-type FnType = typeof createTextareaElement | typeof createInputElement;
-type FnParams = Partial<InputTextParams> & Partial<TextareaParams>;
-export function createInputTextareaMolecule<F extends FnType, P extends FnParams>(func: F, p: P) {
-  const { eventDetail: ed, fn, textContent, styleName, ...rest } = p;
-  const container = createDivElement({ styleName: 'CONTACT_INPUT_CONTAINER' });
-  const label = createLabelElement({ styleName: 'CONTACT_INPUT_LABEL', htmlFor: p.id!, textContent });
-  const element = func({
-    ...rest,
-    styleName: styleName!,
-    autocomplete: 'off',
-    eventEmmiter: { eventDetail: ed!, eventType: 'input' },
-    eventReceiver: { eventDetail: ed!, receiverFn: fn! },
+export function createInputTextareaMolecule<F extends BothFn, P extends BothParams>(func: F, p: P) {
+  const { textContent, ...rest } = p;
+  const container = atom.createDivElement({ styleName: 'CONTACT_INPUT_CONTAINER' });
+  const label = atom.createLabelElement({
+    styleName: 'CONTACT_INPUT_LABEL',
+    htmlFor: p.id!,
+    id: p.id!,
+    textContent,
   });
+  const element = func({ ...rest });
   container.append(label, element);
   return container;
 }

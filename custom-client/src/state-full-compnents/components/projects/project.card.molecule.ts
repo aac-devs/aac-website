@@ -10,15 +10,18 @@ export function projectCardMolecule(params: ProjectType): HTMLElement {
     textTag: 'h1',
     textContent: params.projectTitle,
   });
+
   card.style.setProperty('background-image', `url(${params.projectImage})`);
 
   const aGithub = createAnchorElement({
     href: params.projectSocialMediaLinks.github,
     styleName: 'PROJECT_CARD_GITHUB_ANCHOR',
+    target: '_blank',
   });
   const aLink = createAnchorElement({
     href: params.projectSocialMediaLinks.app,
     styleName: 'PROJECT_CARD_APP_ANCHOR',
+    target: '_blank',
   });
   const iconGithub = createIconMolecule({
     className: 'fa-solid fa-code-compare',
@@ -61,6 +64,11 @@ export function projectCardMolecule(params: ProjectType): HTMLElement {
     });
     descContainer.appendChild(descOther);
   }
+
+  // TODO: Agregar un listener para cuando se cambie la orientación o el tamaño de la pantalla
+  globalThis.document.addEventListener('styles', () => {
+    card.style.setProperty('background-image', `url(${params.projectImage})`);
+  });
 
   title.appendChild(dateText);
   elemContainer.append(title, descContainer, aGithub, aLink);

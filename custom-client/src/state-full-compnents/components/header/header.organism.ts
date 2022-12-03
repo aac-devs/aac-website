@@ -1,69 +1,57 @@
-import {
-  createButtonElement,
-  createHeaderElement,
-  createHeadingElement,
-  GlobalParams,
-  HeadingParams,
-} from '../../atoms/html-atom.js';
+import getScreenSize from '../../../helpers/sizes.js';
+import { createButtonElement, createHeaderElement, createHeadingElement } from '../../atoms/html-atom.js';
 import { createInfoOrganism } from '../info/info.organism.js';
 import { createSocialOrganims } from '../info/social.organism.js';
 import { createIconMolecule } from '../nav/molecules/icon.molecule.js';
 import { liItemsData } from '../nav/nav.organism.data.js';
 import { createNavOrganism } from '../nav/nav.organism.js';
-
-const BARS_ICON = {
-  className: 'fa-solid fa-bars',
-  styleName: {
-    container: 'HEADER_BUTTON_ICON_CONTAINER',
-    icon: 'HEADER_BUTTON_ICON',
-  },
-};
-
-const XMARK_ICON = {
-  className: 'fa-solid fa-xmark',
-  styleName: {
-    container: 'HEADER_BUTTON_ICON_CONTAINER',
-    icon: 'HEADER_BUTTON_ICON',
-  },
-};
-
-const HEADER_PARAMS: GlobalParams = { styleName: 'HEADER_CONTAINER' };
-const BRAND_PARAMS: HeadingParams = { styleName: 'HEADER_BRAND', textTag: 'h1', textContent: 'aac-devs' };
-const BUTTON_PARAMS: GlobalParams = {
-  styleName: 'HEADER_BUTTON',
-  eventEmmiter: { eventDetail: 'MENU-BUTTON', eventType: 'click' },
-};
+import * as pos from './header.containers.js';
 
 export function createMainHeaderOrganism(): HTMLElement {
-  const header = createHeaderElement(HEADER_PARAMS);
-  const brand = createHeadingElement(BRAND_PARAMS);
-  const barsIcon = createIconMolecule(BARS_ICON);
-  const xmarkIcon = createIconMolecule(XMARK_ICON);
-  const button = createButtonElement({
-    ...BUTTON_PARAMS,
-    buttonType: 'button',
-    eventReceiver: {
-      eventDetail: 'MENU-BUTTON',
-      currentState: 'bars',
+  let buttonState: pos.TypeButtonIcon = 'xmark';
 
-      // possibleStates: ['bars', 'xmarK'],
-      receiverFn: (c: string): string => {
-        if (c === 'bars') {
-          button.removeChild(barsIcon);
-          button.appendChild(xmarkIcon);
-          return 'xmarK';
-        }
-        button.removeChild(xmarkIcon);
-        button.appendChild(barsIcon);
-        return 'bars';
-      },
-    },
-  });
-  button.appendChild(barsIcon);
+  const header = createHeaderElement(pos.HEADER_PARAMS);
+  const brand = createHeadingElement(pos.BRAND_PARAMS);
+  const barsIcon = createIconMolecule(pos.BARS_ICON);
+  const xmarkIcon = createIconMolecule(pos.XMARK_ICON);
+  const button = createButtonElement({ ...pos.BUTTON_PARAMS, buttonType: 'button', tabindex: 1 });
   const nav = createNavOrganism(liItemsData);
   const info = createInfoOrganism();
   const social = createSocialOrganims();
 
+  function updateHeaderState(ev?: Event) {
+    if (ev) ev.stopPropagation();
+    if (getScreenSize().device === 'mobile') {
+      const { navStyle, socialStyle, infoStyle, barsBtnStyle, xmarkBtnStyle, newState } =
+        pos.positioningContainers(buttonState);
+
+      buttonState = newState;
+      HTMLElement.prototype.setElementsStyles(
+        { element: nav, style: navStyle },
+        { element: social, style: socialStyle },
+        { element: info, style: infoStyle },
+        { element: barsIcon, style: barsBtnStyle },
+        { element: xmarkIcon, style: xmarkBtnStyle }
+      );
+    }
+  }
+
+  button.addEventListener('click', (ev: Event) => updateHeaderState(ev));
+
+  globalThis.document.addEventListener('nav-close', (ev: Event) => {
+    buttonState = 'xmark';
+    updateHeaderState(ev);
+  });
+
+  nav.addEventListener('click', (ev: Event) => ev.stopPropagation());
+
+  updateHeaderState();
+  globalThis.document.addEventListener('styles', () => {
+    buttonState = 'xmark';
+    updateHeaderState();
+  });
+
+  button.append(xmarkIcon, barsIcon);
   header.append(button, brand, nav, social, info);
   return header;
 }

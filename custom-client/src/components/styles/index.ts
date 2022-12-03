@@ -1,4 +1,5 @@
 import getScreenSize from '../../helpers/sizes.js';
+import { desktopStyles } from './desktop.js';
 import { mobileLandscapeStyles } from './mobile-landscape.js';
 import { mobilePortraitStyles } from './mobile-portrait.js';
 
@@ -14,6 +15,8 @@ function updateStyles() {
   let stylesToUpdate: ElementStyles = {};
   if (device === 'mobile') {
     stylesToUpdate = orientation === 'portrait-primary' ? mobilePortraitStyles() : mobileLandscapeStyles();
+  } else if ('desktop') {
+    stylesToUpdate = desktopStyles();
   }
 
   Document.prototype.setStyles(stylesToUpdate);

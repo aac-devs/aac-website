@@ -12,10 +12,11 @@ XXLARGE: 1344px < x
 SMALL SIZES <= 944px
 BIG SIZES > 944px
 */
+type TypeOrientation = 'portrait-primary' | 'landscape-primary';
 
 export default function getScreenSize(): { height: number; width: number; orientation: string; device: string } {
   const { clientWidth: width, clientHeight: height } = window.document.documentElement;
-  const orientation = window.screen.orientation.type;
+  const orientation = <TypeOrientation>window.screen.orientation.type;
   const userAgent = navigator.userAgent || navigator.vendor;
   // console.clear();
   // console.log(userAgent);
