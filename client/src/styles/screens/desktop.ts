@@ -29,26 +29,14 @@ export function desktopStyles(): ElementStyles {
     margin: '0px',
     padding: '0px',
     position: 'relative',
-    // scrollMargin: '12vw',
-
-    // scrollBehavior: 'smooth',
     scrollBehavior: 'smooth',
     scrollPaddingTop: '8vw',
     backgroundColor: '#ccc',
   });
 
-  // e.body = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['padding', '0'],
-  //   ['margin', '0'],
-  //   ['min-height', '100%'],
-  //   ['position', 'relative']
-  // );
-
   e.BODY = ''.cssProps({
     boxSizing: 'border-box',
     padding: '0px',
-    // scrollBehavior: 'smooth',
     margin: '0px',
     minHeight: '100%',
     position: 'relative',

@@ -4,309 +4,6 @@ export function mobilePortraitStyles(): ElementStyles {
   let e: ElementStyles = {};
   const CONTAINER_TRANSITION = 'all 0.3s ease-in-out';
 
-  // HTML, BODY:
-
-  // MAIN-HEADER:
-  // HEADER:
-  // e['main-header'] = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['display', 'flex'],
-  //   ['flex-direction', 'row'],
-  //   ['justify-content', 'space-between'],
-  //   ['align-items', 'center'],
-  //   // ['backdrop-filter', 'blur(10px],'],
-  //   ['background-color', `${ThemeColor.colorMainDarker}`],
-  //   ['background-color', 'transparent'],
-  //   // ['box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5],'],
-  //   ['min-height', '15vw'],
-  //   ['width', '100vw'],
-  //   ['position', 'fixed'],
-  //   ['top', '0'],
-  //   ['padding', '0 3vw'],
-  //   ['z-index', '10']
-  // );
-
-  // // BUTTON HEADER:
-  // e['main-header-button'] = ''.cssProperties(
-  //   ['aspect-ratio', '1'],
-  //   ['color', '#ccc'],
-  //   ['display', 'flex'],
-  //   ['box-shadow', '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2)'],
-  //   ['justify-content', 'flex-start'],
-  //   ['align-items', 'center'],
-  //   ['position', 'relative'],
-  //   ['border', '2px solid #888'],
-  //   ['background-color', `${ThemeColor.colorMainDark}`],
-  //   ['background-color', 'transparent'],
-  //   ['border-radius', '1rem'],
-  //   ['height', `10vw`]
-  // );
-
-  // // e.MAIN_HEADER_BUTTON_XMARK_ICON_CONTAINER = ''.cssProps({
-  // //   boxSizing: 'border-box',
-  // //   aspectRatio: '1',
-  // //   height: '8vw',
-  // // });
-
-  // // e.MAIN_HEADER_BUTTON_XMARK_ICON = ''.cssProps({
-  // //   height: '100%',
-  // //   width: '100%',
-  // // });
-
-  // // BARS - BUTTON HEADER:
-  // e['main-header-button-bars'] = 'visible';
-
-  // // BRAND HEADER:
-  // e['main-header-brand'] = ''.cssProperties(
-  //   // ['margin-block-start', '0'],
-  //   // ['margin-block-end', '0'],
-  //   ['font-weight', '500'],
-  //   ['display', 'inline'],
-  //   ['text-shadow', '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5)'],
-  //   ['color', `#ccc`],
-  //   ['z-index', '10'],
-  //   // ['visibility', 'hidden'],
-  //   ['font-size', `6vw`]
-  // );
-
-  // // MENU-NAV
-  // e['main-header-nav'] = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   // ['box-shadow', '0 2.4rem 4.8rem rgba(255, 255, 255, 1],'],
-  //   ['display', 'flex'],
-  //   ['position', 'absolute'],
-  //   ['left', '0'], // change to hidden,
-  //   ['background-color', ThemeColor.colorMainDark],
-  //   ['transition', 'all 0.3s ease-in-out'],
-  //   ['flex-direction', 'column'],
-  //   ['justify-content', 'flex-start'],
-  //   ['align-items', 'center'],
-  //   ['row-gap', `5vh`],
-  //   ['padding', '12vh 0 0 0'],
-  //   // ['border-bottom-right-radius', '3vw'],
-  //   // ['border-top-right-radius', '3vw'],
-  //   ['width', `100vw`],
-  //   ['height', '100vh'],
-  //   ['top', '0vh']
-  //   // ['transform', 'translateX(-140%)']  // TODO: estado inicial
-  // );
-
-  // // MENU INFO:
-  // e['main-header-nav-info'] = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['position', 'relative'],
-  //   [
-  //     'background-image',
-  //     'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1666998062/aac-website/info/cyber-3400789_1920_csolpx.jpg)',
-  //   ],
-
-  //   ['background-size', 'cover'],
-  //   ['background-repeat', 'no-repeat'],
-  //   ['background-position', 'center'],
-  //   ['display', 'flex'],
-  //   ['flex-direction', 'column'],
-  //   ['justify-content', 'flex-start'],
-  //   ['align-items', 'center'],
-  //   ['width', `80vw`],
-  //   ['aspect-ratio', '1.4'],
-  //   ['padding-top', '8vw'],
-  //   ['border-radius', '5vw']
-  // );
-
-  // e['main-header-nav-info-filter'] = ''.cssProperties(
-  //   ['position', 'absolute'],
-  //   ['bottom', '0'],
-  //   ['left', '0'],
-  //   ['height', '100%'],
-  //   ['width', '100%'],
-  //   ['opacity', '0.15'],
-  //   ['background-color', '#000'],
-  //   ['border-radius', '5vw']
-  // );
-
-  // e['main-header-nav-info-name'] = ''.cssProperties(
-  //   ['margin', '0'],
-  //   ['padding', '0'],
-  //   ['font-weight', '500'],
-  //   ['margin-block-start', '0px'],
-  //   ['margin-block-end', '0px'],
-  //   ['z-index', '10'],
-  //   ['color', '#eee'],
-  //   ['text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)'],
-  //   ['font-size', '8vw']
-  // );
-
-  // e['main-header-nav-info-description'] = ''.cssProperties(
-  //   ['margin', '0'],
-  //   ['padding', '0'],
-  //   ['z-index', '10'],
-  //   ['font-weight', '400'],
-  //   ['color', '#ee0'],
-  //   ['margin-block-start', '0px'],
-  //   ['margin-block-end', '0px'],
-  //   ['text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)'],
-  //   ['font-size', '5.5vw']
-  // );
-
-  // e['main-header-nav-info-jslogo'] = ''.cssProperties(
-  //   ['aspect-ratio', '1'],
-  //   [
-  //     'background-image',
-  //     'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1663975560/aac-website/info/js_cgxlpb.png)',
-  //   ],
-  //   ['background-size', 'contain'],
-  //   ['position', 'absolute'],
-  //   ['height', '13vw'],
-  //   ['border-radius', '1vw'],
-  //   ['bottom', '4vw'],
-  //   ['left', '4vw']
-  // );
-
-  // e['main-header-nav-info-linkedin'] = ''.cssProperties(
-  //   ['color', '#fff'],
-  //   ['position', 'absolute'],
-  //   ['aspect-ratio', '1'],
-  //   ['height', '10vw'],
-  //   ['bottom', '4vw'],
-  //   ['right', '4vw'],
-  //   ['padding', '0rem 0.2rem']
-  // );
-
-  // e['main-header-nav-info-github'] = ''.cssProperties(
-  //   ['color', '#fff'],
-  //   ['position', 'absolute'],
-  //   ['aspect-ratio', '1'],
-  //   ['height', '10vw'],
-  //   ['bottom', '4vw'],
-  //   ['right', '4vw'],
-  //   ['padding', '0rem 0.2rem'],
-  //   ['transform', 'translateY(-140%)']
-  // );
-
-  // // MENU UL:
-  // e['main-header-nav-ul'] = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['display', 'flex'],
-  //   ['flex-direction', 'column'],
-  //   ['width', `80vw`],
-  //   ['margin', '0'],
-  //   ['padding', '0'],
-  //   ['list-style', 'none'],
-  //   ['row-gap', '2.5vw'],
-  //   ['justify-content', 'flex-start']
-  // );
-  // // ['width', 'inherit'],
-
-  // e['main-header-nav-ul-li'] = ''.cssProperties(
-  //   ['background-color', `${ThemeColor.colorMainDarker}`],
-  //   ['border-radius', '5vw'],
-  //   ['list-style', 'none']
-  // );
-
-  // e['main-header-nav-ul-li-anchor'] = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['text-decoration', 'none'],
-  //   ['flex-grow', '1'],
-  //   ['display', 'flex'],
-  //   ['flex-direction', 'row'],
-  //   ['justify-content', 'flex-start'],
-  //   ['align-items', 'center'],
-  //   ['color', '#ccc'],
-  //   ['font-size', '5vw'],
-  //   ['margin', 'auto 0'],
-  //   ['min-height', '10vw'],
-  //   ['max-height', '10vw'],
-  //   ['border-radius', '5vw'],
-  //   ['padding', '1vw 2.5vw']
-  // );
-
-  // e['main-header-nav-ul-li-anchor-icon-container'] = ''.cssProperties(
-  //   ['display', 'flex'],
-  //   ['justify-content', 'center'],
-  //   ['align-items', 'center'],
-  //   ['font-size', '5vw'],
-  //   ['margin', '0 3vw 0 1vw'],
-  //   ['width', '7vw']
-  // );
-
-  // e['main-header-nav-ul-li-anchor-icon'] = ''.cssProperties(['height', '100%'], ['width', '100%']);
-
-  // // SECTIONS:
-  // e.sections = ''.cssProperties(
-  //   ['background-color', `#fff`],
-  //   ['margin-bottom', '10vh'],
-  //   ['box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)'],
-  //   ['background-position', 'center']
-  // );
-
-  // e['sections-header'] = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['height', '15vw'],
-  //   ['background-color', 'transparent'],
-  //   ['background-color', `${ThemeColor.colorMainDarker}`],
-  //   ['opacity', '0.9'],
-  //   ['box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)'],
-  //   ['display', 'flex'],
-  //   ['flex-direction', 'row'],
-  //   ['justify-content', 'flex-start'],
-  //   ['align-items', 'center'],
-  //   ['column-gap', '1vw'],
-  //   ['position', 'sticky'],
-  //   ['padding', '0 0 0 15vw'],
-  //   ['z-index', '1'],
-  //   ['top', '0vh']
-  // );
-
-  // e['sections-header-title'] = ''.cssProperties(['font-weight', '400'], ['color', `#fff`], ['font-size', '5vw']);
-
-  // e['sections-header-icon'] = ''.cssProperties(
-  //   ['display', 'flex'],
-  //   ['color', `#fff`],
-  //   ['justify-content', 'center'],
-  //   ['align-items', 'center'],
-  //   ['font-size', '5vw'],
-  //   ['margin', '0 3vw 0 1vw'],
-  //   ['width', '7vw']
-  // );
-
-  // e['project-section-container'] = ''.cssProps({
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   justifyContent: 'space-between',
-  //   height: 'inherit',
-  // });
-
-  // e['project-section-ul'] = ''.cssProps({
-  //   position: 'relative',
-  //   height: '100%',
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   justifyContent: 'flex-start',
-  //   alignItems: 'center',
-  //   rowGap: '5vw',
-  //   padding: '5vw 0',
-  //   marginBlockStart: '0',
-  //   marginBlockEnd: '0',
-  //   overflowX: 'scroll',
-  //   listStyle: 'none',
-  //   opacity: 1,
-  // });
-
-  // e['project-section-footer'] = ''.cssProperties(
-  //   ['font-size', '5vw'],
-  //   ['color', '#fff'],
-  //   ['height', '5vh'],
-  //   ['background-color', 'orange']
-  // );
-
-  // e['project-section-footer'] = ''.cssProps({
-  //   fontSize: '5vw',
-  //   color: '#fff',
-  //   height: '5vh',
-  //   margin: '5vw',
-  //   backgroundColor: 'orange',
-  // });
-
   //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
   //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
   //MP                                                                                                          MP MP
@@ -335,15 +32,6 @@ export function mobilePortraitStyles(): ElementStyles {
     scrollBehavior: 'smooth',
     backgroundColor: '#888',
   });
-
-  // e.body = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['padding', '0'],
-  //   ['margin', '0'],
-  //   // ['background-color', '#aa0'],
-  //   ['min-height', '100%'],
-  //   ['position', 'relative']
-  // );
 
   e.BODY = ''.cssProps({
     boxSizing: 'border-box',
@@ -395,7 +83,6 @@ export function mobilePortraitStyles(): ElementStyles {
   // /header/header.organism.ts
   e.HEADER_BUTTON = ''.cssProps({
     boxSizing: 'border-box',
-    // boxShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3)',
     boxShadow: '0.8rem 0.8rem 2rem rgba(0, 0, 0, 0.5)',
     aspectRatio: '1',
     color: '#ccc',
@@ -404,10 +91,8 @@ export function mobilePortraitStyles(): ElementStyles {
     alignItems: 'center',
     position: 'relative',
     border: '0px solid #888',
-    // backgroundColor: `${ThemeColor.colorMainDarker}`,
     backgroundColor: 'transparent',
     borderRadius: '1vw',
-    // height: '10vw',
     padding: '0.8vw',
   });
 
@@ -464,23 +149,11 @@ export function mobilePortraitStyles(): ElementStyles {
   // /nav/nav.organism.ts
   e.NAV = ''.cssProps({
     boxSizing: 'border-box',
-    // border: '1px solid #aaa',
-    // padding: '5vw',
-
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'flex-start',
-    // alignItems: 'center',
-    // rowGap: '5vh',
-
     position: 'absolute',
     left: '0px',
     top: '15vw',
-
     backgroundColor: 'transparent',
-    // boxShadow: '0px 2.4rem 4.8rem rgba(0, 0, 0, 0.3)',
     backdropFilter: 'blur(10px)',
-
     transition: CONTAINER_TRANSITION,
     borderBottomRightRadius: '3vw',
     borderTopRightRadius: '3vw',
