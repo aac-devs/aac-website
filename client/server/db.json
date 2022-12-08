@@ -1,0 +1,192 @@
+{
+  "defaults": {
+    "social": [
+      {
+        "name": "LinkedIn",
+        "href": "https://www.linkedin.com/in/andrés-arana-castillo-880757203/",
+        "iconClassname": "fa-brands fa-linkedin",
+        "color": "mediumblue"
+      },
+      {
+        "name": "Github",
+        "href": "https://github.com/aac-devs",
+        "iconClassname": "fa-brands fa-github",
+        "color": "#000"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "date": "SEP / 2021",
+      "title": "Wizetube App",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1663975746/aac-website/projects/youtubeclone_ypszxw.png",
+      "description": {
+        "front": "React, Context API, StyledComponents",
+        "back": "Youtube Data API v3, Firebase"
+      },
+      "links": {
+        "github": "https://github.com/aac-devs/youtube-client",
+        "app": "https://aac-tube.netlify.app"
+      }
+    },
+    {
+      "id": 2,
+      "date": "JUN / 2021",
+      "title": "Countries App",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1622618050/aac-website/projects/countries2_ibz6i6.png",
+      "description": {
+        "front": "React, Context API, Material UI"
+      },
+      "links": {
+        "github": "https://github.com/aac-devs/countries-app",
+        "app": "https://aac-devs.github.io/countries-app"
+      }
+    }
+  ],
+  "hackerrank": {
+    "badges": [
+      {
+        "id": 1,
+        "title": "Problem Solving",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1663976076/aac-website/hackerrank/badges/prob_xskaux.png"
+      },
+      {
+        "id": 2,
+        "title": "C++",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1663976163/aac-website/hackerrank/badges/cpp_udyfbk.png"
+      },
+      {
+        "id": 3,
+        "title": "Days of Code",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1670290138/aac-website/hackerrank/badges/two-days_s0ipcm.png"
+      },
+      {
+        "id": 4,
+        "title": "Days of JS",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1670290675/aac-website/hackerrank/badges/four-days_yg3oer.png"
+      },
+      {
+        "id": 5,
+        "title": "C Language",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1670290665/aac-website/hackerrank/badges/four-clan_b2ucew.png"
+      }
+    ],
+    "verifiedSkills": [
+      {
+        "id": 1,
+        "title": "JavaScript - Basic",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1670291591/aac-website/hackerrank/verified%20skills/javascript_qyy8ga.png"
+      },
+      {
+        "id": 2,
+        "title": "JavaScript - Intermediate",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1670291151/aac-website/hackerrank/verified%20skills/javascript-intermediate_m4x2jd.png"
+      },
+      {
+        "id": 3,
+        "title": "React - Basic",
+        "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1670291615/aac-website/hackerrank/verified%20skills/react_wnrpsc.png"
+      }
+    ],
+    "profileLink": "https://www.hackerrank.com/aac_devs"
+  },
+  "skills": [
+    {
+      "id": 1,
+      "skillTitle": "JavaScript",
+      "skillType": "Programming Language",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619759284/aac-website/skills/js2_uzcztc.png"
+    },
+    {
+      "id": 2,
+      "skillTitle": "TypeScript",
+      "skillType": "Programming Language",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1664068659/aac-website/skills/ts_faazhn.png"
+    },
+    {
+      "id": 3,
+      "skillTitle": "Node JS",
+      "skillType": "Runtime Environment",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1664070510/aac-website/skills/Node.js_logo_iwypdj.svg"
+    },
+    {
+      "id": 4,
+      "skillTitle": "C",
+      "skillType": "Programming Language",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1664070613/aac-website/skills/unnamed_ymuoby.png"
+    },
+    {
+      "id": 5,
+      "skillTitle": "C++",
+      "skillType": "Programming Language",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1664068717/aac-website/skills/c_mk8mem.png"
+    },
+    {
+      "id": 6,
+      "skillTitle": "HTML",
+      "skillType": "Web Technology",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358674/aac-website/skills/html2_reyk9y.png"
+    },
+    {
+      "id": 7,
+      "skillTitle": "CSS",
+      "skillType": "Web Technology",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358722/aac-website/skills/css_dykwnz.png"
+    },
+    {
+      "id": 8,
+      "skillTitle": "Git",
+      "skillType": "Version Control",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358661/aac-website/skills/git_e4nxfn.png"
+    },
+    {
+      "id": 9,
+      "skillTitle": "Github",
+      "skillType": "Version Control",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358707/aac-website/skills/github_rbfbqy.png"
+    },
+    {
+      "id": 10,
+      "skillTitle": "React",
+      "skillType": "Framework - Library",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358686/aac-website/skills/react2_kq8ndv.png"
+    },
+    {
+      "id": 11,
+      "skillTitle": "Redux",
+      "skillType": "Framework - Library",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358681/aac-website/skills/redux_bnekhs.png"
+    },
+    {
+      "id": 12,
+      "skillTitle": "PostgreSQL",
+      "skillType": "Database",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619359910/aac-website/skills/postgres_2_htrqyd.png"
+    },
+    {
+      "id": 13,
+      "skillTitle": "Styled Components",
+      "skillType": "Framework - Library",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358665/aac-website/skills/1_7jRD5QhgARucFKvRHFxpOg_velwnn.png"
+    },
+    {
+      "id": 14,
+      "skillTitle": "Express",
+      "skillType": "Framework - Library",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358647/aac-website/skills/express_dj1u8e.png"
+    },
+    {
+      "id": 15,
+      "skillTitle": "React Testing Library",
+      "skillType": "Framework - Library",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1631025986/aac-website/skills/testing_r43rm3.png"
+    },
+    {
+      "id": 16,
+      "skillTitle": "Sequelize ORM",
+      "skillType": "Framework - Library",
+      "image": "https://res.cloudinary.com/aac-devs-data/image/upload/v1619358654/aac-website/skills/sequelize_jei6yf.png"
+    }
+  ]
+}
