@@ -1,8 +1,8 @@
-import ThemeColor from '../color-themes.js';
 import getScreenSize from '../../helpers/screen-size.js';
+import { getInfoStyles } from './sections/info.styles.js';
 
 export function mobileLandscapeStyles(): ElementStyles {
-  const CALCULATED_TOP = getScreenSize().height * 0.12;
+  // const CALCULATED_TOP = getScreenSize().height * 0.12;
   const WIDTH = getScreenSize().width;
   const CONTAINER_TRANSITION = 'all 0.3s ease-in-out';
   let e: ElementStyles = {};
@@ -35,15 +35,6 @@ export function mobileLandscapeStyles(): ElementStyles {
     scrollBehavior: 'smooth',
     backgroundColor: '#fff',
   });
-
-  // e.body = ''.cssProperties(
-  //   ['box-sizing', 'border-box'],
-  //   ['padding', '0'],
-  //   ['margin', '0'],
-  //   // ['background-color', '#aa0'],
-  //   ['min-height', '100%'],
-  //   ['position', 'relative']
-  // );
 
   e.BODY = ''.cssProps({
     boxSizing: 'border-box',
@@ -79,19 +70,13 @@ export function mobileLandscapeStyles(): ElementStyles {
   // /header/header.organism.ts
   e.HEADER_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // display: 'flex',
-    // flexDirection: 'row',
-    // justifyContent: 'space-between',
-    // alignItems: 'center',
     backgroundColor: 'transparent',
-    // backgroundColor: 'lime',
     minHeight: '0vh',
     height: '0vh',
     maxHeight: '0vh',
     width: '100vw',
     position: 'fixed',
     top: '0',
-    // padding: '0 3vh',
     zIndex: '10',
   });
 
@@ -143,9 +128,6 @@ export function mobileLandscapeStyles(): ElementStyles {
     position: 'absolute',
     bottom: '-10vh',
     right: '3vh',
-    // position: 'fixed',
-    // top: '0px',
-    // right: '0px',
   });
 
   //ML    END HEADER
@@ -183,7 +165,6 @@ export function mobileLandscapeStyles(): ElementStyles {
     borderBottomRightRadius: '3vh',
     borderBottomLeftRadius: '3vh',
     transform: 'translateX(-1400%)',
-    // display: 'block',
   });
 
   // /nav/molecules/ul.molecule.ts
@@ -193,7 +174,6 @@ export function mobileLandscapeStyles(): ElementStyles {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    // rowGap: '4vw',
     columnGap: '4vh',
     padding: '4vh 4vh 4.5vh 4vh',
     marginBlock: '0px',
@@ -269,49 +249,11 @@ export function mobileLandscapeStyles(): ElementStyles {
   //ML
   //ML
 
-  // /info/info.organism.ts
-  e.INFO_CONTAINER = ''.cssProps({
-    boxSizing: 'border-box',
-    position: 'fixed',
-    transition: CONTAINER_TRANSITION,
-    bottom: '0px',
-    right: '0px',
-    backgroundColor: 'transparent',
-    transform: 'translateY(1000%)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-    width: '60vh',
-    padding: '2vh 4vh',
-    borderTopLeftRadius: '5vh',
-    backdropFilter: 'blur(10px)',
-  });
+  const { infoContainer, infoName, infoDescription } = getInfoStyles('mobile-landscape');
 
-  // /info/info.organism.ts
-  e.INFO_NAME = ''.cssProps({
-    boxSizing: 'border-box',
-    textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.8)',
-    margin: '0px',
-    padding: '0px',
-    marginBlock: '0px',
-    fontWeight: '500',
-    fontSize: '6.5vh',
-    color: 'orangered',
-    zIndex: '10',
-  });
-
-  // /info/info.organism.ts
-  e.INFO_DESCRIPTION = ''.cssProps({
-    boxSizing: 'border-box',
-    color: 'orangered',
-    textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.8)',
-    margin: '0px',
-    padding: '0px',
-    marginBlock: '0px',
-    fontWeight: '400',
-    fontSize: '4.5vh',
-    zIndex: '10',
-  });
+  e.INFO_CONTAINER = infoContainer;
+  e.INFO_NAME = infoName;
+  e.INFO_DESCRIPTION = infoDescription;
 
   //ML    END INFO
   //ML
@@ -355,7 +297,7 @@ export function mobileLandscapeStyles(): ElementStyles {
   });
 
   // /info/social.organism.ts
-  e.SOCIAL_GITHUB_ICON_CONTAINER = ''.cssProps({
+  e.SOCIAL_ICON_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     color: '#000',
     backgroundColor: '#fff',
@@ -369,23 +311,23 @@ export function mobileLandscapeStyles(): ElementStyles {
   });
 
   // /info/social.organism.ts
-  e.SOCIAL_LINKEDIN_ICON_CONTAINER = ''.cssProps({
-    boxSizing: 'border-box',
-    color: 'mediumblue',
-    backgroundColor: '#fff',
-    boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
-    aspectRatio: '1',
-    height: '9vh',
-    borderRadius: '1vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  });
+  // e.SOCIAL_LINKEDIN_ICON_CONTAINER = ''.cssProps({
+  //   boxSizing: 'border-box',
+  //   color: 'mediumblue',
+  //   backgroundColor: '#fff',
+  //   boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
+  //   aspectRatio: '1',
+  //   height: '9vh',
+  //   borderRadius: '1vh',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // });
 
   // /info/social.organism.ts
   e.SOCIAL_ICON = ''.cssProps({
     boxSizing: 'border-box',
-    height: '100%',
+    height: '90%',
     aspectRatio: '1',
   });
 
@@ -421,8 +363,6 @@ export function mobileLandscapeStyles(): ElementStyles {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     rowGap: '5vh',
-    // backgroundColor: 'lime',
-    // columnGap: '5vw',
     scrollBehavior: 'smooth',
     overflowY: 'scroll',
     transition: CONTAINER_TRANSITION,
@@ -432,13 +372,10 @@ export function mobileLandscapeStyles(): ElementStyles {
   e.FRAME_SINGLE_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     backgroundColor: '#fff',
-    // backgroundColor: 'palegoldenrod',
     width: '100vw',
     height: '100vh',
     flexShrink: '0',
-    // fontSize: '5rem',
     display: 'flex',
-    // backgroundColor: 'pink',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     position: 'relative',
@@ -449,24 +386,18 @@ export function mobileLandscapeStyles(): ElementStyles {
   e.FRAME_HEADER_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     backgroundColor: `rgba(08, 49, 52, 0.8)`,
-    // backgroundColor: 'transparent',
     minWidth: '16vh',
     maxWidth: '16vh',
     width: '16vh',
     height: '100vh',
-    // height: '15vh',
-    // minHeight: '15vw',
-    // width: '100vw',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
     rowGap: '3vh',
-    // columnGap: '3vw',
     paddingTop: '16vh',
     paddingBottom: '3vh',
     position: 'sticky',
-    // top: '0px',
     zIndex: '1',
     left: '0px',
   });
@@ -475,9 +406,7 @@ export function mobileLandscapeStyles(): ElementStyles {
   e.FRAME_BODY = ''.cssProps({
     boxSizing: 'border-box',
     flexGrow: 1,
-    // backgroundColor: 'olive',
     width: `calc(${WIDTH} - 16vh)`,
-    // minHeight: '85vw', // TODO: revisar esta parte
   });
 
   // /sections/section-frame.ts
@@ -485,7 +414,6 @@ export function mobileLandscapeStyles(): ElementStyles {
     boxSizing: 'border-box',
     color: '#ccc',
     width: '50%',
-    // height: '50%',
     aspectRatio: '1',
     display: 'flex',
     justifyContent: 'center',
@@ -516,12 +444,8 @@ export function mobileLandscapeStyles(): ElementStyles {
     textOrientation: 'upright',
     wordSpacing: '0.1',
     textTransform: 'uppercase',
-    // backgroundColor: 'wheat',
     flexGrow: 1,
     textAlign: 'center',
-    // lineHeight: '0.5',
-    // lineBreak: '0.5',
-    // letterSpacing: '0.1',
   });
 
   //ML    END FRAME
@@ -556,13 +480,10 @@ export function mobileLandscapeStyles(): ElementStyles {
     justifyContent: 'flex-start',
     alignItems: 'center',
     columnGap: '5vh',
-    // backgroundColor: 'wheat',
     backgroundColor: 'honeydew',
-    // backgroundColor: 'gold',
     minHeight: '100%',
     maxHeight: '100%',
     height: '100vh',
-    // width: '100vw',
     marginBlock: '0px',
     paddingInline: '0px',
     padding: '0px 5vh',
@@ -672,49 +593,45 @@ export function mobileLandscapeStyles(): ElementStyles {
     textAlign: 'center',
   });
 
-  //  /PROJECTS/project.card.molecule.ts
-  e.PROJECT_CARD_GITHUB_ANCHOR = ''.cssProps({
+  const PROJECT_CARD_ANCHOR = ''.cssProps({
     boxSizing: 'border-box',
+    height: '12vh',
+    minHeight: '12vh',
+    maxHeight: '12vh',
+    aspectRatio: '2',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#c92a2a',
     boxShadow: '0px -2.4rem 4.8rem rgba(0, 255, 255, 0.5)',
-    borderRight: '1px solid #fff',
     borderTop: '1px solid #fff',
     outline: '2px solid #0FF',
-    height: '8vh',
-    aspectRatio: '1',
     position: 'absolute',
     bottom: '0px',
-    left: '0px',
-    padding: '2vh 6vh',
-    borderTopRightRadius: '5vh',
-    borderBottomLeftRadius: '5vh',
-    outlineOffset: '1vh',
+    outlineOffset: '1.5vh',
   });
 
   //  /PROJECTS/project.card.molecule.ts
-  e.PROJECT_CARD_APP_ANCHOR = ''.cssProps({
-    boxSizing: 'border-box',
-    backgroundColor: '#c92a2a',
-    boxShadow: '0px -2.4rem 4.8rem rgba(0, 255, 255, 0.5)',
-    borderLeft: '1px solid #fff',
-    borderTop: '1px solid #fff',
-    outline: '2px solid #0FF',
-    height: '8vh',
-    aspectRatio: '1',
-    position: 'absolute',
-    bottom: '0px',
+  e.PROJECT_CARD_GITHUB_ANCHOR = `${PROJECT_CARD_ANCHOR}${''.cssProps({
+    left: '0px',
+    borderRight: '1px solid #fff',
+    borderBottomLeftRadius: '5vh',
+    borderTopRightRadius: '5vh',
+  })}`;
+
+  //  /PROJECTS/project.card.molecule.ts
+  e.PROJECT_CARD_APP_ANCHOR = `${PROJECT_CARD_ANCHOR}${''.cssProps({
     right: '0px',
-    padding: '2vh 6vh',
+    borderLeft: '1px solid #fff',
     borderTopLeftRadius: '5vh',
     borderBottomRightRadius: '5vh',
-    outlineOffset: '1vh',
-  });
+  })}`;
 
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_ICON_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     color: '#fff',
-    height: '100%',
+    height: '70%',
     aspectRatio: '1',
     display: 'flex',
     justifyContent: 'center',
@@ -756,7 +673,6 @@ export function mobileLandscapeStyles(): ElementStyles {
   e.HACKERRANK_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     listStyle: 'none',
-    // padding: '5vw 0px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -793,7 +709,6 @@ export function mobileLandscapeStyles(): ElementStyles {
   //  /REUSABLE/frame.organims.ts
   e.HACKERRANK_SECTION_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // backgroundColor: 'aquamarine',
     width: '100%',
     height: '50vh',
     minHeight: '50vh',
@@ -825,7 +740,6 @@ export function mobileLandscapeStyles(): ElementStyles {
     alignItems: 'stretch',
     flexWrap: 'nowrap',
     columnGap: '3vh',
-    // alignSelf: 'flex-end',
     padding: '2vh 0',
   });
 
@@ -887,12 +801,9 @@ export function mobileLandscapeStyles(): ElementStyles {
   e.SKILLS_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     backgroundColor: 'honeydew',
-    // listStyle: 'none',
-    // padding: '5vw 0px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    // alignItems: 'center',
     columnGap: '5vh',
     minHeight: '100vh',
     maxHeight: '100vh',
@@ -902,29 +813,17 @@ export function mobileLandscapeStyles(): ElementStyles {
     paddingInline: '0px',
     paddingLeft: '3vh',
     overflowX: 'scroll',
-    // rowGap: '5vw',
-    // minHeight: '100%',
-    // maxHeight: '100%',
-    // width: '100vw',
-    // marginBlock: '0px',
-    // paddingInline: '0px',
-    // overflowY: 'scroll',
   });
 
   //  /REUSABLE/frame.organims.ts
   e.SKILLS_SECTION_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // width: 'inherit',
-    // width: '20vw',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     columnGap: '2vh',
     paddingLeft: '1vh',
     boxShadow: '0px 0px 4.8rem rgba(0, 0, 0, 0.1)',
-    // backgroundColor: '#eee',
-    // flexWrap: 'wrap',
-    // alignItems: 'center',
   });
 
   //  /REUSABLE/frame.organims.ts
@@ -935,13 +834,10 @@ export function mobileLandscapeStyles(): ElementStyles {
     textOrientation: 'upright',
     wordSpacing: '0.1',
     textTransform: 'uppercase',
-    // backgroundColor: 'wheat',
-    // flexGrow: 1,
     textAlign: 'center',
     marginBlock: '0px',
     fontSize: '3vh',
     fontWeight: '600',
-    // backgroundColor: '#ddd',
   });
 
   //  /REUSABLE/frame.organims.ts
@@ -1134,9 +1030,6 @@ export function mobileLandscapeStyles(): ElementStyles {
   e.CONTACT_FOOTER_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     backgroundColor: '#000',
-    // width: '50%',
-    // minWidth: '50%',
-    // maxWidth: '50%',
     alignSelf: 'flex-end',
     padding: '3vh 2vh',
     display: 'flex',
@@ -1179,5 +1072,3 @@ export function mobileLandscapeStyles(): ElementStyles {
 
   return e;
 }
-
-// TODO: los header de las secciones en modo landscape van a ser verticales al lado derecho (letras en modo vertical), y el scroll de cada sección será horizontal

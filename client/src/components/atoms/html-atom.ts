@@ -24,6 +24,7 @@ function createAtomicElement(tag?: HTMLTag) {
     if (p.rows) element.rows = p.rows;
     if (p.src) element.src = p.src;
     if (p.tabindex) element.tabIndex = p.tabindex;
+    if (p.target) element.target = p.target;
     if (p.textContent) element.textContent = p.textContent;
     if (p.title) element.title = p.title;
     if (p.type) element.type = p.type;

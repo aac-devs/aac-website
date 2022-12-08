@@ -1,4 +1,4 @@
-import ThemeColor from '../color-themes.js';
+import { getInfoStyles } from './sections/info.styles.js';
 
 export function mobilePortraitStyles(): ElementStyles {
   let e: ElementStyles = {};
@@ -164,12 +164,10 @@ export function mobilePortraitStyles(): ElementStyles {
   e.NAV_UL = ''.cssProps({
     boxSizing: 'border-box',
     listStyle: 'none',
-
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     rowGap: '4vw',
-
     padding: '4vw 4.5vw 4vw 4vw',
     marginBlock: '0px',
   });
@@ -183,19 +181,15 @@ export function mobilePortraitStyles(): ElementStyles {
     maxHeight: '10vw',
     maxWidth: '10vw',
     backgroundColor: `rgba(08, 49, 52, 1)`,
-    // boxShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3)',
-    // boxShadow: '0.5rem 0.5rem 1rem rgba(127, 127, 127, 0.8)',
     boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
   });
 
   // /nav/nav.organism.data.ts
   e.NAV_ANCHOR = ''.cssProps({
-    // display: 'block',
     boxSizing: 'border-box',
     textDecoration: 'none',
     color: '#aaa',
     fontSize: '5vw',
-    // padding: '1vw 1vw',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -204,8 +198,6 @@ export function mobilePortraitStyles(): ElementStyles {
     minWidth: '10vw',
     maxHeight: '10vw',
     maxWidth: '10vw',
-    // height: 'inherit',
-    // aspectRatio: '1',
   });
 
   // /nav/nav.organism.data.ts
@@ -215,7 +207,6 @@ export function mobilePortraitStyles(): ElementStyles {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '5vw',
-    // width: '7vw',
     height: '70%',
     width: '70%',
   });
@@ -251,50 +242,11 @@ export function mobilePortraitStyles(): ElementStyles {
   //MP
   //MP
 
-  // /info/info.organism.ts
-  e.INFO_CONTAINER = ''.cssProps({
-    boxSizing: 'border-box',
-    position: 'fixed',
-    transition: CONTAINER_TRANSITION,
-    bottom: '0px',
-    right: '0px',
-    transform: 'translateY(1000%)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-    width: '60vw',
-    padding: '2vw 4vw',
-    borderTopLeftRadius: '5vw',
-    backdropFilter: 'blur(10px)',
-  });
+  const { infoContainer, infoName, infoDescription } = getInfoStyles('mobile-portrait');
 
-  // /info/info.organism.ts
-  e.INFO_NAME = ''.cssProps({
-    boxSizing: 'border-box',
-    margin: '0px',
-    padding: '0px',
-    marginBlock: '0px',
-    fontWeight: '500',
-    fontSize: '6.5vw',
-    color: 'orangered',
-    zIndex: '10',
-    textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.8)',
-    // textShadow: '0.5rem 0.5rem 1rem rgba(125, 127, 127, 0.8)',
-  });
-
-  // /info/info.organism.ts
-  e.INFO_DESCRIPTION = ''.cssProps({
-    boxSizing: 'border-box',
-    margin: '0px',
-    padding: '0px',
-    marginBlock: '0px',
-    fontWeight: '400',
-    fontSize: '4.5vw',
-    color: 'orangered',
-    zIndex: '10',
-    textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.8)',
-    // textShadow: '0.5rem 0.5rem 1rem rgba(127, 127, 127, 0.8)',
-  });
+  e.INFO_CONTAINER = infoContainer;
+  e.INFO_NAME = infoName;
+  e.INFO_DESCRIPTION = infoDescription;
 
   //MP    END INFO
   //MP
@@ -322,7 +274,6 @@ export function mobilePortraitStyles(): ElementStyles {
   // /info/social.organism.ts
   e.SOCIAL_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-
     position: 'fixed',
     left: '0px',
     bottom: '5vw',
@@ -330,12 +281,7 @@ export function mobilePortraitStyles(): ElementStyles {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     rowGap: '3vw',
-
-    // backgroundColor: 'yellow',
-    // boxShadow: '0px 2.4rem 4.8rem rgba(0, 0, 0, 0.3)',
-    // padding
     padding: '3vw 3.5vw 3vw 3vw',
-
     transition: CONTAINER_TRANSITION,
     borderBottomRightRadius: '3vw',
     borderTopRightRadius: '3vw',
@@ -344,42 +290,36 @@ export function mobilePortraitStyles(): ElementStyles {
   });
 
   // /info/social.organism.ts
-  e.SOCIAL_GITHUB_ICON_CONTAINER = ''.cssProps({
+  e.SOCIAL_ICON_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     height: '9vw',
     aspectRatio: '1',
     color: '#000',
     borderRadius: '1vw',
-    // padding: '0.2vw',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    // boxShadow: '0.8rem 0.8rem 2rem rgba(0, 0, 0, 0.5)',
-    // boxShadow: '0.5rem 0.5rem 1rem rgba(127, 127, 127, 0.8)',
     boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
   });
 
   // /info/social.organism.ts
-  e.SOCIAL_LINKEDIN_ICON_CONTAINER = ''.cssProps({
-    boxSizing: 'border-box',
-    height: '9vw',
-    aspectRatio: '1',
-    color: 'mediumblue',
-    borderRadius: '1vw',
-    // padding: '0.2vw',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    // boxShadow: '0.8rem 0.8rem 2rem rgba(0, 0, 0, 0.5)',
-    // boxShadow: '0.5rem 0.5rem 1rem rgba(127, 127, 127, 0.8)',
-    boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
-  });
+  // e.SOCIAL_LINKEDIN_ICON_CONTAINER = ''.cssProps({
+  //   boxSizing: 'border-box',
+  //   height: '9vw',
+  //   aspectRatio: '1',
+  //   color: 'mediumblue',
+  //   borderRadius: '1vw',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   backgroundColor: '#fff',
+  //   boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
+  // });
 
   // /info/social.organism.ts
   e.SOCIAL_ICON = ''.cssProps({
-    height: '100%',
+    height: '90%',
     aspectRatio: '1',
     boxSizing: 'border-box',
   });
@@ -409,7 +349,6 @@ export function mobilePortraitStyles(): ElementStyles {
 
   // sections/sections.ts
   e.FRAMES_CONTAINER = ''.cssProps({
-    // backgroundColor: 'lavender',
     width: '100vw',
     height: '100vh',
     boxSizing: 'border-box',
@@ -424,7 +363,6 @@ export function mobilePortraitStyles(): ElementStyles {
 
   // /sections/section-frame.ts
   e.FRAME_SINGLE_CONTAINER = ''.cssProps({
-    // backgroundColor: `${ThemeColor.colorMainNormal}`,
     backgroundColor: '#fff',
     width: '100vw',
     height: '100vh',
@@ -519,22 +457,18 @@ export function mobilePortraitStyles(): ElementStyles {
     boxSizing: 'border-box',
     listStyle: 'none',
     padding: '5vw 0px',
-
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
     rowGap: '5vw',
-    // rowGap: '4vw',
     backgroundColor: 'honeydew',
     minHeight: '100%',
     maxHeight: '100%',
     width: '100vw',
-    // padding: '4vw 4.5vw 4vw 4vw',
     marginBlock: '0px',
     paddingInline: '0px',
     overflowY: 'scroll',
-    // overflowY: 'scroll',
   });
 
   //  /PROJECTS/project.card.molecule.ts
@@ -642,44 +576,48 @@ export function mobilePortraitStyles(): ElementStyles {
 
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_GITHUB_ANCHOR = ''.cssProps({
-    height: '8vw',
-    aspectRatio: '1',
+    height: '12vw',
+    aspectRatio: '2',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     position: 'absolute',
     bottom: '0px',
     left: '0px',
     backgroundColor: '#c92a2a',
-    padding: '2vw 6vw',
     borderTopRightRadius: '5vw',
     borderBottomLeftRadius: '5vw',
     boxShadow: '0px -2.4rem 4.8rem rgba(0, 255, 255, 0.5)',
     borderRight: '1px solid #fff',
     borderTop: '1px solid #fff',
-    outlineOffset: '1vw',
+    outlineOffset: '1.5vw',
     outline: '2px solid #0FF',
   });
 
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_APP_ANCHOR = ''.cssProps({
-    height: '8vw',
-    aspectRatio: '1',
+    height: '12vw',
+    aspectRatio: '2',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     position: 'absolute',
     bottom: '0px',
     right: '0px',
     backgroundColor: '#c92a2a',
-    padding: '2vw 6vw',
     borderTopLeftRadius: '5vw',
     borderBottomRightRadius: '5vw',
     boxShadow: '0px -2.4rem 4.8rem rgba(0, 255, 255, 0.5)',
     borderLeft: '1px solid #fff',
     borderTop: '1px solid #fff',
-    outlineOffset: '1vw',
+    outlineOffset: '1.5vw',
     outline: '2px solid #0FF',
   });
 
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_ICON_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    height: '100%',
+    height: '70%',
     aspectRatio: '1',
     display: 'flex',
     justifyContent: 'center',
@@ -969,11 +907,7 @@ export function mobilePortraitStyles(): ElementStyles {
   e.CONTACT_FORM = ''.cssProps({
     boxSizing: 'border-box',
     width: '90vw',
-    // margin: 'auto',
-    // marginTop: '5vw',
-    // marginBottom: '0px',
     backgroundColor: '#fff',
-    // boxShadow: '0px 0px 4.8rem rgba(0, 0, 0, 0.1)',
     border: '1px solid #ccc',
     padding: '4vw',
     display: 'flex',
@@ -1007,16 +941,12 @@ export function mobilePortraitStyles(): ElementStyles {
   e.CONTACT_INPUT_TEXT = ''.cssProps({
     boxSizing: 'border-box',
     fontFamily: 'sans-serif',
-    // height: '4vw',
     padding: '1vw 2vw',
     fontSize: '4vw',
     borderRadius: '1vw',
-    // border: '1px solid rgb(225, 228, 232)',
     fontWeight: '300',
     color: '#111',
-    // backgroundColor: 'lavender',
     transition: 'all 0.2s ease-in',
-    // outlineColor: 'navy',
     outline: '1px solid #ccc',
     border: '1px solid #ccc',
     width: '100%',
@@ -1030,16 +960,12 @@ export function mobilePortraitStyles(): ElementStyles {
   e.CONTACT_TEXTAREA = ''.cssProps({
     boxSizing: 'border-box',
     fontFamily: 'sans-serif',
-    // height: '4vw',
     padding: '1vw 2vw',
     fontSize: '4vw',
     borderRadius: '1vw',
-    // border: '1px solid rgb(225, 228, 232)',
     fontWeight: '300',
     color: '#111',
-    // backgroundColor: 'lavender',
     transition: 'all 0.2s ease-in',
-    // outlineColor: 'navy',
     outline: '1px solid #ccc',
     border: '1px solid #ccc',
     width: '100%',
@@ -1053,7 +979,6 @@ export function mobilePortraitStyles(): ElementStyles {
   // CONTACT/contact.organism.ts
   e.CONTACT_BUTTON = ''.cssProps({
     boxSizing: 'border-box',
-    // height: '4vw',
     padding: '1vw 2vw',
     fontSize: '4vw',
     borderRadius: '1vw',
@@ -1107,306 +1032,5 @@ export function mobilePortraitStyles(): ElementStyles {
   //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
   //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
 
-  //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
-  //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
-  //MP
-  //MP            ##
-  //MP            ##
-  //MP            ##
-  //MP            ##
-  //MP            ##
-  //MP            ##
-  //MP            ##
-  //MP
-  //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
-  //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
-  //MP
-  //MP
-  //MP
-  //MP
-
-  //MP    END
-  //MP
-  //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
-  //MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP MP
-
   return e;
 }
-
-/*
-export function mobilePortraitStyles(): ElementStyles {
-  let e: ElementStyles = {};
-
-  // HTML, BODY:
-  e.html = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('font-family', '"Poppins", sans-serif')
-    .cssProperty('height', '100%')
-    .cssProperty('margin', '0')
-    .cssProperty('padding', '0')
-    .cssProperty('position', 'relative')
-    .cssProperty('scroll-behavior', 'smooth')
-    .cssProperty('background-color', '#fff');
-
-  e.body = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('padding', '0')
-    .cssProperty('margin', '0')
-    .cssProperty('background-color', '#fff')
-    .cssProperty('min-height', '100%')
-    .cssProperty('position', 'relative');
-
-  e.test = ''.cssProperties(
-    ['box-sizing', 'border-box'],
-    ['padding', '0'],
-    ['margin', '0'],
-    ['background-color', '#fff'],
-    ['min-height', '100%'],
-    ['position', 'relative']
-  );
-
-  // MAIN-HEADER:
-  // HEADER:
-  e['main-header'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'row')
-    .cssProperty('justify-content', 'space-between')
-    .cssProperty('align-items', 'center')
-    // .cssProperty('backdrop-filter', 'blur(10px)')
-    .cssProperty('background-color', `${ThemeColor.colorMainDarker}`)
-    .cssProperty('background-color', 'transparent')
-    // .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)')
-    .cssProperty('min-height', '15vw')
-    .cssProperty('width', '100vw')
-    .cssProperty('position', 'fixed')
-    .cssProperty('top', '0')
-    .cssProperty('padding', '0 3vw')
-    .cssProperty('z-index', '10');
-
-  // BUTTON HEADER:
-  e['main-header-button'] = ''
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty('color', '#ccc')
-    .cssProperty('display', 'flex')
-    .cssProperty('box-shadow', '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2)')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('position', 'relative')
-    .cssProperty('border', '2px solid #888')
-    .cssProperty('background-color', `${ThemeColor.colorMainDark}`)
-    .cssProperty('background-color', 'transparent')
-    .cssProperty('border-radius', '1rem')
-    .cssProperty('height', `10vw`);
-
-  // BARS - BUTTON HEADER:
-  e['main-header-button-bars'] = 'visible';
-
-  // BRAND HEADER:
-  e['main-header-brand'] = ''
-    .cssProperty('margin-block-start', '0')
-    .cssProperty('margin-block-end', '0')
-    .cssProperty('font-weight', '500')
-    .cssProperty('display', 'inline')
-    .cssProperty('text-shadow', '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5)')
-    .cssProperty('color', `#ccc`)
-    .cssProperty('z-index', '10')
-    // .cssProperty('visibility', 'hidden')
-    .cssProperty('font-size', `6vw`);
-
-  // MENU-NAV
-  e['main-header-nav'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    // .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(255, 255, 255, 1)')
-    .cssProperty('display', 'flex')
-    .cssProperty('position', 'absolute')
-    .cssProperty('left', '0') // change to hidden,
-    .cssProperty('background-color', ThemeColor.colorMainDark)
-    .cssProperty('transition', 'all 0.3s ease-in-out')
-    .cssProperty('flex-direction', 'column')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('row-gap', `5vh`)
-    .cssProperty('padding', '12vh 0 0 0')
-    // .cssProperty('border-bottom-right-radius', '3vw')
-    // .cssProperty('border-top-right-radius', '3vw')
-    .cssProperty('width', `100vw`)
-    .cssProperty('height', '100vh')
-    .cssProperty('top', '0vh');
-
-  // MENU INFO:
-  e['main-header-nav-info'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('position', 'relative')
-    .cssProperty(
-      'background-image',
-      'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1666998062/aac-website/info/cyber-3400789_1920_csolpx.jpg)'
-    )
-
-    .cssProperty('background-size', 'cover')
-    .cssProperty('background-repeat', 'no-repeat')
-    .cssProperty('background-position', 'center')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'column')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('width', `80vw`)
-    .cssProperty('aspect-ratio', '1.4')
-    .cssProperty('padding-top', '8vw')
-    .cssProperty('border-radius', '5vw');
-
-  e['main-header-nav-info-filter'] = ''
-    .cssProperty('position', 'absolute')
-    .cssProperty('bottom', '0')
-    .cssProperty('left', '0')
-    .cssProperty('height', '100%')
-    .cssProperty('width', '100%')
-    .cssProperty('opacity', '0.15')
-    .cssProperty('background-color', '#000')
-    .cssProperty('border-radius', '5vw');
-
-  e['main-header-nav-info-name'] = ''
-    .cssProperty('margin', '0')
-    .cssProperty('padding', '0')
-    .cssProperty('font-weight', '500')
-    .cssProperty('margin-block-start', '0px')
-    .cssProperty('margin-block-end', '0px')
-    .cssProperty('z-index', '10')
-    .cssProperty('color', '#eee')
-    .cssProperty('text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)')
-    .cssProperty('font-size', '8vw');
-
-  e['main-header-nav-info-description'] = ''
-    .cssProperty('margin', '0')
-    .cssProperty('padding', '0')
-    .cssProperty('z-index', '10')
-    .cssProperty('font-weight', '400')
-    .cssProperty('color', '#ee0')
-    .cssProperty('margin-block-start', '0px')
-    .cssProperty('margin-block-end', '0px')
-    .cssProperty('text-shadow', '0rem 0rem 2rem rgba(0, 255, 255, 1)')
-    .cssProperty('font-size', '5.5vw');
-
-  e['main-header-nav-info-jslogo'] = ''
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty(
-      'background-image',
-      'url(https://res.cloudinary.com/aac-devs-data/image/upload/v1663975560/aac-website/info/js_cgxlpb.png)'
-    )
-    .cssProperty('background-size', 'contain')
-    .cssProperty('position', 'absolute')
-    .cssProperty('height', '13vw')
-    .cssProperty('border-radius', '1vw')
-    .cssProperty('bottom', '4vw')
-    .cssProperty('left', '4vw');
-
-  e['main-header-nav-info-linkedin'] = ''
-    .cssProperty('color', '#fff')
-    .cssProperty('position', 'absolute')
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty('height', '10vw')
-    .cssProperty('bottom', '4vw')
-    .cssProperty('right', '4vw')
-    .cssProperty('padding', '0rem 0.2rem');
-
-  e['main-header-nav-info-github'] = ''
-    .cssProperty('color', '#fff')
-    .cssProperty('position', 'absolute')
-    .cssProperty('aspect-ratio', '1')
-    .cssProperty('height', '10vw')
-    .cssProperty('bottom', '4vw')
-    .cssProperty('right', '4vw')
-    .cssProperty('padding', '0rem 0.2rem')
-    .cssProperty('transform', 'translateY(-140%)');
-
-  // MENU UL:
-  e['main-header-nav-ul'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'column')
-    .cssProperty('width', `80vw`)
-    .cssProperty('margin', '0')
-    .cssProperty('padding', '0')
-    .cssProperty('list-style', 'none')
-    .cssProperty('row-gap', '2.5vw')
-    .cssProperty('justify-content', 'flex-start');
-  // .cssProperty('width', 'inherit')
-
-  e['main-header-nav-ul-li'] = ''
-    .cssProperty('background-color', `${ThemeColor.colorMainDarker}`)
-    .cssProperty('border-radius', '5vw');
-
-  e['main-header-nav-ul-li-anchor'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('text-decoration', 'none')
-    .cssProperty('flex-grow', '1')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'row')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('color', '#ccc')
-    .cssProperty('font-size', '5vw')
-    .cssProperty('margin', 'auto 0')
-    .cssProperty('min-height', '10vw')
-    .cssProperty('max-height', '10vw')
-    .cssProperty('border-radius', '5vw')
-    .cssProperty('padding', '1vw 2.5vw');
-
-  e['main-header-nav-ul-li-anchor-icon'] = ''
-    .cssProperty('display', 'flex')
-    .cssProperty('justify-content', 'center')
-    .cssProperty('align-items', 'center')
-    .cssProperty('font-size', '5vw')
-    .cssProperty('margin', '0 3vw 0 1vw')
-    .cssProperty('width', '7vw');
-
-  // SECTIONS:
-  e.sections = ''
-    .cssProperty('background-color', `#fff`)
-    .cssProperty('margin-bottom', '10vh')
-    .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)')
-    .cssProperty('background-position', 'center');
-
-  e['sections-header'] = ''
-    .cssProperty('box-sizing', 'border-box')
-    .cssProperty('height', '15vw')
-    .cssProperty('background-color', 'transparent')
-    .cssProperty('background-color', `${ThemeColor.colorMainDarker}`)
-    .cssProperty('opacity', '0.9')
-    .cssProperty('box-shadow', '0 2.4rem 4.8rem rgba(0, 0, 0, 0.5)')
-    .cssProperty('display', 'flex')
-    .cssProperty('flex-direction', 'row')
-    .cssProperty('justify-content', 'flex-start')
-    .cssProperty('align-items', 'center')
-    .cssProperty('column-gap', '1vw')
-    .cssProperty('position', 'sticky')
-    .cssProperty('padding', '0 0 0 15vw')
-    .cssProperty('z-index', '1')
-    .cssProperty('top', '0vh');
-
-  e['sections-header-title'] = ''
-    .cssProperty('font-weight', '400')
-    .cssProperty('color', `#fff`)
-    .cssProperty('font-size', '5vw');
-
-  e['sections-header-icon'] = ''
-    .cssProperty('display', 'flex')
-    .cssProperty('color', `#fff`)
-    .cssProperty('justify-content', 'center')
-    .cssProperty('align-items', 'center')
-    .cssProperty('font-size', '5vw')
-    .cssProperty('margin', '0 3vw 0 1vw')
-    .cssProperty('width', '7vw');
-
-  // PROJECTS SECTION:
-
-  // HACKERRANK SECTION:
-
-  // SKILLS SECTION:
-
-  // CONTACT SECTION:
-
-  return e;
-}
-
-*/

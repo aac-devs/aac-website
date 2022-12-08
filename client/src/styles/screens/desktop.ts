@@ -1,8 +1,7 @@
-import ThemeColor from '../color-themes.js';
+import { getInfoStyles } from './sections/info.styles.js';
 
 export function desktopStyles(): ElementStyles {
   let e: ElementStyles = {};
-  const CONTAINER_TRANSITION = 'all 0.3s ease-in-out';
 
   //D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D
   //D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D
@@ -72,8 +71,6 @@ export function desktopStyles(): ElementStyles {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // backgroundColor: 'transparent',
-    // backgroundColor: 'lime',
     backgroundColor: `rgba(08, 49, 52, 0.8)`,
     minHeight: '6vw',
     maxHeight: '6vw',
@@ -110,7 +107,6 @@ export function desktopStyles(): ElementStyles {
   e.HEADER_BRAND = ''.cssProps({
     boxSizing: 'border-box',
     fontWeight: '500',
-    // display: 'inline',
     textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5)',
     color: '#ccc',
     zIndex: '10',
@@ -144,16 +140,6 @@ export function desktopStyles(): ElementStyles {
   // /nav/nav.organism.ts
   e.NAV = ''.cssProps({
     boxSizing: 'border-box',
-    // position: 'absolute',
-    // left: '0px',
-    // top: '15vw',
-    // backgroundColor: 'indigo',
-    // backgroundColor: 'transparent',
-    // backdropFilter: 'blur(10px)',
-    // transition: CONTAINER_TRANSITION,
-    // borderBottomRightRadius: '3vw',
-    // borderTopRightRadius: '3vw',
-    // transform: 'translateX(-1400%)',
   });
 
   // /nav/molecules/ul.molecule.ts
@@ -163,22 +149,12 @@ export function desktopStyles(): ElementStyles {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // rowGap: '4vw',
     columnGap: '2vw',
-    // padding: '4vw 4.5vw 4vw 4vw',
-    // marginBlock: '0px',
   });
 
   // /nav/nav.organism.data.ts
   e.NAV_LI = ''.cssProps({
     boxSizing: 'border-box',
-    // borderRadius: '2vw',
-    // minHeight: '10vw',
-    // minWidth: '10vw',
-    // maxHeight: '10vw',
-    // maxWidth: '10vw',
-    // backgroundColor: `rgba(08, 49, 52, 1)`,
-    // boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
   });
 
   // /nav/nav.organism.data.ts
@@ -187,17 +163,11 @@ export function desktopStyles(): ElementStyles {
     textDecoration: 'none',
     color: '#aaa',
     fontSize: '1.6vw',
-    // backgroundColor: 'wheat',
     display: 'flex',
     flexDirection: 'row-reverse',
     justifyContent: 'center',
     alignItems: 'center',
     columnGap: '1vw',
-    // borderRadius: '2vw',
-    // minHeight: '10vw',
-    // minWidth: '10vw',
-    // maxHeight: '10vw',
-    // maxWidth: '10vw',
   });
 
   // /nav/nav.organism.data.ts
@@ -206,7 +176,6 @@ export function desktopStyles(): ElementStyles {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // fontSize: '5vw',
     height: '2.2vw',
     width: '2.2vw',
   });
@@ -242,49 +211,11 @@ export function desktopStyles(): ElementStyles {
   //D D
   //D D
 
-  // /info/info.organism.ts
-  e.INFO_CONTAINER = ''.cssProps({
-    boxSizing: 'border-box',
-    position: 'fixed',
-    // transition: CONTAINER_TRANSITION,
-    bottom: '0px',
-    right: '0px',
-    // backgroundColor: 'rebeccapurple',
-    // transform: 'translateY(1000%)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-    // width: '60vw',
-    padding: '2vw 3vw',
-    // borderTopLeftRadius: '5vw',
-    // backdropFilter: 'blur(10px)',
-  });
+  const { infoContainer, infoName, infoDescription } = getInfoStyles('desktop');
 
-  // /info/info.organism.ts
-  e.INFO_NAME = ''.cssProps({
-    boxSizing: 'border-box',
-    margin: '0px',
-    padding: '0px',
-    marginBlock: '0px',
-    fontWeight: '500',
-    fontSize: '2vw',
-    color: '#333',
-    zIndex: '10',
-    textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.8)',
-  });
-
-  // /info/info.organism.ts
-  e.INFO_DESCRIPTION = ''.cssProps({
-    boxSizing: 'border-box',
-    margin: '0px',
-    padding: '0px',
-    marginBlock: '0px',
-    fontWeight: '400',
-    fontSize: '1.5vw',
-    color: '#333',
-    zIndex: '10',
-    textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.8)',
-  });
+  e.INFO_CONTAINER = infoContainer;
+  e.INFO_NAME = infoName;
+  e.INFO_DESCRIPTION = infoDescription;
 
   //D D    END INFO
   //D D
@@ -316,26 +247,19 @@ export function desktopStyles(): ElementStyles {
     left: '0px',
     bottom: '3vw',
     display: 'flex',
-    // backgroundColor: 'lime',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     rowGap: '2vw',
     paddingLeft: '1vw',
-    // padding: '3vw 3.5vw 3vw 3vw',
-    // transition: CONTAINER_TRANSITION,
-    // borderBottomRightRadius: '3vw',
-    // borderTopRightRadius: '3vw',
-    // transform: 'translateX(-1400%)',
-    // backdropFilter: 'blur(10px)',
   });
 
   // /info/social.organism.ts
-  e.SOCIAL_GITHUB_ICON_CONTAINER = ''.cssProps({
+  e.SOCIAL_ICON_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
     height: '4vw',
     aspectRatio: '1',
     color: '#000',
-    borderRadius: '1vw',
+    borderRadius: '0.5vw',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -344,23 +268,23 @@ export function desktopStyles(): ElementStyles {
   });
 
   // /info/social.organism.ts
-  e.SOCIAL_LINKEDIN_ICON_CONTAINER = ''.cssProps({
-    boxSizing: 'border-box',
-    height: '4vw',
-    aspectRatio: '1',
-    color: 'mediumblue',
-    borderRadius: '1vw',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
-  });
+  // e.SOCIAL_LINKEDIN_ICON_CONTAINER = ''.cssProps({
+  //   boxSizing: 'border-box',
+  //   height: '4vw',
+  //   aspectRatio: '1',
+  //   color: 'mediumblue',
+  //   borderRadius: '1vw',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   backgroundColor: '#fff',
+  //   boxShadow: '0.5rem 0.5rem 1rem rgba(0, 127, 127, 0.8)',
+  // });
 
   // /info/social.organism.ts
   e.SOCIAL_ICON = ''.cssProps({
     boxSizing: 'border-box',
-    height: '100%',
+    height: '90%',
     aspectRatio: '1',
   });
 
@@ -390,38 +314,24 @@ export function desktopStyles(): ElementStyles {
   // sections/sections.ts
   e.FRAMES_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // backgroundColor: 'wheat',
     width: '85%',
     margin: 'auto',
     marginTop: '0px',
     marginBottom: '0px',
-    // height: '100vh',
     display: 'flex',
     padding: '2vw 0',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     rowGap: '20vw',
-    // columnGap: '5vw',
-    // scrollMarginTop: '12vw',
-    // scrollMargin: '12vw',
-
-    // scrollBehavior: 'smooth',
-    // overflowY: 'scroll',
-    // transition: CONTAINER_TRANSITION,
   });
 
   // /sections/section-frame.ts
   e.FRAME_SINGLE_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // backgroundColor: 'pink',
     padding: '1vw 2vw',
     backgroundColor: 'honeydew',
     borderRadius: '1.5vw',
     boxShadow: '0px 2.4rem 4.8rem rgba(0, 0, 0, 0.2)',
-    // width: '100vw',
-    // height: '100vh',
-    // flexShrink: '0',
-    // fontSize: '5rem',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -432,19 +342,11 @@ export function desktopStyles(): ElementStyles {
   // /sections/section-frame.ts
   e.FRAME_HEADER_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // height: '15vw',
-    // backgroundColor: 'palegreen',
-    // minHeight: '15vw',
-    // width: '100vw',
-    // backgroundColor: `rgba(08, 49, 52, 0.8)`,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     columnGap: '2vw',
-    // paddingLeft: '16vw',
-    // position: 'sticky',
-    // top: '0px',
   });
 
   // /sections/section-frame.ts
@@ -452,12 +354,9 @@ export function desktopStyles(): ElementStyles {
     boxSizing: 'border-box',
     height: '4vw',
     aspectRatio: '1',
-    // height: '50%',
-    // aspectRatio: '1',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // fontSize: '5vw',
     color: '#555',
   });
 
@@ -473,10 +372,8 @@ export function desktopStyles(): ElementStyles {
   e.FRAME_HEADER_TEXT = ''.cssProps({
     boxSizing: 'border-box',
     fontWeight: '500',
-    // display: 'inline',
     textShadow: '0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3)',
     color: '#555',
-    // zIndex: '10',
     fontSize: '3vw',
     marginBlock: '0px',
   });
@@ -484,8 +381,6 @@ export function desktopStyles(): ElementStyles {
   // /sections/section-frame.ts
   e.FRAME_BODY = ''.cssProps({
     boxSizing: 'border-box',
-    // flexGrow: 1,
-    // minHeight: '85vw', // TODO: revisar esta parte
   });
 
   //D D    END FRAME
@@ -520,21 +415,14 @@ export function desktopStyles(): ElementStyles {
     flexDirection: 'row',
     justifyContent: 'center',
     flexWrap: 'wrap',
-    // alignItems: 'center',
     gap: '2vw',
-    // backgroundColor: 'orchid',
-    // minHeight: '100%',
-    // maxHeight: '100%',
-    // width: '100vw',
     marginBlock: '0px',
     paddingInline: '0px',
-    // overflowY: 'scroll',
   });
 
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // backgroundColor: '#000',
     width: '25vw',
     minWidth: '25vw',
     maxWidth: '25vw',
@@ -642,54 +530,53 @@ export function desktopStyles(): ElementStyles {
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_GITHUB_ANCHOR = ''.cssProps({
     boxSizing: 'border-box',
-    height: '5vw',
-    minHeight: '5vw',
-    maxHeight: '5vw',
-    width: '7vw',
-    minWidth: '7vw',
-    maxWidth: '7vw',
+    height: '3.5vw',
+    minHeight: '3.5vw',
+    maxHeight: '3.5vw',
+    aspectRatio: '2',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     position: 'absolute',
-    bottom: '0px',
     left: '0px',
+    bottom: '0px',
     backgroundColor: '#c92a2a',
-    padding: '1vw 3vw',
     borderTopRightRadius: '2vw',
     borderBottomLeftRadius: '2vw',
     boxShadow: '0px -2.4rem 4.8rem rgba(0, 255, 255, 0.5)',
     borderRight: '1px solid #fff',
     borderTop: '1px solid #fff',
     outlineOffset: '0.5vw',
-    outline: '2px solid #0FF',
+    outline: '1px solid #0FF',
   });
 
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_APP_ANCHOR = ''.cssProps({
     boxSizing: 'border-box',
-    height: '5vw',
-    minHeight: '5vw',
-    maxHeight: '5vw',
-    width: '7vw',
-    minWidth: '7vw',
-    maxWidth: '7vw',
+    height: '3.5vw',
+    minHeight: '3.5vw',
+    maxHeight: '3.5vw',
+    aspectRatio: '2',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     position: 'absolute',
     bottom: '0px',
     right: '0px',
     backgroundColor: '#c92a2a',
-    padding: '1vw 2vw',
     borderTopLeftRadius: '2vw',
     borderBottomRightRadius: '2vw',
     boxShadow: '0px -2.4rem 4.8rem rgba(0, 255, 255, 0.5)',
     borderLeft: '1px solid #fff',
     borderTop: '1px solid #fff',
     outlineOffset: '0.5vw',
-    outline: '2px solid #0FF',
+    outline: '1px solid #0FF',
   });
 
   //  /PROJECTS/project.card.molecule.ts
   e.PROJECT_CARD_ICON_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    height: '100%',
-    width: '100%',
+    height: '70%',
     aspectRatio: '1',
     display: 'flex',
     justifyContent: 'center',
@@ -738,13 +625,8 @@ export function desktopStyles(): ElementStyles {
     justifyContent: 'flex-start',
     alignItems: 'center',
     rowGap: '2vw',
-    // backgroundColor: 'orchid',
-    // minHeight: '100%',
-    // maxHeight: '100%',
-    // width: '100vw',
     marginBlock: '0px',
     paddingInline: '0px',
-    // overflowY: 'scroll',
   });
 
   //  /HACKERRANK/hackerrank.organism.ts
@@ -765,7 +647,6 @@ export function desktopStyles(): ElementStyles {
   //  /REUSABLE/frame.organims.ts
   e.HACKERRANK_SECTION_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // backgroundColor: 'ivory',
     width: '100%',
   });
 
@@ -855,18 +736,13 @@ export function desktopStyles(): ElementStyles {
     justifyContent: 'flex-start',
     alignItems: 'center',
     rowGap: '2vw',
-    // minHeight: '100%',
-    // maxHeight: '100%',
-    // width: '100vw',
     marginBlock: '0px',
     paddingInline: '0px',
-    // overflowY: 'scroll',
   });
 
   //  /REUSABLE/frame.organims.ts
   e.SKILLS_SECTION_CONTAINER = ''.cssProps({
     boxSizing: 'border-box',
-    // backgroundColor: 'ivory',
     width: '100%',
   });
 
@@ -888,7 +764,6 @@ export function desktopStyles(): ElementStyles {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    // backgroundColor: 'orchid',
     flexWrap: 'wrap',
     gap: '2vw',
     padding: '2vw 0',
@@ -899,25 +774,15 @@ export function desktopStyles(): ElementStyles {
     boxSizing: 'border-box',
     width: '10vw',
     boxShadow: '0px 0px 4.8rem rgba(0, 0, 0, 0.2)',
-    // display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     rowGap: '1vw',
     padding: '1vw 0.2vw',
     backgroundColor: '#fff',
-
-    // boxSizing: 'border-box',
-    // width: '10vw',
     aspectRatio: '0.8',
-    // boxShadow: '0px 0px 4.8rem rgba(0, 0, 0, 0.1)',
     display: 'flex',
-    // flexDirection: 'row',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // rowGap: '1vw',
     position: 'relative',
-    // backgroundColor: '#fff',
   });
 
   //  /REUSABLE/card.molecule.ts
@@ -935,15 +800,12 @@ export function desktopStyles(): ElementStyles {
     color: '#555',
     textAlign: 'center',
     lineHeight: '1.2',
-
-    // textAlign: 'center',
     position: 'absolute',
     bottom: '0px',
     left: '0px',
     width: '100%',
     backgroundColor: 'transparent',
     backdropFilter: 'blur(10px)',
-    // lineHeight: '1',
   });
 
   //D D   END SKILLS
@@ -979,14 +841,8 @@ export function desktopStyles(): ElementStyles {
     justifyContent: 'flex-start',
     alignItems: 'center',
     rowGap: '2vw',
-    // minHeight: '100%',
-    // maxHeight: '100%',
-    // width: '100vw',
     marginBlock: '0px',
     paddingInline: '0px',
-    // overflowY: 'scroll',
-
-    // backgroundColor: 'saddlebrown',
   });
 
   // CONTACT/contact.organism.ts
@@ -1085,7 +941,6 @@ export function desktopStyles(): ElementStyles {
     borderBottomRightRadius: '1.5vw',
     alignSelf: 'stretch',
     padding: '0.8vw',
-    // padding: '3vw 2vw',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',

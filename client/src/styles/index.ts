@@ -1,11 +1,11 @@
 import getScreenSize from '../helpers/screen-size.js';
-import { desktopStyles } from './screens/desktop';
-import { mobileLandscapeStyles } from './screens/mobile-landscape';
-import { mobilePortraitStyles } from './screens/mobile-portrait';
+import { desktopStyles } from './screens/desktop.js';
+import { mobileLandscapeStyles } from './screens/mobile-landscape.js';
+import { mobilePortraitStyles } from './screens/mobile-portrait.js';
 
 const styleEvent = new Event('styles', { bubbles: true });
 
-let timeOut: NodeJS.Timeout;
+let timeOut: number;
 
 function updateStyles() {
   const { height, width, orientation, device } = getScreenSize();
