@@ -2,6 +2,11 @@ node_modules/
 excluded/
 build/
 img/
+db/
+
+.data
+config.ts
+
 *.env
 
 # Logs

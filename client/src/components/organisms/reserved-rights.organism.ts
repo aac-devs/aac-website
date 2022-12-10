@@ -4,10 +4,10 @@ const RESERVED_RIGHTS_HEADING = `© Andrés Arana Castillo - 2022`;
 
 const RESERVED_RIGHTS_DESCRIPTION = `This WebApp was made using only JavaScript (TypeScript) without Frameworks/Libraries, without .css files, index.html file has only <body> tag with <head> tag of course. This WebApp is completly responsive. Trying to make the code as reusable as possible. You can watch its code`;
 
-export function reservedRightsOrganism(): HTMLDivElement {
+export function reservedRightsOrganism(thisAppRepoLink: string): HTMLDivElement {
   const reservedRightsContainer_DIV = atom.createDivElement({ styleName: 'CONTACT_FOOTER_CONTAINER' });
   const linkToGithub_ANCHOR = atom.createAnchorElement({
-    href: '#',
+    href: thisAppRepoLink,
     target: '_blank',
     styleName: 'CONTACT_CODE_ANCHOR',
     textContent: 'here',

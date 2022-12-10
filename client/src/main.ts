@@ -18,9 +18,7 @@ HTMLElement.prototype.resetElementsStyles(
 );
 
 globalThis.document.addEventListener('state', () => {
-  console.log('estado actualizado');
   const data: StateType | undefined = Document.prototype.getState('hola');
-  // TODO: Parámetro provisional, verificar si va algo más que los valores de las redes sociales.
   if (data) {
     const { defaults, projects, hackerrank, skills } = data;
     if (defaults) body.appendChild(org.createMainHeaderOrganism(defaults));
@@ -28,13 +26,12 @@ globalThis.document.addEventListener('state', () => {
     if (projects) org.projectOrganims(projects);
     if (hackerrank) org.hackerrankOrganims(hackerrank);
     if (skills) org.skillsOrganims(skills);
-    org.contactOrganism();
+    if (defaults) org.contactOrganism(defaults.thisAppRepoLink);
   }
 });
 
 const customEvent = new CustomEvent('nav-close');
 
 body.addEventListener('click', () => {
-  console.log('body click');
   globalThis.document.dispatchEvent(customEvent);
 });

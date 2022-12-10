@@ -54,12 +54,10 @@ export function positioningContainers(b: TypeButtonIcon) {
 
   if (b === 'bars') {
     if (o === 'portrait-primary') {
-      console.log('bars - portrait');
       navStyle = NAV_PORTRAIT_VISIBLE;
       socialStyle = SOCIAL_PORTRAIT_VISIBLE;
       infoStyle = INFO_PORTRAIT_VISIBLE;
     } else {
-      console.log('bars - landscape');
       navStyle = NAV_LANDSCAPE_VISIBLE;
       socialStyle = SOCIAL_LANDSCAPE_VISIBLE;
       infoStyle = INFO_LANDSCAPE_VISIBLE;
@@ -69,12 +67,10 @@ export function positioningContainers(b: TypeButtonIcon) {
     xmarkBtnStyle = 'display:block;';
   } else {
     if (o === 'portrait-primary') {
-      console.log('xmark - portrait');
       navStyle = NAV_PORTRAIT_HIDDEN;
       socialStyle = SOCIAL_PORTRAIT_HIDDEN;
       infoStyle = INFO_PORTRAIT_HIDDEN;
     } else {
-      console.log('xmark - landscape');
       navStyle = NAV_LANDSCAPE_HIDDEN;
       socialStyle = SOCIAL_LANDSCAPE_HIDDEN;
       infoStyle = INFO_LANDSCAPE_HIDDEN;

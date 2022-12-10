@@ -319,7 +319,7 @@ export function desktopStyles(): ElementStyles {
     marginTop: '0px',
     marginBottom: '0px',
     display: 'flex',
-    padding: '2vw 0',
+    padding: '2vw 0 10vw 0',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     rowGap: '20vw',
