@@ -62,6 +62,7 @@ interface SocialItemType {
 
 interface DefaultsType {
   social: SocialItemType[];
+  thisAppRepoLink: string;
 }
 
 // STATE SKELETON TYPES:

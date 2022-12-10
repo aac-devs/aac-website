@@ -2,15 +2,12 @@ import * as atom from '../atoms/html-atom';
 import * as org from './index';
 import * as data from '../data/contact.organism.data';
 import { BothParams, createInputTextareaMolecule } from '../molecules/input-textarea.molecule';
+import { sendContactUserInfo } from '../helper-functions/send-sms';
 
-// TODO: poner footer en CONTACT con la información que se quiere mostrar.
-// TODO: enviar campos del formulario mediante un POST (cuando esté el backend)
-// TODO: organizar todos los eventos de los controles que ya no funcionan por el cambion en html-atom.ts
-
-export function contactOrganism() {
+export function contactOrganism(thisAppRepoLink: string) {
   const contactBody = globalThis.document.querySelector('.contact-body');
   const contactContainer_DIV = atom.createDivElement({ styleName: 'CONTACT_CONTAINER' });
-  const reservedRightsContainer_DIV = org.reservedRightsOrganism();
+  const reservedRightsContainer_DIV = org.reservedRightsOrganism(thisAppRepoLink);
 
   const contactFormContainer_FORM = atom.createFormElement({ styleName: 'CONTACT_FORM' });
   let formValues = data.INITIAL_VALUES_STATE;
@@ -36,6 +33,7 @@ export function contactOrganism() {
   }
 
   function onButtonClick() {
+    sendContactUserInfo(formValues);
     contactFormContainer_FORM.reset();
     for (let formValuesKey in formValues) formValues[formValuesKey] = '';
     for (let formValuesKey in formValuesState) formValuesState[formValuesKey] = false;
@@ -66,7 +64,6 @@ export function contactOrganism() {
   }
 
   function onContentReset() {
-    console.log('element reset');
     Array.from(globalThis.document.querySelectorAll('input')).forEach((el) => {
       el.style.setProperty('outline', '1px solid #ccc');
     });

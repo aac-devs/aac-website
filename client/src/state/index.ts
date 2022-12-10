@@ -3,6 +3,7 @@ const stateEvent = new Event('state', { bubbles: true });
 const INITIAL_STATE: StateType = {
   defaults: {
     social: [],
+    thisAppRepoLink: '',
   },
   projects: [],
   hackerrank: {
@@ -16,11 +17,11 @@ const INITIAL_STATE: StateType = {
 type AllFetchDataType = Partial<DefaultsType> & Partial<ProjectType[]> & Partial<HackerrankType> & Partial<SkillType[]>;
 
 async function fetchData(route: string): Promise<AllFetchDataType | Error> {
-  const url = 'http://localhost:3001/';
+  const url = 'http://localhost:4000/';
   try {
     const resp = await fetch(`${url}${route}`);
     if (resp.ok) {
-      const data = await resp.json();
+      const data: AllFetchDataType = await resp.json();
       return data;
     }
     throw new Error();

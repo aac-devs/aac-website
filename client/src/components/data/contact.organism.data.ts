@@ -33,6 +33,7 @@ export const INPUT_NAME_PARAMS: InputControlParams = {
   title: 'Error',
   tabindex: 1,
   autocomplete: 'off',
+  // value: 'andres',
 };
 
 export const INPUT_BUTTON_PARAMS: ButtonControlParams = {
@@ -44,7 +45,7 @@ export const INPUT_BUTTON_PARAMS: ButtonControlParams = {
   name: 'contact-button',
   tabindex: 5,
   title: 'Error button',
-  textContent: 'Send',
+  textContent: 'Send me a SMS',
 };
 
 export const INPUT_EMAIL_PARAMS: InputControlParams = {
@@ -59,6 +60,7 @@ export const INPUT_EMAIL_PARAMS: InputControlParams = {
   title: 'Error email',
   tabindex: 2,
   autocomplete: 'off',
+  // value: 'aac@mail.com',
 };
 
 export const TEXTAREA_PARAMS: TextareaControlParams = {
@@ -71,6 +73,7 @@ export const TEXTAREA_PARAMS: TextareaControlParams = {
   textContent: 'Message:',
   minlength: 3,
   maxlength: 120,
+  // value: 'Hola aac-devs',
 };
 
 export const INPUT_OPERATION_PARAMS: InputControlParams = {
