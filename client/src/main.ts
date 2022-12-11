@@ -10,12 +10,18 @@ import * as org from './components/organisms/index';
 const html: HTMLElement = globalThis.document.getElementsByTagName('html')[0];
 const body: HTMLElement = globalThis.document.getElementsByTagName('body')[0];
 
-const { HTML: HTML_STYLES, BODY: BODY_STYLES } = Document.prototype.getStyles();
+function setStyles() {
+  const { HTML: HTML_STYLES, BODY: BODY_STYLES } = Document.prototype.getStyles();
 
-HTMLElement.prototype.resetElementsStyles(
-  { element: html, style: HTML_STYLES! },
-  { element: body, style: BODY_STYLES! }
-);
+  HTMLElement.prototype.resetElementsStyles(
+    { element: html, style: HTML_STYLES! },
+    { element: body, style: BODY_STYLES! }
+  );
+}
+
+setStyles();
+
+globalThis.document.addEventListener('styles', setStyles);
 
 globalThis.document.addEventListener('state', () => {
   const data: StateType | undefined = Document.prototype.getState('hola');

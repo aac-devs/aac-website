@@ -30,7 +30,7 @@ export function mobilePortraitStyles(): ElementStyles {
     padding: '0px',
     position: 'relative',
     scrollBehavior: 'smooth',
-    backgroundColor: '#888',
+    backgroundColor: '#ccc',
   });
 
   e.BODY = ''.cssProps({
@@ -157,7 +157,7 @@ export function mobilePortraitStyles(): ElementStyles {
     transition: CONTAINER_TRANSITION,
     borderBottomRightRadius: '3vw',
     borderTopRightRadius: '3vw',
-    transform: 'translateX(-1400%)',
+    transform: 'translateX(-100%)',
   });
 
   // /nav/molecules/ul.molecule.ts
@@ -285,7 +285,7 @@ export function mobilePortraitStyles(): ElementStyles {
     transition: CONTAINER_TRANSITION,
     borderBottomRightRadius: '3vw',
     borderTopRightRadius: '3vw',
-    transform: 'translateX(-1400%)',
+    transform: 'translateX(-100%)',
     backdropFilter: 'blur(10px)',
   });
 
