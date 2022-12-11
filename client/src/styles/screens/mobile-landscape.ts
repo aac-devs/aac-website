@@ -33,7 +33,7 @@ export function mobileLandscapeStyles(): ElementStyles {
     padding: '0px',
     position: 'relative',
     scrollBehavior: 'smooth',
-    backgroundColor: '#fff',
+    backgroundColor: '#ccc',
   });
 
   e.BODY = ''.cssProps({
@@ -164,7 +164,7 @@ export function mobileLandscapeStyles(): ElementStyles {
     transition: CONTAINER_TRANSITION,
     borderBottomRightRadius: '3vh',
     borderBottomLeftRadius: '3vh',
-    transform: 'translateX(-1400%)',
+    transform: 'translateX(-200%)',
   });
 
   // /nav/molecules/ul.molecule.ts
@@ -292,7 +292,7 @@ export function mobileLandscapeStyles(): ElementStyles {
     transition: CONTAINER_TRANSITION,
     borderTopLeftRadius: '3vh',
     borderTopRightRadius: '3vh',
-    transform: 'translateY(1000%)',
+    transform: 'translateY(-200%)',
     backdropFilter: 'blur(10px)',
   });
 

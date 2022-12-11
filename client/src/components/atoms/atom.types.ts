@@ -57,13 +57,13 @@ interface InputControlParams extends ControlGlobalParams, TextControlParams {
   min?: string;
   pattern?: string;
   title?: string;
-  value?: string | never;
+  value?: never;
 }
 
 interface TextareaControlParams extends ControlGlobalParams, TextControlParams {
   cols?: number;
   rows?: number;
-  value?: string | never;
+  // value?: string | never;
 }
 
 interface ButtonControlParams extends ControlGlobalParams {

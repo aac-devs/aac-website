@@ -17,19 +17,19 @@ export const BUTTON_PARAMS: GlobalParams = { styleName: 'HEADER_BUTTON' };
 
 const NAV_PORTRAIT_VISIBLE = 'transform:translateX(0%)';
 const SOCIAL_PORTRAIT_VISIBLE = 'transform:translateX(0%)';
-const INFO_PORTRAIT_VISIBLE = 'transform:translateY(0%)';
+const INFO_PORTRAIT_VISIBLE = 'transform:translateX(0%)';
 
-const NAV_PORTRAIT_HIDDEN = 'transform:translateX(-1400%)';
-const SOCIAL_PORTRAIT_HIDDEN = 'transform:translateX(-1400%)';
-const INFO_PORTRAIT_HIDDEN = 'transform:translateY(1000%)';
+const NAV_PORTRAIT_HIDDEN = 'transform:translateX(-100%)';
+const SOCIAL_PORTRAIT_HIDDEN = 'transform:translateX(-100%)';
+const INFO_PORTRAIT_HIDDEN = 'transform:translateX(100%)';
 
-const NAV_LANDSCAPE_VISIBLE = 'transform:translateY(0%)';
-const SOCIAL_LANDSCAPE_VISIBLE = 'transform:translateY(0%)';
-const INFO_LANDSCAPE_VISIBLE = 'transform:translateY(0%)';
+const NAV_LANDSCAPE_VISIBLE = 'transform:translateX(0%)'; // ok
+const SOCIAL_LANDSCAPE_VISIBLE = 'transform:translateX(0%)'; // ok
+const INFO_LANDSCAPE_VISIBLE = 'transform:translateX(0%)'; // ok
 
-const NAV_LANDSCAPE_HIDDEN = 'transform:translateY(-1400%)';
-const SOCIAL_LANDSCAPE_HIDDEN = 'transform:translateY(1000%)';
-const INFO_LANDSCAPE_HIDDEN = 'transform:translateY(1000%)';
+const NAV_LANDSCAPE_HIDDEN = 'transform:translateX(-200%)'; // ok
+const SOCIAL_LANDSCAPE_HIDDEN = 'transform:translateX(-200%)'; // ok
+const INFO_LANDSCAPE_HIDDEN = 'transform:translateX(100%)'; // ok
 
 type NavPortraitStyle = typeof NAV_PORTRAIT_VISIBLE | typeof NAV_PORTRAIT_HIDDEN;
 type NavLandscapeStyle = typeof NAV_LANDSCAPE_VISIBLE | typeof NAV_LANDSCAPE_HIDDEN;
