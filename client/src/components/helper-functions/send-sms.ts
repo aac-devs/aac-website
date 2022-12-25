@@ -1,7 +1,8 @@
+import { url } from '../../lib/config';
 import * as data from '../data/contact.organism.data';
 
 export async function sendContactUserInfo(info: typeof data.INITIAL_VALUES_STATE) {
-  const resp = await fetch('http://localhost:4000/contact', {
+  const resp = await fetch(`${url}contact`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(info),
