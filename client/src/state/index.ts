@@ -1,3 +1,5 @@
+import { url } from '../lib/config';
+
 const stateEvent = new Event('state', { bubbles: true });
 
 const INITIAL_STATE: StateType = {
@@ -17,7 +19,6 @@ const INITIAL_STATE: StateType = {
 type AllFetchDataType = Partial<DefaultsType> & Partial<ProjectType[]> & Partial<HackerrankType> & Partial<SkillType[]>;
 
 async function fetchData(route: string): Promise<AllFetchDataType | Error> {
-  const url = 'http://localhost:4000/';
   try {
     const resp = await fetch(`${url}${route}`);
     if (resp.ok) {
